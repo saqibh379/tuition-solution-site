@@ -1,0 +1,177 @@
+/* ============================================
+   ADMIN PANEL - Custom Styles
+   ============================================ */
+
+/* Field item in builder */
+.field-item {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+    transition: all 0.2s ease;
+    cursor: grab;
+    position: relative;
+}
+
+.field-item:hover {
+    border-color: #93c5fd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.field-item:active {
+    cursor: grabbing;
+}
+
+.field-item.dragging {
+    opacity: 0.5;
+    border-color: #1e40af;
+    box-shadow: 0 8px 24px rgba(30, 64, 175, 0.2);
+}
+
+.field-item .field-drag-handle {
+    color: #cbd5e1;
+    cursor: grab;
+    transition: color 0.2s;
+}
+
+.field-item:hover .field-drag-handle {
+    color: #94a3b8;
+}
+
+/* Field type badges */
+.field-type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.field-type-badge.type-text { background: #dbeafe; color: #1e40af; }
+.field-type-badge.type-email { background: #d1fae5; color: #065f46; }
+.field-type-badge.type-tel { background: #fef3c7; color: #92400e; }
+.field-type-badge.type-number { background: #e0e7ff; color: #3730a3; }
+.field-type-badge.type-date { background: #fce7f3; color: #9d174d; }
+.field-type-badge.type-select { background: #fed7aa; color: #c2410c; }
+.field-type-badge.type-radio { background: #c7d2fe; color: #4338ca; }
+.field-type-badge.type-checkbox { background: #a7f3d0; color: #047857; }
+.field-type-badge.type-textarea { background: #e2e8f0; color: #475569; }
+.field-type-badge.type-file { background: #fecaca; color: #991b1b; }
+
+/* Saved form card */
+.saved-form-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+    transition: all 0.2s ease;
+}
+
+.saved-form-card:hover {
+    border-color: #93c5fd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Submissions table */
+.submission-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    transition: all 0.2s ease;
+}
+
+.submission-card:hover {
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Modal animation */
+#field-modal {
+    transition: opacity 0.2s ease;
+}
+
+#field-modal.show {
+    display: flex !important;
+    animation: fadeIn 0.2s ease-out;
+}
+
+#field-modal > div {
+    animation: slideUp 0.3s ease-out;
+}
+
+/* Toast animation */
+#toast.show {
+    display: block !important;
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Drag over placeholder */
+.drag-over-placeholder {
+    border: 2px dashed #93c5fd;
+    background: #eff6ff;
+    border-radius: 12px;
+    min-height: 60px;
+    transition: all 0.2s;
+}
+
+/* Scrollbar for forms list */
+#saved-forms-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#saved-forms-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#saved-forms-list::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 6px;
+}
+
+#saved-forms-list::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Active form card indicator */
+.saved-form-card.editing {
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+/* Toggle switch */
+.toggle-active {
+    background-color: #22c55e !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .field-item {
+        padding: 12px;
+    }
+}
+
+/* Print: hide admin */
+@media print {
+    body { display: none !important; }
+}

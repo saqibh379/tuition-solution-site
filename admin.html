@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin Panel | Form Builder - Tuition Solution</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+                            400: '#60a5fa', 500: '#3b82f6', 600: '#1e40af', 700: '#1e3a8a',
+                            800: '#1e2d5f', 900: '#0f172a',
+                        },
+                        accent: {
+                            50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+                            400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+                            800: '#9a3412', 900: '#7c2d12',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="font-body text-gray-800 bg-gray-100 min-h-screen">
+
+    <!-- ============================================ -->
+    <!-- LOGIN SCREEN -->
+    <!-- ============================================ -->
+    <div id="login-screen" class="min-h-screen flex items-center justify-center px-4">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 lg:p-10 max-w-md w-full border border-gray-100">
+            <div class="text-center mb-8">
+                <div class="flex items-center justify-center gap-3 mb-6">
+                    <img src="Assets/Logo/logo icon-01 2.png" alt="Logo" class="h-12 w-auto object-contain" loading="eager">
+                    <div class="w-px h-10 bg-gray-300" aria-hidden="true"></div>
+                    <img src="Assets/Logo/Group 48095398.png" alt="Tuition Solution" class="h-9 w-auto object-contain" loading="eager">
+                </div>
+                <h1 class="font-heading text-2xl font-bold text-primary-800">Admin Panel</h1>
+                <p class="text-gray-500 text-sm mt-1">Login to manage registration forms</p>
+            </div>
+
+            <form id="login-form" class="space-y-5">
+                <div>
+                    <label for="admin-username" class="block text-sm font-semibold text-gray-700 mb-1.5">Username</label>
+                    <div class="relative">
+                        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"><i class="fas fa-user" aria-hidden="true"></i></span>
+                        <input type="text" id="admin-username" required autocomplete="username"
+                            class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all"
+                            placeholder="Enter username">
+                    </div>
+                </div>
+                <div>
+                    <label for="admin-password" class="block text-sm font-semibold text-gray-700 mb-1.5">Password</label>
+                    <div class="relative">
+                        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"><i class="fas fa-lock" aria-hidden="true"></i></span>
+                        <input type="password" id="admin-password" required autocomplete="current-password"
+                            class="w-full pl-10 pr-12 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all"
+                            placeholder="Enter password">
+                        <button type="button" id="toggle-password" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600" aria-label="Toggle password visibility">
+                            <i class="fas fa-eye" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="login-error" class="hidden bg-red-50 text-red-600 text-sm p-3 rounded-xl border border-red-200" role="alert">
+                    <i class="fas fa-exclamation-circle mr-1" aria-hidden="true"></i>
+                    <span>Invalid username or password.</span>
+                </div>
+                <button type="submit" class="w-full bg-primary-600 text-white py-3.5 rounded-xl font-bold hover:bg-primary-700 transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+                    <i class="fas fa-sign-in-alt mr-2" aria-hidden="true"></i> Login
+                </button>
+            </form>
+
+            <p class="text-center text-xs text-gray-400 mt-6">Default: admin / admin123</p>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- ADMIN DASHBOARD -->
+    <!-- ============================================ -->
+    <div id="admin-dashboard" class="hidden">
+        <!-- Top Navbar -->
+        <header class="bg-white shadow-sm sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center gap-3">
+                        <img src="Assets/Logo/logo icon-01 2.png" alt="Logo" class="h-9 w-auto object-contain">
+                        <div class="w-px h-7 bg-gray-300" aria-hidden="true"></div>
+                        <img src="Assets/Logo/Group 48095398.png" alt="Tuition Solution" class="h-7 w-auto object-contain">
+                        <span class="ml-3 bg-primary-100 text-primary-700 text-xs font-bold px-3 py-1 rounded-full">ADMIN</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <a href="registration.html" target="_blank" class="hidden sm:inline-flex items-center gap-2 text-sm text-gray-600 hover:text-primary-600 transition-colors">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                            View Registration Page
+                        </a>
+                        <button id="logout-btn" class="inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-red-100 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400">
+                            <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+                            <span class="hidden sm:inline">Logout</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+            <!-- Stats Cards -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-file-alt text-primary-600 text-xl" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <div id="stat-total-forms" class="text-2xl font-bold text-gray-800">0</div>
+                            <div class="text-gray-500 text-sm">Total Forms</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-check-circle text-green-600 text-xl" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <div id="stat-active-forms" class="text-2xl font-bold text-gray-800">0</div>
+                            <div class="text-gray-500 text-sm">Active Forms</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-users text-accent-600 text-xl" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <div id="stat-registrations" class="text-2xl font-bold text-gray-800">0</div>
+                            <div class="text-gray-500 text-sm">Registrations</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-list text-purple-600 text-xl" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <div id="stat-total-fields" class="text-2xl font-bold text-gray-800">0</div>
+                            <div class="text-gray-500 text-sm">Total Fields</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Layout -->
+            <div class="grid lg:grid-cols-3 gap-8">
+
+                <!-- ============================================ -->
+                <!-- LEFT: Form Builder -->
+                <!-- ============================================ -->
+                <div class="lg:col-span-2 space-y-6">
+
+                    <!-- Create / Edit Form Card -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="bg-gradient-to-r from-primary-600 to-primary-700 px-6 py-5">
+                            <h2 class="font-heading text-lg font-bold text-white flex items-center gap-2">
+                                <i class="fas fa-plus-circle" aria-hidden="true"></i>
+                                <span id="form-builder-title">Create New Form</span>
+                            </h2>
+                            <p class="text-primary-200 text-sm mt-1">Define the form name, description, and add fields with their types and options.</p>
+                        </div>
+
+                        <div class="p-6">
+                            <form id="form-builder" class="space-y-6">
+                                <!-- Form Meta -->
+                                <div class="grid sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label for="form-name" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                                            Form Name <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" id="form-name" required
+                                            class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm"
+                                            placeholder="e.g., Web Development Course Registration">
+                                    </div>
+                                    <div>
+                                        <label for="form-icon" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                                            Form Icon (FontAwesome class)
+                                        </label>
+                                        <input type="text" id="form-icon"
+                                            class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm"
+                                            placeholder="e.g., fas fa-laptop-code" value="fas fa-file-alt">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="form-desc" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                                        Form Description
+                                    </label>
+                                    <textarea id="form-desc" rows="2"
+                                        class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm resize-none"
+                                        placeholder="Brief description of what this form is for..."></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="form-color" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                                        Card Color Theme
+                                    </label>
+                                    <select id="form-color" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm bg-white">
+                                        <option value="primary">Blue (Primary)</option>
+                                        <option value="accent">Orange (Accent)</option>
+                                        <option value="green">Green</option>
+                                        <option value="purple">Purple</option>
+                                        <option value="red">Red</option>
+                                        <option value="indigo">Indigo</option>
+                                    </select>
+                                </div>
+
+                                <!-- Fields Section -->
+                                <div class="border-t border-gray-100 pt-6">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="font-heading text-base font-bold text-gray-800 flex items-center gap-2">
+                                            <i class="fas fa-list-ul text-primary-500" aria-hidden="true"></i>
+                                            Form Fields
+                                        </h3>
+                                        <button type="button" id="add-field-btn" class="inline-flex items-center gap-1.5 bg-primary-50 text-primary-600 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-primary-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                            <i class="fas fa-plus" aria-hidden="true"></i>
+                                            Add Field
+                                        </button>
+                                    </div>
+
+                                    <!-- Fields Container -->
+                                    <div id="fields-container" class="space-y-4">
+                                        <!-- Field items will be added here dynamically -->
+                                        <div class="text-center py-8 text-gray-400 border-2 border-dashed border-gray-200 rounded-xl" id="no-fields-msg">
+                                            <i class="fas fa-inbox text-3xl mb-2" aria-hidden="true"></i>
+                                            <p class="text-sm">No fields added yet. Click "Add Field" to start building your form.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Form Actions -->
+                                <div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-gray-100">
+                                    <button type="submit" id="save-form-btn" class="flex-1 bg-gradient-to-r from-accent-500 to-accent-600 text-white py-3 rounded-xl font-bold hover:from-accent-600 hover:to-accent-700 transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 flex items-center justify-center gap-2">
+                                        <i class="fas fa-save" aria-hidden="true"></i>
+                                        Save Form
+                                    </button>
+                                    <button type="button" id="cancel-edit-btn" class="hidden px-6 py-3 rounded-xl border-2 border-gray-200 text-gray-600 font-semibold hover:border-gray-300 hover:bg-gray-50 transition-all focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2">
+                                        <i class="fas fa-times mr-2" aria-hidden="true"></i>Cancel
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Submissions Viewer -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="px-6 py-5 border-b border-gray-100 flex items-center justify-between">
+                            <h2 class="font-heading text-lg font-bold text-gray-800 flex items-center gap-2">
+                                <i class="fas fa-inbox text-accent-500" aria-hidden="true"></i>
+                                Recent Registrations
+                            </h2>
+                            <button id="clear-submissions-btn" class="text-sm text-red-500 hover:text-red-700 font-medium transition-colors focus:outline-none">
+                                <i class="fas fa-trash mr-1" aria-hidden="true"></i> Clear All
+                            </button>
+                        </div>
+                        <div id="submissions-container" class="p-6">
+                            <div class="text-center py-8 text-gray-400">
+                                <i class="fas fa-clipboard-list text-3xl mb-2" aria-hidden="true"></i>
+                                <p class="text-sm">No registrations yet.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ============================================ -->
+                <!-- RIGHT: Saved Forms List -->
+                <!-- ============================================ -->
+                <div class="space-y-6">
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="px-6 py-5 border-b border-gray-100">
+                            <h2 class="font-heading text-lg font-bold text-gray-800 flex items-center gap-2">
+                                <i class="fas fa-folder-open text-primary-500" aria-hidden="true"></i>
+                                Saved Forms
+                            </h2>
+                            <p class="text-gray-500 text-sm mt-1">Manage your registration forms</p>
+                        </div>
+                        <div id="saved-forms-list" class="p-4 space-y-3 max-h-[600px] overflow-y-auto">
+                            <!-- Saved forms will appear here -->
+                            <div class="text-center py-8 text-gray-400" id="no-forms-msg">
+                                <i class="fas fa-folder-open text-3xl mb-2" aria-hidden="true"></i>
+                                <p class="text-sm">No forms created yet.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Help -->
+                    <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-6 border border-primary-100">
+                        <h3 class="font-heading font-bold text-primary-800 mb-3 flex items-center gap-2">
+                            <i class="fas fa-lightbulb text-accent-500" aria-hidden="true"></i>
+                            Quick Guide
+                        </h3>
+                        <ul class="space-y-2.5 text-sm text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <span class="w-5 h-5 bg-primary-600 text-white rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">1</span>
+                                <span>Enter form name & description</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-5 h-5 bg-primary-600 text-white rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">2</span>
+                                <span>Add fields (text, email, phone, select, radio, checkbox, textarea, date, number, file)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-5 h-5 bg-primary-600 text-white rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">3</span>
+                                <span>For select, radio & checkbox: add options separated by commas</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-5 h-5 bg-primary-600 text-white rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">4</span>
+                                <span>Mark fields as required if needed</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-5 h-5 bg-primary-600 text-white rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">5</span>
+                                <span>Save the form — it will appear on the registration page</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- ADD FIELD MODAL -->
+    <!-- ============================================ -->
+    <div id="field-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+            <div class="px-6 py-5 border-b border-gray-100 flex items-center justify-between">
+                <h3 id="modal-title" class="font-heading text-lg font-bold text-gray-800">Add New Field</h3>
+                <button id="close-modal" class="w-8 h-8 rounded-lg hover:bg-gray-100 flex items-center justify-center text-gray-500 hover:text-gray-700 transition-colors" aria-label="Close modal">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="p-6 space-y-5">
+                <div>
+                    <label for="field-label" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                        Field Label <span class="text-red-500">*</span>
+                    </label>
+                    <input type="text" id="field-label"
+                        class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm"
+                        placeholder="e.g., Student Name, Father's Name, CNIC...">
+                </div>
+
+                <div>
+                    <label for="field-type" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                        Field Type <span class="text-red-500">*</span>
+                    </label>
+                    <select id="field-type" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm bg-white">
+                        <option value="text">Text Input</option>
+                        <option value="email">Email</option>
+                        <option value="tel">Phone Number</option>
+                        <option value="number">Number</option>
+                        <option value="date">Date</option>
+                        <option value="select">Dropdown (Select)</option>
+                        <option value="radio">Radio Buttons</option>
+                        <option value="checkbox">Checkboxes</option>
+                        <option value="textarea">Text Area (Long Text)</option>
+                        <option value="file">File Upload</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="field-placeholder" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                        Placeholder Text
+                    </label>
+                    <input type="text" id="field-placeholder"
+                        class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm"
+                        placeholder="e.g., Enter your full name...">
+                </div>
+
+                <!-- Options (for select, radio, checkbox) -->
+                <div id="field-options-group" class="hidden">
+                    <label for="field-options" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                        Options <span class="text-red-500">*</span>
+                        <span class="font-normal text-gray-400">(comma separated)</span>
+                    </label>
+                    <textarea id="field-options" rows="3"
+                        class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm resize-none"
+                        placeholder="Option 1, Option 2, Option 3"></textarea>
+                    <p class="text-xs text-gray-400 mt-1">Separate each option with a comma. Example: Male, Female, Other</p>
+                </div>
+
+                <!-- Column Width (layout) -->
+                <div>
+                    <label for="field-width" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                        Field Width
+                    </label>
+                    <select id="field-width" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm bg-white">
+                        <option value="full">Full Width</option>
+                        <option value="half">Half Width (side by side)</option>
+                    </select>
+                </div>
+
+                <!-- Required Toggle -->
+                <div class="flex items-center gap-3 bg-gray-50 p-4 rounded-xl">
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="field-required" class="sr-only peer">
+                        <div class="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary-500 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
+                    </label>
+                    <span class="text-sm font-medium text-gray-700">This field is required</span>
+                </div>
+
+                <!-- Modal Actions -->
+                <div class="flex gap-3 pt-2">
+                    <button id="save-field-btn" class="flex-1 bg-primary-600 text-white py-3 rounded-xl font-bold hover:bg-primary-700 transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 flex items-center justify-center gap-2">
+                        <i class="fas fa-plus" aria-hidden="true"></i>
+                        Add Field
+                    </button>
+                    <button id="cancel-field-btn" class="px-6 py-3 rounded-xl border-2 border-gray-200 text-gray-600 font-semibold hover:bg-gray-50 transition-all focus:outline-none focus:ring-2 focus:ring-gray-300">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- TOAST NOTIFICATION -->
+    <!-- ============================================ -->
+    <div id="toast" class="fixed bottom-6 right-6 z-[70] hidden" role="status" aria-live="polite">
+        <div class="bg-white rounded-xl shadow-2xl border border-gray-100 px-6 py-4 flex items-center gap-3 max-w-sm">
+            <div id="toast-icon" class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"></div>
+            <p id="toast-message" class="text-sm font-medium text-gray-700"></p>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="js/admin.js"></script>
+</body>
+</html>

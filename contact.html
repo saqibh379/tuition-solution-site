@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Tuition Solution & IT Solution - Visit us, call, or send a message. Located in Karachi, Pakistan.">
+    <title>Contact Us | Tuition Solution & IT Solution</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+                            400: '#60a5fa', 500: '#3b82f6', 600: '#1e40af', 700: '#1e3a8a',
+                            800: '#1e2d5f', 900: '#0f172a',
+                        },
+                        accent: {
+                            50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+                            400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+                            800: '#9a3412', 900: '#7c2d12',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-body text-gray-800 bg-white overflow-x-hidden" data-page="contact">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-accent-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:outline-none">
+        Skip to main content
+    </a>
+
+    <!-- HEADER -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="bg-primary-700 text-white py-2 hidden md:block">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm">
+                <div class="flex items-center gap-6">
+                    <a href="mailto:info@tuitionsolution.pk" class="flex items-center gap-2 hover:text-accent-400 transition-colors" aria-label="Email us">
+                        <i class="fas fa-envelope" aria-hidden="true"></i><span>info@tuitionsolution.pk</span>
+                    </a>
+                    <a href="tel:+923001234567" class="flex items-center gap-2 hover:text-accent-400 transition-colors" aria-label="Call us">
+                        <i class="fas fa-phone" aria-hidden="true"></i><span>+92 300 1234567</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="flex items-center gap-2"><i class="fas fa-clock" aria-hidden="true"></i> Mon - Sat: 9:00 AM - 8:00 PM</span>
+                    <div class="flex items-center gap-3 ml-4" role="list" aria-label="Social media links">
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="Facebook" role="listitem"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="WhatsApp" role="listitem"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="Instagram" role="listitem"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="YouTube" role="listitem"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="index.html" class="flex items-center gap-3 group" aria-label="Tuition Solution - Home">
+                    <img src="Assets/Logo/logo icon-01 2.png" alt="Tuition Solution Logo Icon" class="h-10 lg:h-14 w-auto object-contain" loading="eager">
+                    <div class="w-px h-8 lg:h-12 bg-gray-300" aria-hidden="true"></div>
+                    <img src="Assets/Logo/Group 48095398.png" alt="Tuition Solution & IT Solution" class="h-8 lg:h-11 w-auto object-contain" loading="eager">
+                </a>
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="index.html" data-nav="home" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Home</a>
+                    <a href="about.html" data-nav="about" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">About Us</a>
+                    <a href="services.html" data-nav="services" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Services</a>
+                    <a href="courses.html" data-nav="courses" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Courses</a>
+                    <a href="contact.html" data-nav="contact" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Contact</a>
+                </div>
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="registration.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-accent-500 to-accent-600 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:from-accent-600 hover:to-accent-700 transition-all shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2">
+                        <i class="fas fa-user-plus" aria-hidden="true"></i> Register Now
+                    </a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100 shadow-xl" role="navigation" aria-label="Mobile navigation">
+            <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+                <a href="index.html" data-nav="home" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Home</a>
+                <a href="about.html" data-nav="about" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">About Us</a>
+                <a href="services.html" data-nav="services" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Services</a>
+                <a href="courses.html" data-nav="courses" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Courses</a>
+                <a href="contact.html" data-nav="contact" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Contact</a>
+                <div class="pt-3 border-t border-gray-100">
+                    <a href="registration.html" class="block text-center bg-gradient-to-r from-accent-500 to-accent-600 text-white px-6 py-3 rounded-full font-semibold hover:from-accent-600 hover:to-accent-700 transition-all">
+                        <i class="fas fa-user-plus mr-2" aria-hidden="true"></i>Register Now
+                    </a>
+                </div>
+                <div class="pt-3 flex items-center justify-center gap-4 text-sm text-gray-500">
+                    <a href="tel:+923001234567" class="flex items-center gap-2 hover:text-primary-600"><i class="fas fa-phone" aria-hidden="true"></i> +92 300 1234567</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+
+        <!-- Page Banner -->
+        <section class="relative pt-32 lg:pt-40 pb-16 lg:pb-20 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900 overflow-hidden">
+            <div class="absolute inset-0 hero-pattern opacity-5"></div>
+            <div class="absolute top-20 right-10 w-72 h-72 bg-accent-500/10 rounded-full blur-3xl" aria-hidden="true"></div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-4" data-aos="fade-up">Contact <span class="text-accent-400">Us</span></h1>
+                <p class="text-primary-200 text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Get in touch with us. We'd love to hear from you and help you start your learning journey.</p>
+                <nav class="mt-6" aria-label="Breadcrumb" data-aos="fade-up" data-aos-delay="200">
+                    <ol class="flex items-center justify-center gap-2 text-sm text-primary-300">
+                        <li><a href="index.html" class="hover:text-accent-400 transition-colors">Home</a></li>
+                        <li><i class="fas fa-chevron-right text-xs" aria-hidden="true"></i></li>
+                        <li class="text-accent-400 font-semibold">Contact</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- CONTACT INFO CARDS -->
+        <section class="py-20 lg:py-28 bg-gray-50 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                    <!-- Location -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center group" data-aos="fade-up">
+                        <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-600 transition-colors">
+                            <i class="fas fa-map-marker-alt text-2xl text-primary-600 group-hover:text-white transition-colors" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-primary-700 mb-2">Our Location</h3>
+                        <p class="text-gray-600 text-sm">Tuition Solution Center, Karachi, Pakistan</p>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-accent-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-accent-500 transition-colors">
+                            <i class="fas fa-phone-alt text-2xl text-accent-600 group-hover:text-white transition-colors" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-primary-700 mb-2">Phone Number</h3>
+                        <a href="tel:+923001234567" class="text-gray-600 text-sm hover:text-primary-600 transition-colors">+92 300 1234567</a>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-green-500 transition-colors">
+                            <i class="fas fa-envelope text-2xl text-green-600 group-hover:text-white transition-colors" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-primary-700 mb-2">Email Address</h3>
+                        <a href="mailto:info@tuitionsolution.pk" class="text-gray-600 text-sm hover:text-primary-600 transition-colors">info@tuitionsolution.pk</a>
+                    </div>
+
+                    <!-- Hours -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-500 transition-colors">
+                            <i class="fas fa-clock text-2xl text-purple-600 group-hover:text-white transition-colors" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-primary-700 mb-2">Working Hours</h3>
+                        <p class="text-gray-600 text-sm">Mon - Sat: 9:00 AM - 8:00 PM</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form & Map Grid -->
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Enrollment Form -->
+                    <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-10 relative overflow-hidden" data-aos="fade-right">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-600 to-accent-500"></div>
+                        <h2 class="font-heading text-2xl lg:text-3xl font-bold text-primary-700 mb-2">Send Us a Message</h2>
+                        <p class="text-gray-600 mb-8">Fill in the form below and we'll get back to you as soon as possible.</p>
+
+                        <form id="enrollment-form" class="space-y-5" novalidate>
+                            <div>
+                                <label for="student-name" class="block text-sm font-semibold text-gray-700 mb-2">Full Name <span class="text-red-500" aria-hidden="true">*</span></label>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"><i class="fas fa-user" aria-hidden="true"></i></span>
+                                    <input type="text" id="student-name" name="name" class="w-full pl-11 pr-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 outline-none transition-all text-gray-800" placeholder="Enter your full name" required aria-required="true">
+                                </div>
+                                <p class="text-red-500 text-xs mt-1 hidden" id="name-error" role="alert"></p>
+                            </div>
+
+                            <div>
+                                <label for="student-phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number <span class="text-red-500" aria-hidden="true">*</span></label>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"><i class="fas fa-phone" aria-hidden="true"></i></span>
+                                    <input type="tel" id="student-phone" name="phone" class="w-full pl-11 pr-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 outline-none transition-all text-gray-800" placeholder="03XX XXXXXXX" required aria-required="true">
+                                </div>
+                                <p class="text-red-500 text-xs mt-1 hidden" id="phone-error" role="alert"></p>
+                            </div>
+
+                            <div>
+                                <label for="student-email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+                                    <input type="email" id="student-email" name="email" class="w-full pl-11 pr-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 outline-none transition-all text-gray-800" placeholder="your@email.com">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="student-course" class="block text-sm font-semibold text-gray-700 mb-2">Interested In <span class="text-red-500" aria-hidden="true">*</span></label>
+                                <div class="relative">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"><i class="fas fa-book" aria-hidden="true"></i></span>
+                                    <select id="student-course" name="course" class="w-full pl-11 pr-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 outline-none transition-all text-gray-800 appearance-none bg-white" required aria-required="true">
+                                        <option value="">Select a course or service</option>
+                                        <option value="tuition">Tuition Classes</option>
+                                        <option value="computer-basics">Computer Basics & MS Office</option>
+                                        <option value="advanced-excel">Advanced Excel & Data Analysis</option>
+                                        <option value="graphic-design">Graphic Design</option>
+                                        <option value="web-development">Web Development</option>
+                                        <option value="digital-marketing">Digital Marketing</option>
+                                        <option value="python">Python Programming</option>
+                                        <option value="nazra">Nazra Classes</option>
+                                        <option value="personal-tuition">Personal Tuition</option>
+                                    </select>
+                                </div>
+                                <p class="text-red-500 text-xs mt-1 hidden" id="course-error" role="alert"></p>
+                            </div>
+
+                            <div>
+                                <label for="student-message" class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                                <textarea id="student-message" name="message" rows="4" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 outline-none transition-all text-gray-800 resize-none" placeholder="Write your message here..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3.5 rounded-xl font-bold text-lg hover:from-primary-700 hover:to-primary-800 transition-all shadow-lg shadow-primary-600/25 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+                                <i class="fas fa-paper-plane mr-2" aria-hidden="true"></i>Send Message
+                            </button>
+                        </form>
+
+                        <!-- Success Message -->
+                        <div id="form-success" class="hidden text-center py-12">
+                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-check text-green-500 text-3xl" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="font-heading text-2xl font-bold text-primary-700 mb-2">Message Sent!</h3>
+                            <p class="text-gray-600 mb-6">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                            <button onclick="document.getElementById('enrollment-form').classList.remove('hidden');document.getElementById('form-success').classList.add('hidden');document.getElementById('enrollment-form').reset();" class="inline-flex items-center gap-2 bg-primary-50 text-primary-600 px-6 py-3 rounded-xl font-semibold hover:bg-primary-100 transition-all">
+                                <i class="fas fa-redo" aria-hidden="true"></i> Send Another Message
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Google Maps -->
+                    <div class="space-y-6" data-aos="fade-left">
+                        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                            <div class="p-6 bg-gradient-to-r from-primary-600 to-primary-700">
+                                <h3 class="font-heading text-xl font-bold text-white flex items-center gap-3">
+                                    <i class="fas fa-map-marked-alt text-accent-400" aria-hidden="true"></i> Find Us on Map
+                                </h3>
+                            </div>
+                            <div class="relative">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.9!2d67.0775558!3d24.9087459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sTuition+Solution+Center!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk"
+                                    width="100%"
+                                    height="400"
+                                    style="border:0;"
+                                    allowfullscreen=""
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    title="Tuition Solution Center Location on Google Maps"
+                                    class="w-full">
+                                </iframe>
+                            </div>
+                        </div>
+
+                        <!-- Additional Info -->
+                        <div class="bg-gradient-to-br from-primary-700 to-primary-900 rounded-2xl p-8 text-white">
+                            <h3 class="font-heading text-xl font-bold mb-4"><i class="fas fa-info-circle text-accent-400 mr-2" aria-hidden="true"></i>Quick Information</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-accent-400 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                                    <span class="text-primary-200">SDC Certified Computer Courses available with government-recognized certificates.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-accent-400 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                                    <span class="text-primary-200">Home tuition available across Karachi for all subjects and classes.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-accent-400 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                                    <span class="text-primary-200">Nazra and Quran classes with experienced male and female teachers.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check-circle text-accent-400 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                                    <span class="text-primary-200">Free demo classes available. Contact us to schedule your demo today!</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary-900 text-white relative overflow-hidden" role="contentinfo">
+        <div class="absolute inset-0 hero-pattern opacity-5"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <a href="index.html" class="flex items-center gap-3 mb-6">
+                        <img src="Assets/Logo/logo icon-01 2.png" alt="Tuition Solution Logo" class="h-10 w-auto object-contain brightness-0 invert" loading="lazy">
+                        <div class="w-px h-8 bg-white/30" aria-hidden="true"></div>
+                        <img src="Assets/Logo/Group 48095398.png" alt="Tuition Solution & IT Solution" class="h-8 w-auto object-contain brightness-0 invert" loading="lazy">
+                    </a>
+                    <p class="text-primary-300 leading-relaxed mb-6">Your trusted partner in education. Providing quality tuition, SDC certified computer courses, Nazra classes, and personal tutoring.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-lg mb-6 relative">Quick Links<span class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"></span></h3>
+                    <nav aria-label="Footer quick links">
+                        <ul class="space-y-3" role="list">
+                            <li><a href="index.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Home</a></li>
+                            <li><a href="about.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> About Us</a></li>
+                            <li><a href="services.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Services</a></li>
+                            <li><a href="courses.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Courses</a></li>
+                            <li><a href="registration.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Register Now</a></li>
+                            <li><a href="contact.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-lg mb-6 relative">Our Courses<span class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"></span></h3>
+                    <ul class="space-y-3" role="list">
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Computer Basics</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Advanced Excel</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Graphic Design</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Web Development</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Digital Marketing</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Python Programming</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-lg mb-6 relative">Stay Updated<span class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"></span></h3>
+                    <p class="text-primary-300 mb-4">Subscribe to our newsletter for updates on new courses and offers.</p>
+                    <form class="space-y-3" id="newsletter-form">
+                        <div class="relative">
+                            <label for="newsletter-email" class="sr-only">Email address for newsletter</label>
+                            <input type="email" id="newsletter-email" placeholder="Your email address" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-primary-400 focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all" required>
+                        </div>
+                        <button type="submit" class="w-full bg-accent-500 text-white py-3 rounded-xl font-semibold hover:bg-accent-600 transition-all focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 focus:ring-offset-primary-900">
+                            Subscribe <i class="fas fa-paper-plane ml-1" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                    <div class="mt-6 bg-white/10 rounded-xl p-4 border border-white/10">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-accent-500 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-certificate text-white text-xl" aria-hidden="true"></i></div>
+                            <div><div class="text-accent-400 font-bold text-sm">Registered with</div><div class="text-white font-semibold">Skills Development Council</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-primary-400 text-sm text-center md:text-left">&copy; <span id="footer-year"></span> Tuition Solution & IT Solution. All rights reserved.</p>
+                    <div class="flex items-center gap-6 text-sm">
+                        <a href="#" class="text-primary-400 hover:text-accent-400 transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-primary-400 hover:text-accent-400 transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-accent-500 text-white rounded-full shadow-xl opacity-0 invisible transition-all duration-300 hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 z-40" aria-label="Back to top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 left-6 w-14 h-14 bg-green-500 text-white rounded-full shadow-xl flex items-center justify-center hover:bg-green-600 transition-all z-40 hover:scale-110" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

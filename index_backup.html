@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tuition Solution & IT Solution - Expert tuition classes, computer courses certified by Skills Development Council, Nazra classes, and personal tuition services.">
+    <meta name="keywords" content="tuition, computer courses, IT solution, Nazra classes, personal tuition, Skills Development Council">
+    <title>Tuition Solution & IT Solution | Expert Learning Institute</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#1e40af',
+                            700: '#1e3a8a',
+                            800: '#1e2d5f',
+                            900: '#0f172a',
+                        },
+                        accent: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-body text-gray-800 bg-white overflow-x-hidden">
+
+    <!-- Skip to Content (WCAG) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-accent-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:outline-none">
+        Skip to main content
+    </a>
+
+    <!-- ============================================ -->
+    <!-- HEADER & NAVIGATION -->
+    <!-- ============================================ -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm">
+        <!-- Top Bar -->
+        <div class="bg-primary-700 text-white py-2 hidden md:block">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm">
+                <div class="flex items-center gap-6">
+                    <a href="mailto:info@tuitionsolution.pk" class="flex items-center gap-2 hover:text-accent-400 transition-colors" aria-label="Email us">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span>info@tuitionsolution.pk</span>
+                    </a>
+                    <a href="tel:+923001234567" class="flex items-center gap-2 hover:text-accent-400 transition-colors" aria-label="Call us">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <span>+92 300 1234567</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        Mon - Sat: 9:00 AM - 8:00 PM
+                    </span>
+                    <div class="flex items-center gap-3 ml-4" role="list" aria-label="Social media links">
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="Facebook" role="listitem"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="WhatsApp" role="listitem"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="Instagram" role="listitem"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="YouTube" role="listitem"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group" aria-label="Tuition Solution - Home">
+                    <img src="Assets/Logo/logo icon-01 2.png" alt="Tuition Solution Logo Icon" class="h-10 lg:h-14 w-auto object-contain" loading="eager">
+                    <div class="w-px h-8 lg:h-12 bg-gray-300" aria-hidden="true"></div>
+                    <img src="Assets/Logo/Group 48095398.png" alt="Tuition Solution & IT Solution" class="h-8 lg:h-11 w-auto object-contain" loading="eager">
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="#home" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Home</a>
+                    <a href="#about" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">About Us</a>
+                    <a href="#services" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Services</a>
+                    <a href="#courses" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Courses</a>
+                    <a href="#why-us" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Why Us</a>
+                    <a href="#testimonials" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Testimonials</a>
+                    <a href="#contact" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Contact</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="registration.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-accent-500 to-accent-600 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:from-accent-600 hover:to-accent-700 transition-all shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2">
+                        <i class="fas fa-user-plus" aria-hidden="true"></i>
+                        Register Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100 shadow-xl" role="navigation" aria-label="Mobile navigation">
+            <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+                <a href="#home" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Home</a>
+                <a href="#about" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">About Us</a>
+                <a href="#services" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Services</a>
+                <a href="#courses" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Courses</a>
+                <a href="#why-us" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Why Us</a>
+                <a href="#testimonials" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Testimonials</a>
+                <a href="#contact" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Contact</a>
+                <div class="pt-3 border-t border-gray-100">
+                    <a href="registration.html" class="block text-center bg-gradient-to-r from-accent-500 to-accent-600 text-white px-6 py-3 rounded-full font-semibold hover:from-accent-600 hover:to-accent-700 transition-all">
+                        <i class="fas fa-user-plus mr-2" aria-hidden="true"></i>Register Now
+                    </a>
+                </div>
+                <div class="pt-3 flex items-center justify-center gap-4 text-sm text-gray-500">
+                    <a href="tel:+923001234567" class="flex items-center gap-2 hover:text-primary-600">
+                        <i class="fas fa-phone" aria-hidden="true"></i> +92 300 1234567
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- MAIN CONTENT -->
+    <!-- ============================================ -->
+    <main id="main-content">
+
+        <!-- ============================================ -->
+        <!-- HERO SECTION -->
+        <!-- ============================================ -->
+        <section id="home" class="relative min-h-screen flex items-center pt-20 lg:pt-28 overflow-hidden">
+            <!-- Background -->
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-700 to-primary-800"></div>
+            <div class="absolute inset-0 hero-pattern opacity-10"></div>
+
+            <!-- Floating Shapes -->
+            <div class="absolute top-20 left-10 w-72 h-72 bg-accent-500/20 rounded-full blur-3xl animate-float" aria-hidden="true"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-primary-400/20 rounded-full blur-3xl animate-float-delayed" aria-hidden="true"></div>
+            <div class="absolute top-1/2 left-1/3 w-48 h-48 bg-accent-400/10 rounded-full blur-2xl animate-float" aria-hidden="true"></div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <!-- Hero Content -->
+                    <div class="text-center lg:text-left" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6 border border-white/20">
+                            <span class="w-2 h-2 bg-accent-400 rounded-full animate-pulse"></span>
+                            <span class="text-accent-300 font-medium text-sm">SDC Certified Institute</span>
+                        </div>
+
+                        <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight mb-6">
+                            Your Path to
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-accent-300"> Academic</span>
+                            <br>Excellence
+                        </h1>
+
+                        <p class="text-primary-200 text-lg sm:text-xl max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+                            Expert tuition classes, professional computer courses certified by 
+                            <strong class="text-accent-400">Skills Development Council</strong>, Nazra-e-Quran classes, and personalized one-on-one tutoring — all under one roof.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+                            <a href="#enroll" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-accent-600 hover:to-accent-700 transition-all shadow-2xl shadow-accent-500/30 hover:shadow-accent-500/50 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:ring-offset-2 focus:ring-offset-primary-800">
+                                <i class="fas fa-rocket" aria-hidden="true"></i>
+                                Get Started Today
+                            </a>
+                            <a href="#courses" class="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full font-bold text-lg border border-white/20 hover:bg-white/20 transition-all hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-primary-800">
+                                <i class="fas fa-book-open" aria-hidden="true"></i>
+                                Explore Courses
+                            </a>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
+                            <div class="text-center">
+                                <div class="text-3xl lg:text-4xl font-extrabold text-white counter" data-target="500">0</div>
+                                <div class="text-primary-300 text-sm mt-1">Students</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl lg:text-4xl font-extrabold text-white counter" data-target="20">0</div>
+                                <div class="text-primary-300 text-sm mt-1">Expert Tutors</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl lg:text-4xl font-extrabold text-white counter" data-target="15">0</div>
+                                <div class="text-primary-300 text-sm mt-1">Courses</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Image / Illustration -->
+                    <div class="relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                            <!-- Main Card -->
+                            <div class="bg-white rounded-2xl shadow-2xl p-8 text-center">
+                                <div class="w-24 h-24 bg-gradient-to-br from-primary-600 to-accent-500 rounded-full mx-auto flex items-center justify-center mb-6 shadow-xl">
+                                    <i class="fas fa-graduation-cap text-white text-4xl" aria-hidden="true"></i>
+                                </div>
+                                <h2 class="font-heading text-2xl font-bold text-primary-700 mb-3">Learn, Grow, Succeed</h2>
+                                <p class="text-gray-500 mb-6">Quality education that transforms lives and builds futures.</p>
+
+                                <div class="space-y-3">
+                                    <div class="flex items-center gap-3 bg-primary-50 rounded-xl p-3">
+                                        <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <i class="fas fa-chalkboard-teacher text-white" aria-hidden="true"></i>
+                                        </div>
+                                        <span class="text-primary-700 font-medium text-sm">Tuition Classes (All Subjects)</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 bg-accent-50 rounded-xl p-3">
+                                        <div class="w-10 h-10 bg-accent-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <i class="fas fa-laptop-code text-white" aria-hidden="true"></i>
+                                        </div>
+                                        <span class="text-accent-700 font-medium text-sm">Computer Courses (SDC Certified)</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 bg-green-50 rounded-xl p-3">
+                                        <div class="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <i class="fas fa-book-quran text-white" aria-hidden="true"></i>
+                                        </div>
+                                        <span class="text-green-700 font-medium text-sm">Nazra-e-Quran Classes</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 bg-purple-50 rounded-xl p-3">
+                                        <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <i class="fas fa-user-graduate text-white" aria-hidden="true"></i>
+                                        </div>
+                                        <span class="text-purple-700 font-medium text-sm">Personal / Home Tuition</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Floating Badge -->
+                            <div class="absolute -top-4 -right-4 bg-accent-500 text-white rounded-2xl px-4 py-3 shadow-xl shadow-accent-500/30 animate-bounce-slow">
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-certificate text-xl" aria-hidden="true"></i>
+                                    <div>
+                                        <div class="text-xs font-medium opacity-90">Certified by</div>
+                                        <div class="text-sm font-bold">SDC</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" aria-hidden="true">
+                <a href="#about" class="block w-10 h-10 border-2 border-white/30 rounded-full flex items-center justify-center hover:border-accent-400 transition-colors" aria-label="Scroll down">
+                    <i class="fas fa-chevron-down text-white/60 text-sm"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- ABOUT SECTION -->
+        <!-- ============================================ -->
+        <section id="about" class="py-20 lg:py-28 bg-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-primary-50 rounded-full -translate-y-1/2 translate-x-1/2" aria-hidden="true"></div>
+            <div class="absolute bottom-0 left-0 w-72 h-72 bg-accent-50 rounded-full translate-y-1/2 -translate-x-1/2" aria-hidden="true"></div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <!-- About Image -->
+                    <div class="relative" data-aos="fade-right" data-aos-duration="800">
+                        <div class="relative">
+                            <div class="bg-gradient-to-br from-primary-100 to-primary-50 rounded-3xl p-8 lg:p-12">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                                        <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                            <i class="fas fa-award text-primary-600 text-2xl" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="text-2xl font-bold text-primary-700">10+</div>
+                                        <div class="text-gray-500 text-sm">Years Experience</div>
+                                    </div>
+                                    <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow mt-8">
+                                        <div class="w-14 h-14 bg-accent-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                            <i class="fas fa-users text-accent-600 text-2xl" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="text-2xl font-bold text-accent-600">500+</div>
+                                        <div class="text-gray-500 text-sm">Happy Students</div>
+                                    </div>
+                                    <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                                        <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                            <i class="fas fa-certificate text-green-600 text-2xl" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="text-2xl font-bold text-green-600">SDC</div>
+                                        <div class="text-gray-500 text-sm">Certified</div>
+                                    </div>
+                                    <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow mt-8">
+                                        <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                            <i class="fas fa-star text-purple-600 text-2xl" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="text-2xl font-bold text-purple-600">98%</div>
+                                        <div class="text-gray-500 text-sm">Success Rate</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Decorative Element -->
+                            <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-accent-500 rounded-2xl flex items-center justify-center shadow-xl rotate-12" aria-hidden="true">
+                                <i class="fas fa-heart text-white text-3xl -rotate-12"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About Content -->
+                    <div data-aos="fade-left" data-aos-duration="800">
+                        <div class="inline-flex items-center gap-2 bg-primary-50 rounded-full px-4 py-2 mb-4">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span>
+                            <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">About Us</span>
+                        </div>
+
+                        <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-800 mb-6 leading-tight">
+                            Empowering Students Through 
+                            <span class="text-accent-500">Quality Education</span>
+                        </h2>
+
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                            <strong class="text-primary-700">Tuition Solution & IT Solution</strong> is a premier educational institute dedicated to providing comprehensive learning solutions. We offer expert tuition classes for all grades, professional computer courses certified by the <strong class="text-accent-600">Skills Development Council (SDC)</strong>, Nazra-e-Quran classes, and personalized one-on-one tutoring services.
+                        </p>
+
+                        <p class="text-gray-600 leading-relaxed mb-8">
+                            Our mission is to nurture academic excellence and equip students with the skills they need to succeed in today's competitive world. With experienced faculty, modern teaching methodologies, and a student-first approach, we ensure every learner reaches their full potential.
+                        </p>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start gap-3">
+                                <div class="w-6 h-6 bg-accent-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="fas fa-check text-white text-xs" aria-hidden="true"></i>
+                                </div>
+                                <span class="text-gray-700">Qualified & experienced teaching staff</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-6 h-6 bg-accent-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="fas fa-check text-white text-xs" aria-hidden="true"></i>
+                                </div>
+                                <span class="text-gray-700">Skills Development Council (SDC) certified computer courses</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-6 h-6 bg-accent-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="fas fa-check text-white text-xs" aria-hidden="true"></i>
+                                </div>
+                                <span class="text-gray-700">Personalized attention with small batch sizes</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-6 h-6 bg-accent-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i class="fas fa-check text-white text-xs" aria-hidden="true"></i>
+                                </div>
+                                <span class="text-gray-700">Modern curriculum aligned with current standards</span>
+                            </div>
+                        </div>
+
+                        <a href="#contact" class="inline-flex items-center gap-2 bg-primary-600 text-white px-8 py-3.5 rounded-full font-semibold hover:bg-primary-700 transition-all shadow-lg shadow-primary-600/25 hover:shadow-primary-600/40 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+                            <i class="fas fa-info-circle" aria-hidden="true"></i>
+                            Learn More About Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SERVICES SECTION -->
+        <!-- ============================================ -->
+        <section id="services" class="py-20 lg:py-28 bg-gray-50 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 bg-accent-50 rounded-full px-4 py-2 mb-4">
+                        <span class="w-2 h-2 bg-accent-500 rounded-full"></span>
+                        <span class="text-accent-600 font-semibold text-sm uppercase tracking-wider">Our Services</span>
+                    </div>
+                    <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-800 mb-4">
+                        What We <span class="text-accent-500">Offer</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg">Comprehensive educational services tailored to meet every student's learning needs and career goals.</p>
+                </div>
+
+                <!-- Services Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service 1: Tuition Classes -->
+                    <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 hover:border-primary-200" data-aos="fade-up" data-aos-delay="0">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-primary-500/25 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-chalkboard-teacher text-white text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-primary-700 mb-3">Tuition Classes</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">Expert tuition for all subjects from primary to intermediate level with personalized attention.</p>
+                        <ul class="space-y-2 text-sm text-gray-500" role="list">
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary-500" aria-hidden="true"></i> All Boards Covered</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary-500" aria-hidden="true"></i> Science & Arts Subjects</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-primary-500" aria-hidden="true"></i> Test Preparation</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 2: Computer Courses -->
+                    <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 hover:border-accent-200" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-accent-500/25 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-laptop-code text-white text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-accent-600 mb-3">Computer Courses</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">Professional IT courses certified by Skills Development Council for career growth.</p>
+                        <ul class="space-y-2 text-sm text-gray-500" role="list">
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent-500" aria-hidden="true"></i> SDC Certified</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent-500" aria-hidden="true"></i> Hands-on Training</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-accent-500" aria-hidden="true"></i> Job-Ready Skills</li>
+                        </ul>
+                        <div class="mt-4 inline-flex items-center gap-1 bg-accent-50 text-accent-600 text-xs font-semibold px-3 py-1 rounded-full">
+                            <i class="fas fa-star" aria-hidden="true"></i> IT Solution Partner
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Nazra Classes -->
+                    <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 hover:border-green-200" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/25 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-book-quran text-white text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-green-700 mb-3">Nazra-e-Quran</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">Learn to recite the Holy Quran with proper Tajweed under qualified and experienced Qaris.</p>
+                        <ul class="space-y-2 text-sm text-gray-500" role="list">
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500" aria-hidden="true"></i> Tajweed Rules</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500" aria-hidden="true"></i> Experienced Qaris</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500" aria-hidden="true"></i> Flexible Timings</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 4: Personal Tuition -->
+                    <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 hover:border-purple-200" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-user-graduate text-white text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-purple-700 mb-3">Personal Tuition</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">One-on-one personalized tutoring at your home or our center for focused learning.</p>
+                        <ul class="space-y-2 text-sm text-gray-500" role="list">
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-500" aria-hidden="true"></i> Home Tuition Available</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-500" aria-hidden="true"></i> Customized Plans</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-500" aria-hidden="true"></i> Progress Reports</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- COURSES SECTION -->
+        <!-- ============================================ -->
+        <section id="courses" class="py-20 lg:py-28 bg-white relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-600 via-accent-500 to-primary-600"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 bg-primary-50 rounded-full px-4 py-2 mb-4">
+                        <span class="w-2 h-2 bg-primary-500 rounded-full"></span>
+                        <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Our Courses</span>
+                    </div>
+                    <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-800 mb-4">
+                        SDC Certified <span class="text-accent-500">Computer Courses</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg">Industry-recognized courses designed to build your IT skills and advance your career. All certified by Skills Development Council.</p>
+                    <div class="inline-flex items-center gap-2 mt-4 bg-accent-50 border border-accent-200 rounded-full px-5 py-2">
+                        <i class="fas fa-certificate text-accent-500" aria-hidden="true"></i>
+                        <span class="text-accent-700 font-semibold text-sm">Registered with Skills Development Council</span>
+                    </div>
+                </div>
+
+                <!-- Course Filter Tabs -->
+                <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up" data-aos-delay="100" role="tablist" aria-label="Course categories">
+                    <button class="course-filter-btn active px-6 py-2.5 rounded-full text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2" data-filter="all" role="tab" aria-selected="true">
+                        All Courses
+                    </button>
+                    <button class="course-filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2" data-filter="basic" role="tab" aria-selected="false">
+                        Basic
+                    </button>
+                    <button class="course-filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2" data-filter="professional" role="tab" aria-selected="false">
+                        Professional
+                    </button>
+                    <button class="course-filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2" data-filter="development" role="tab" aria-selected="false">
+                        Development
+                    </button>
+                    <button class="course-filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2" data-filter="design" role="tab" aria-selected="false">
+                        Design
+                    </button>
+                </div>
+
+                <!-- Courses Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="courses-grid">
+                    <!-- Course 1 -->
+                    <div class="course-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden" data-category="basic" data-aos="fade-up">
+                        <div class="h-48 bg-gradient-to-br from-primary-600 to-primary-800 relative overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <i class="fas fa-laptop text-white/20 text-8xl" aria-hidden="true"></i>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full">Basic</div>
+                            <div class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">
+                                <i class="fas fa-clock mr-1" aria-hidden="true"></i> 3 Months
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-xl font-bold text-primary-700 mb-2 group-hover:text-accent-600 transition-colors">Computer Basics & MS Office</h3>
+                            <p class="text-gray-600 text-sm mb-4">Learn fundamental computer skills, Windows, MS Word, Excel, PowerPoint, and Internet basics.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <span class="flex items-center gap-1"><i class="fas fa-signal" aria-hidden="true"></i> Beginner</span>
+                                <span class="flex items-center gap-1"><i class="fas fa-certificate" aria-hidden="true"></i> SDC Certified</span>
+                            </div>
+                            <a href="#enroll" class="block text-center bg-primary-50 text-primary-600 py-2.5 rounded-xl font-semibold hover:bg-primary-600 hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                Enroll Now <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Course 2 -->
+                    <div class="course-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden" data-category="professional" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-48 bg-gradient-to-br from-accent-500 to-accent-700 relative overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <i class="fas fa-chart-bar text-white/20 text-8xl" aria-hidden="true"></i>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-full">Professional</div>
+                            <div class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">
+                                <i class="fas fa-clock mr-1" aria-hidden="true"></i> 4 Months
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-xl font-bold text-primary-700 mb-2 group-hover:text-accent-600 transition-colors">Advanced Excel & Data Analysis</h3>
+                            <p class="text-gray-600 text-sm mb-4">Master advanced Excel formulas, pivot tables, data analysis, dashboards, and macros.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <span class="flex items-center gap-1"><i class="fas fa-signal" aria-hidden="true"></i> Intermediate</span>
+                                <span class="flex items-center gap-1"><i class="fas fa-certificate" aria-hidden="true"></i> SDC Certified</span>
+                            </div>
+                            <a href="#enroll" class="block text-center bg-primary-50 text-primary-600 py-2.5 rounded-xl font-semibold hover:bg-primary-600 hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                Enroll Now <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Course 3 -->
+                    <div class="course-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden" data-category="design" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-700 relative overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <i class="fas fa-palette text-white/20 text-8xl" aria-hidden="true"></i>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full">Design</div>
+                            <div class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">
+                                <i class="fas fa-clock mr-1" aria-hidden="true"></i> 6 Months
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-xl font-bold text-primary-700 mb-2 group-hover:text-accent-600 transition-colors">Graphic Design (Adobe Suite)</h3>
+                            <p class="text-gray-600 text-sm mb-4">Learn Photoshop, Illustrator, InDesign, and CorelDRAW for professional graphic design.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <span class="flex items-center gap-1"><i class="fas fa-signal" aria-hidden="true"></i> All Levels</span>
+                                <span class="flex items-center gap-1"><i class="fas fa-certificate" aria-hidden="true"></i> SDC Certified</span>
+                            </div>
+                            <a href="#enroll" class="block text-center bg-primary-50 text-primary-600 py-2.5 rounded-xl font-semibold hover:bg-primary-600 hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                Enroll Now <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Course 4 -->
+                    <div class="course-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden" data-category="development" data-aos="fade-up" data-aos-delay="0">
+                        <div class="h-48 bg-gradient-to-br from-green-500 to-green-700 relative overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <i class="fas fa-code text-white/20 text-8xl" aria-hidden="true"></i>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full">Development</div>
+                            <div class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">
+                                <i class="fas fa-clock mr-1" aria-hidden="true"></i> 6 Months
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-xl font-bold text-primary-700 mb-2 group-hover:text-accent-600 transition-colors">Web Development</h3>
+                            <p class="text-gray-600 text-sm mb-4">Full-stack web development with HTML, CSS, JavaScript, React, and backend technologies.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <span class="flex items-center gap-1"><i class="fas fa-signal" aria-hidden="true"></i> Intermediate</span>
+                                <span class="flex items-center gap-1"><i class="fas fa-certificate" aria-hidden="true"></i> SDC Certified</span>
+                            </div>
+                            <a href="#enroll" class="block text-center bg-primary-50 text-primary-600 py-2.5 rounded-xl font-semibold hover:bg-primary-600 hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                Enroll Now <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Course 5 -->
+                    <div class="course-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden" data-category="professional" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-48 bg-gradient-to-br from-red-500 to-red-700 relative overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <i class="fas fa-bullhorn text-white/20 text-8xl" aria-hidden="true"></i>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-full">Professional</div>
+                            <div class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">
+                                <i class="fas fa-clock mr-1" aria-hidden="true"></i> 3 Months
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-xl font-bold text-primary-700 mb-2 group-hover:text-accent-600 transition-colors">Digital Marketing</h3>
+                            <p class="text-gray-600 text-sm mb-4">Social media marketing, SEO, Google Ads, content marketing, and email campaigns.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <span class="flex items-center gap-1"><i class="fas fa-signal" aria-hidden="true"></i> Beginner</span>
+                                <span class="flex items-center gap-1"><i class="fas fa-certificate" aria-hidden="true"></i> SDC Certified</span>
+                            </div>
+                            <a href="#enroll" class="block text-center bg-primary-50 text-primary-600 py-2.5 rounded-xl font-semibold hover:bg-primary-600 hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                Enroll Now <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Course 6 -->
+                    <div class="course-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden" data-category="development" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-48 bg-gradient-to-br from-indigo-500 to-indigo-700 relative overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <i class="fas fa-mobile-alt text-white/20 text-8xl" aria-hidden="true"></i>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full">Development</div>
+                            <div class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">
+                                <i class="fas fa-clock mr-1" aria-hidden="true"></i> 4 Months
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-xl font-bold text-primary-700 mb-2 group-hover:text-accent-600 transition-colors">Python Programming</h3>
+                            <p class="text-gray-600 text-sm mb-4">Learn Python from scratch — variables, loops, functions, OOP, and real-world projects.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <span class="flex items-center gap-1"><i class="fas fa-signal" aria-hidden="true"></i> Beginner</span>
+                                <span class="flex items-center gap-1"><i class="fas fa-certificate" aria-hidden="true"></i> SDC Certified</span>
+                            </div>
+                            <a href="#enroll" class="block text-center bg-primary-50 text-primary-600 py-2.5 rounded-xl font-semibold hover:bg-primary-600 hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                Enroll Now <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- WHY CHOOSE US SECTION -->
+        <!-- ============================================ -->
+        <section id="why-us" class="py-20 lg:py-28 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900 relative overflow-hidden">
+            <div class="absolute inset-0 hero-pattern opacity-5"></div>
+            <div class="absolute top-0 right-0 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl" aria-hidden="true"></div>
+            <div class="absolute bottom-0 left-0 w-72 h-72 bg-primary-400/10 rounded-full blur-3xl" aria-hidden="true"></div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 mb-4 border border-white/20">
+                        <span class="w-2 h-2 bg-accent-400 rounded-full"></span>
+                        <span class="text-accent-300 font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
+                    </div>
+                    <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+                        Why Students <span class="text-accent-400">Trust Us</span>
+                    </h2>
+                    <p class="text-primary-200 text-lg">Discover what makes Tuition Solution & IT Solution the preferred choice for quality education.</p>
+                </div>
+
+                <!-- Features Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/15 transition-all hover:-translate-y-1" data-aos="fade-up">
+                        <div class="w-14 h-14 bg-accent-500 rounded-2xl flex items-center justify-center mb-5">
+                            <i class="fas fa-award text-white text-xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-white mb-3">SDC Certified</h3>
+                        <p class="text-primary-200 leading-relaxed">Our computer courses are officially recognized and certified by the Skills Development Council for industry-standard quality.</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/15 transition-all hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-14 h-14 bg-accent-500 rounded-2xl flex items-center justify-center mb-5">
+                            <i class="fas fa-user-tie text-white text-xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-white mb-3">Expert Faculty</h3>
+                        <p class="text-primary-200 leading-relaxed">Highly qualified and experienced teachers who are passionate about delivering quality education and mentoring students.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/15 transition-all hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-14 h-14 bg-accent-500 rounded-2xl flex items-center justify-center mb-5">
+                            <i class="fas fa-users-cog text-white text-xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-white mb-3">Small Batch Sizes</h3>
+                        <p class="text-primary-200 leading-relaxed">Limited students per batch ensures personalized attention, better engagement, and effective learning outcomes.</p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/15 transition-all hover:-translate-y-1" data-aos="fade-up" data-aos-delay="0">
+                        <div class="w-14 h-14 bg-accent-500 rounded-2xl flex items-center justify-center mb-5">
+                            <i class="fas fa-laptop text-white text-xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-white mb-3">Modern Labs</h3>
+                        <p class="text-primary-200 leading-relaxed">State-of-the-art computer labs with latest hardware and software for hands-on practical training experience.</p>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/15 transition-all hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-14 h-14 bg-accent-500 rounded-2xl flex items-center justify-center mb-5">
+                            <i class="fas fa-money-bill-wave text-white text-xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-white mb-3">Affordable Fees</h3>
+                        <p class="text-primary-200 leading-relaxed">Quality education at reasonable fees with flexible payment options and installment plans available.</p>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/15 transition-all hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-14 h-14 bg-accent-500 rounded-2xl flex items-center justify-center mb-5">
+                            <i class="fas fa-clock text-white text-xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-white mb-3">Flexible Timings</h3>
+                        <p class="text-primary-200 leading-relaxed">Multiple batch timings available including morning, afternoon, and evening slots to fit your schedule.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- TESTIMONIALS SECTION -->
+        <!-- ============================================ -->
+        <section id="testimonials" class="py-20 lg:py-28 bg-gray-50 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 bg-primary-50 rounded-full px-4 py-2 mb-4">
+                        <span class="w-2 h-2 bg-primary-500 rounded-full"></span>
+                        <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Testimonials</span>
+                    </div>
+                    <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-800 mb-4">
+                        What Our Students <span class="text-accent-500">Say</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg">Real feedback from our students and parents who trust us with their education.</p>
+                </div>
+
+                <!-- Testimonials Slider -->
+                <div class="relative overflow-hidden" id="testimonials-slider">
+                    <div class="flex transition-transform duration-500 ease-in-out" id="testimonials-track">
+                        <!-- Testimonial 1 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 h-full">
+                                <div class="flex items-center gap-1 mb-4" role="img" aria-label="5 star rating">
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-600 leading-relaxed mb-6 italic">"Tuition Solution helped me score outstanding grades in my board exams. The teachers are incredibly dedicated and the study material is excellent."</p>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-user text-primary-600" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-primary-700">Ahmed Khan</div>
+                                        <div class="text-sm text-gray-500">Matric Student</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 h-full">
+                                <div class="flex items-center gap-1 mb-4" role="img" aria-label="5 star rating">
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-600 leading-relaxed mb-6 italic">"The computer course I completed here was amazing! I got my SDC certificate and landed a good job within a month. Highly recommended for IT courses!"</p>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-user text-accent-600" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-primary-700">Fatima Noor</div>
+                                        <div class="text-sm text-gray-500">Web Development Graduate</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 h-full">
+                                <div class="flex items-center gap-1 mb-4" role="img" aria-label="5 star rating">
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-600 leading-relaxed mb-6 italic">"My son's Nazra classes here are excellent. The Qari sahab is very patient and knowledgeable. My son now recites beautifully with proper Tajweed."</p>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-user text-green-600" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-primary-700">Ayesha Siddiqui</div>
+                                        <div class="text-sm text-gray-500">Parent</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 h-full">
+                                <div class="flex items-center gap-1 mb-4" role="img" aria-label="5 star rating">
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-600 leading-relaxed mb-6 italic">"The personal tuition at home was a game changer for my daughter. She improved significantly in Math and Science. Thank you, Tuition Solution!"</p>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-user text-purple-600" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-primary-700">Muhammad Ali</div>
+                                        <div class="text-sm text-gray-500">Parent</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 5 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 h-full">
+                                <div class="flex items-center gap-1 mb-4" role="img" aria-label="5 star rating">
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-600 leading-relaxed mb-6 italic">"I completed the Graphic Design course and now working as a freelancer. The hands-on approach and practical projects really prepared me for the real world."</p>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-user text-red-600" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-primary-700">Sara Malik</div>
+                                        <div class="text-sm text-gray-500">Graphic Design Graduate</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 6 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 h-full">
+                                <div class="flex items-center gap-1 mb-4" role="img" aria-label="5 star rating">
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-600 leading-relaxed mb-6 italic">"Best institute for intermediate preparation. The faculty explains concepts in an easy-to-understand manner. Got A+ in FSc Pre-Medical!"</p>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-user text-indigo-600" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-primary-700">Zain Ul Abideen</div>
+                                        <div class="text-sm text-gray-500">FSc Student</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Controls -->
+                    <div class="flex items-center justify-center gap-4 mt-10">
+                        <button id="testimonial-prev" class="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary-600 hover:bg-primary-600 hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2" aria-label="Previous testimonial">
+                            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <div class="flex gap-2" id="testimonial-dots" role="tablist" aria-label="Testimonial navigation">
+                        </div>
+                        <button id="testimonial-next" class="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary-600 hover:bg-primary-600 hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2" aria-label="Next testimonial">
+                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- ENROLLMENT / CTA SECTION -->
+        <!-- ============================================ -->
+        <section id="enroll" class="py-20 lg:py-28 bg-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent-50 via-white to-primary-50"></div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <!-- CTA Content -->
+                    <div data-aos="fade-right">
+                        <div class="inline-flex items-center gap-2 bg-accent-100 rounded-full px-4 py-2 mb-4">
+                            <span class="w-2 h-2 bg-accent-500 rounded-full"></span>
+                            <span class="text-accent-600 font-semibold text-sm uppercase tracking-wider">Enroll Now</span>
+                        </div>
+
+                        <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-800 mb-6 leading-tight">
+                            Start Your Learning 
+                            <span class="text-accent-500">Journey Today</span>
+                        </h2>
+
+                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                            Take the first step toward academic excellence and career growth. Fill out the enrollment form and our team will get in touch with you within 24 hours.
+                        </p>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                                <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-primary-600 text-xl" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-500">Call Us</div>
+                                    <a href="tel:+923001234567" class="font-bold text-primary-700 hover:text-accent-600 transition-colors">+92 300 1234567</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fab fa-whatsapp text-green-600 text-xl" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-500">WhatsApp</div>
+                                    <a href="https://wa.me/923001234567" class="font-bold text-primary-700 hover:text-accent-600 transition-colors" target="_blank" rel="noopener noreferrer">+92 300 1234567</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                                <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-accent-600 text-xl" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-500">Email</div>
+                                    <a href="mailto:info@tuitionsolution.pk" class="font-bold text-primary-700 hover:text-accent-600 transition-colors">info@tuitionsolution.pk</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Enrollment Form -->
+                    <div data-aos="fade-left">
+                        <div class="bg-white rounded-3xl shadow-2xl p-8 lg:p-10 border border-gray-100">
+                            <h3 class="font-heading text-2xl font-bold text-primary-700 mb-2">Enrollment Form</h3>
+                            <p class="text-gray-500 mb-8">Fill the form below and we'll contact you shortly.</p>
+
+                            <form id="enrollment-form" class="space-y-5" novalidate>
+                                <div>
+                                    <label for="student-name" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                                        Full Name <span class="text-red-500" aria-hidden="true">*</span>
+                                    </label>
+                                    <input type="text" id="student-name" name="name" required
+                                        class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-gray-700"
+                                        placeholder="Enter your full name"
+                                        aria-required="true">
+                                    <div class="error-message text-red-500 text-xs mt-1 hidden" role="alert"></div>
+                                </div>
+
+                                <div class="grid sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label for="student-phone" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                                            Phone Number <span class="text-red-500" aria-hidden="true">*</span>
+                                        </label>
+                                        <input type="tel" id="student-phone" name="phone" required
+                                            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-gray-700"
+                                            placeholder="03XX XXXXXXX"
+                                            aria-required="true">
+                                        <div class="error-message text-red-500 text-xs mt-1 hidden" role="alert"></div>
+                                    </div>
+                                    <div>
+                                        <label for="student-email" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                                            Email Address
+                                        </label>
+                                        <input type="email" id="student-email" name="email"
+                                            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-gray-700"
+                                            placeholder="your@email.com">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="student-course" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                                        Select Course/Service <span class="text-red-500" aria-hidden="true">*</span>
+                                    </label>
+                                    <select id="student-course" name="course" required
+                                        class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-gray-700 bg-white"
+                                        aria-required="true">
+                                        <option value="" disabled selected>Choose a course or service</option>
+                                        <optgroup label="Tuition Classes">
+                                            <option value="tuition-primary">Primary Level Tuition</option>
+                                            <option value="tuition-middle">Middle Level Tuition</option>
+                                            <option value="tuition-matric">Matric Level Tuition</option>
+                                            <option value="tuition-inter">Intermediate Tuition</option>
+                                        </optgroup>
+                                        <optgroup label="Computer Courses (SDC Certified)">
+                                            <option value="computer-basics">Computer Basics & MS Office</option>
+                                            <option value="advanced-excel">Advanced Excel & Data Analysis</option>
+                                            <option value="graphic-design">Graphic Design (Adobe Suite)</option>
+                                            <option value="web-development">Web Development</option>
+                                            <option value="digital-marketing">Digital Marketing</option>
+                                            <option value="python">Python Programming</option>
+                                        </optgroup>
+                                        <optgroup label="Other Services">
+                                            <option value="nazra">Nazra-e-Quran Classes</option>
+                                            <option value="personal-tuition">Personal / Home Tuition</option>
+                                        </optgroup>
+                                    </select>
+                                    <div class="error-message text-red-500 text-xs mt-1 hidden" role="alert"></div>
+                                </div>
+
+                                <div>
+                                    <label for="student-message" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                                        Message (Optional)
+                                    </label>
+                                    <textarea id="student-message" name="message" rows="3"
+                                        class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-gray-700 resize-none"
+                                        placeholder="Any specific requirements or questions..."></textarea>
+                                </div>
+
+                                <button type="submit"
+                                    class="w-full bg-gradient-to-r from-accent-500 to-accent-600 text-white py-3.5 rounded-xl font-bold text-lg hover:from-accent-600 hover:to-accent-700 transition-all shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 flex items-center justify-center gap-2">
+                                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                                    Submit Enrollment
+                                </button>
+                            </form>
+
+                            <!-- Success Message -->
+                            <div id="form-success" class="hidden text-center py-8">
+                                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-check-circle text-green-500 text-4xl" aria-hidden="true"></i>
+                                </div>
+                                <h4 class="font-heading text-xl font-bold text-primary-700 mb-2">Thank You!</h4>
+                                <p class="text-gray-600">Your enrollment request has been submitted successfully. We'll contact you within 24 hours.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- CONTACT SECTION -->
+        <!-- ============================================ -->
+        <section id="contact" class="py-20 lg:py-28 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 bg-primary-50 rounded-full px-4 py-2 mb-4">
+                        <span class="w-2 h-2 bg-primary-500 rounded-full"></span>
+                        <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Contact Us</span>
+                    </div>
+                    <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-800 mb-4">
+                        Get In <span class="text-accent-500">Touch</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg">Have questions? We'd love to hear from you. Reach out to us through any of the following channels.</p>
+                </div>
+
+                <!-- Contact Cards -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" data-aos="fade-up">
+                    <!-- Address -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center hover:shadow-xl transition-shadow group">
+                        <div class="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-600 transition-colors">
+                            <i class="fas fa-map-marker-alt text-primary-600 text-xl group-hover:text-white transition-colors" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-primary-700 mb-2">Our Location</h3>
+                        <p class="text-gray-600 text-sm">Main Campus, City Center,<br>Karachi, Pakistan</p>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center hover:shadow-xl transition-shadow group">
+                        <div class="w-14 h-14 bg-accent-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-accent-500 transition-colors">
+                            <i class="fas fa-phone-alt text-accent-600 text-xl group-hover:text-white transition-colors" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-primary-700 mb-2">Call Us</h3>
+                        <a href="tel:+923001234567" class="text-gray-600 text-sm hover:text-primary-600 transition-colors block">+92 300 1234567</a>
+                        <a href="tel:+922112345678" class="text-gray-600 text-sm hover:text-primary-600 transition-colors block">021-12345678</a>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center hover:shadow-xl transition-shadow group">
+                        <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-green-500 transition-colors">
+                            <i class="fas fa-envelope text-green-600 text-xl group-hover:text-white transition-colors" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-primary-700 mb-2">Email Us</h3>
+                        <a href="mailto:info@tuitionsolution.pk" class="text-gray-600 text-sm hover:text-primary-600 transition-colors block">info@tuitionsolution.pk</a>
+                        <a href="mailto:admissions@tuitionsolution.pk" class="text-gray-600 text-sm hover:text-primary-600 transition-colors block">admissions@tuitionsolution.pk</a>
+                    </div>
+
+                    <!-- Hours -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center hover:shadow-xl transition-shadow group">
+                        <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-500 transition-colors">
+                            <i class="fas fa-clock text-purple-600 text-xl group-hover:text-white transition-colors" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-primary-700 mb-2">Working Hours</h3>
+                        <p class="text-gray-600 text-sm">Mon - Sat: 9 AM - 8 PM<br>Sunday: Closed</p>
+                    </div>
+                </div>
+
+                <!-- Google Map -->
+                <div class="rounded-2xl overflow-hidden h-80 shadow-lg" data-aos="fade-up">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d904.0!2d67.0774109!3d24.9087459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f960a376ca1%3A0xc3f6c832bf007724!2sTuition%20Solution%20Center!5e0!3m2!1sen!2s!4v1709280000000"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Tuition Solution Center Location on Google Maps"
+                        aria-label="Google Maps showing Tuition Solution Center location">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <footer class="bg-primary-900 text-white relative overflow-hidden" role="contentinfo">
+        <div class="absolute inset-0 hero-pattern opacity-5"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- About Column -->
+                <div>
+                    <a href="#" class="flex items-center gap-3 mb-6">
+                        <img src="Assets/Logo/logo icon-01 2.png" alt="Tuition Solution Logo" class="h-10 w-auto object-contain brightness-0 invert" loading="lazy">
+                        <div class="w-px h-8 bg-white/30" aria-hidden="true"></div>
+                        <img src="Assets/Logo/Group 48095398.png" alt="Tuition Solution & IT Solution" class="h-8 w-auto object-contain brightness-0 invert" loading="lazy">
+                    </a>
+                    <p class="text-primary-300 leading-relaxed mb-6">Your trusted partner in education. Providing quality tuition, SDC certified computer courses, Nazra classes, and personal tutoring.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-heading font-bold text-lg mb-6 relative">
+                        Quick Links
+                        <span class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"></span>
+                    </h3>
+                    <nav aria-label="Footer quick links">
+                        <ul class="space-y-3" role="list">
+                            <li><a href="#home" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Home</a></li>
+                            <li><a href="#about" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> About Us</a></li>
+                            <li><a href="#services" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Services</a></li>
+                            <li><a href="#courses" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Courses</a></li>
+                            <li><a href="#enroll" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Enroll Now</a></li>
+                            <li><a href="#contact" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Our Courses -->
+                <div>
+                    <h3 class="font-heading font-bold text-lg mb-6 relative">
+                        Our Courses
+                        <span class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"></span>
+                    </h3>
+                    <ul class="space-y-3" role="list">
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Computer Basics</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Advanced Excel</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Graphic Design</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Web Development</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Digital Marketing</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Python Programming</li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="font-heading font-bold text-lg mb-6 relative">
+                        Stay Updated
+                        <span class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"></span>
+                    </h3>
+                    <p class="text-primary-300 mb-4">Subscribe to our newsletter for updates on new courses and offers.</p>
+                    <form class="space-y-3" id="newsletter-form">
+                        <div class="relative">
+                            <label for="newsletter-email" class="sr-only">Email address for newsletter</label>
+                            <input type="email" id="newsletter-email" placeholder="Your email address"
+                                class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-primary-400 focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all"
+                                required>
+                        </div>
+                        <button type="submit" class="w-full bg-accent-500 text-white py-3 rounded-xl font-semibold hover:bg-accent-600 transition-all focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 focus:ring-offset-primary-900">
+                            Subscribe <i class="fas fa-paper-plane ml-1" aria-hidden="true"></i>
+                        </button>
+                    </form>
+
+                    <!-- SDC Badge -->
+                    <div class="mt-6 bg-white/10 rounded-xl p-4 border border-white/10">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-accent-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-certificate text-white text-xl" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <div class="text-accent-400 font-bold text-sm">Registered with</div>
+                                <div class="text-white font-semibold">Skills Development Council</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-primary-400 text-sm text-center md:text-left">
+                        &copy; <span id="footer-year"></span> Tuition Solution & IT Solution. All rights reserved.
+                    </p>
+                    <div class="flex items-center gap-6 text-sm">
+                        <a href="#" class="text-primary-400 hover:text-accent-400 transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-primary-400 hover:text-accent-400 transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- BACK TO TOP BUTTON -->
+    <!-- ============================================ -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-accent-500 text-white rounded-full shadow-xl opacity-0 invisible transition-all duration-300 hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 z-40" aria-label="Back to top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 left-6 w-14 h-14 bg-green-500 text-white rounded-full shadow-xl flex items-center justify-center hover:bg-green-600 transition-all z-40 hover:scale-110" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
+    </a>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

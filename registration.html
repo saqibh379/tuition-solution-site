@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register for courses and services at Tuition Solution & IT Solution.">
+    <title>Registration | Tuition Solution & IT Solution</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+                            400: '#60a5fa', 500: '#3b82f6', 600: '#1e40af', 700: '#1e3a8a',
+                            800: '#1e2d5f', 900: '#0f172a',
+                        },
+                        accent: {
+                            50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+                            400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+                            800: '#9a3412', 900: '#7c2d12',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/registration.css">
+</head>
+<body class="font-body text-gray-800 bg-gray-50 min-h-screen flex flex-col">
+
+    <!-- Skip to Content (WCAG) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-accent-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:outline-none">
+        Skip to main content
+    </a>
+
+    <!-- ============================================ -->
+    <!-- HEADER -->
+    <!-- ============================================ -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3" aria-label="Tuition Solution - Home">
+                    <img src="Assets/Logo/logo icon-01 2.png" alt="Tuition Solution Logo Icon" class="h-10 lg:h-14 w-auto object-contain" loading="eager">
+                    <div class="w-px h-8 lg:h-12 bg-gray-300" aria-hidden="true"></div>
+                    <img src="Assets/Logo/Group 48095398.png" alt="Tuition Solution & IT Solution" class="h-8 lg:h-11 w-auto object-contain" loading="eager">
+                </a>
+
+                <!-- Nav -->
+                <nav class="flex items-center gap-4" aria-label="Registration page navigation">
+                    <a href="index.html" class="hidden sm:inline-flex items-center gap-2 text-gray-600 hover:text-primary-600 font-medium text-sm transition-colors">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                        Back to Home
+                    </a>
+                    <a href="index.html" class="sm:hidden text-gray-600 hover:text-primary-600 transition-colors" aria-label="Back to home">
+                        <i class="fas fa-arrow-left text-lg" aria-hidden="true"></i>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- MAIN CONTENT -->
+    <!-- ============================================ -->
+    <main id="main-content" class="flex-1 py-8 lg:py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Page Header -->
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 bg-accent-50 rounded-full px-4 py-2 mb-4">
+                    <span class="w-2 h-2 bg-accent-500 rounded-full"></span>
+                    <span class="text-accent-600 font-semibold text-sm uppercase tracking-wider">Registration</span>
+                </div>
+                <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-800 mb-3">
+                    Student <span class="text-accent-500">Registration</span>
+                </h1>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Fill out the registration form below. Our team will contact you within 24 hours to confirm your enrollment.</p>
+            </div>
+
+            <!-- Form Selection -->
+            <div id="form-selector-section" class="mb-8">
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 lg:p-8">
+                    <h2 class="font-heading text-xl font-bold text-primary-700 mb-2">Select Registration Form</h2>
+                    <p class="text-gray-500 text-sm mb-6">Choose the course or program you want to register for.</p>
+                    
+                    <div id="form-selector-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Forms will be dynamically loaded here -->
+                        <div class="col-span-full text-center py-12">
+                            <div class="animate-spin w-10 h-10 border-4 border-primary-200 border-t-primary-600 rounded-full mx-auto mb-4"></div>
+                            <p class="text-gray-500">Loading available forms...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Registration Form -->
+            <div id="registration-form-container" class="hidden">
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                    <!-- Form Header -->
+                    <div class="bg-gradient-to-r from-primary-600 to-primary-700 px-6 lg:px-8 py-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h2 id="form-title" class="font-heading text-xl lg:text-2xl font-bold text-white">Registration Form</h2>
+                                <p id="form-description" class="text-primary-200 text-sm mt-1">Please fill all required fields.</p>
+                            </div>
+                            <button id="back-to-forms" class="text-white/70 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10" aria-label="Go back to form selection">
+                                <i class="fas fa-arrow-left text-lg" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <!-- Progress Bar -->
+                        <div class="mt-4 bg-white/20 rounded-full h-2 overflow-hidden" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            <div id="form-progress-bar" class="bg-accent-400 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                        <p id="form-progress-text" class="text-primary-200 text-xs mt-1">0% completed</p>
+                    </div>
+
+                    <!-- Form Body -->
+                    <div class="px-6 lg:px-8 py-8">
+                        <form id="dynamic-registration-form" novalidate>
+                            <div id="form-fields-container" class="space-y-6">
+                                <!-- Dynamic fields will be rendered here -->
+                            </div>
+
+                            <!-- Submit -->
+                            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                                <button type="submit" id="submit-registration" class="flex-1 bg-gradient-to-r from-accent-500 to-accent-600 text-white py-3.5 rounded-xl font-bold text-lg hover:from-accent-600 hover:to-accent-700 transition-all shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                                    Submit Registration
+                                </button>
+                                <button type="reset" class="px-6 py-3 rounded-xl border-2 border-gray-200 text-gray-600 font-semibold hover:border-gray-300 hover:bg-gray-50 transition-all focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2">
+                                    <i class="fas fa-undo mr-2" aria-hidden="true"></i>
+                                    Reset
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success State -->
+            <div id="registration-success" class="hidden">
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 lg:p-12 text-center">
+                    <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce-slow">
+                        <i class="fas fa-check-circle text-green-500 text-5xl" aria-hidden="true"></i>
+                    </div>
+                    <h2 class="font-heading text-2xl lg:text-3xl font-bold text-primary-700 mb-3">Registration Successful!</h2>
+                    <p class="text-gray-600 text-lg mb-2">Thank you for registering with Tuition Solution & IT Solution.</p>
+                    <p class="text-gray-500 mb-8">Our team will contact you within 24 hours to confirm your enrollment and share next steps.</p>
+                    
+                    <div class="bg-primary-50 rounded-xl p-6 mb-8 max-w-md mx-auto">
+                        <h3 class="font-semibold text-primary-700 mb-3">What happens next?</h3>
+                        <ul class="space-y-2 text-sm text-gray-600 text-left">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-green-500 mt-0.5" aria-hidden="true"></i>
+                                <span>Our team will review your registration</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-green-500 mt-0.5" aria-hidden="true"></i>
+                                <span>You'll receive a confirmation call/message</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-green-500 mt-0.5" aria-hidden="true"></i>
+                                <span>Fee details & schedule will be shared</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-green-500 mt-0.5" aria-hidden="true"></i>
+                                <span>Start your learning journey!</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="index.html" class="inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-700 transition-all">
+                            <i class="fas fa-home" aria-hidden="true"></i>
+                            Go to Home
+                        </a>
+                        <button id="register-another" class="inline-flex items-center justify-center gap-2 bg-accent-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-accent-600 transition-all">
+                            <i class="fas fa-plus" aria-hidden="true"></i>
+                            Register Again
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <footer class="bg-primary-900 text-white py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <img src="Assets/Logo/logo icon-01 2.png" alt="Logo" class="h-8 w-auto brightness-0 invert" loading="lazy">
+                    <div class="w-px h-6 bg-white/30" aria-hidden="true"></div>
+                    <img src="Assets/Logo/Group 48095398.png" alt="Tuition Solution" class="h-6 w-auto brightness-0 invert" loading="lazy">
+                </div>
+                <p class="text-primary-400 text-sm text-center">&copy; <span id="footer-year"></span> Tuition Solution & IT Solution. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="tel:+923001234567" class="text-primary-300 hover:text-accent-400 transition-colors text-sm">
+                        <i class="fas fa-phone mr-1" aria-hidden="true"></i> +92 300 1234567
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/registration.js"></script>
+</body>
+</html>
