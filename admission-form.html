@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admission Form - Apply for AI Courses, Computer Courses, Tuition & Nazra Classes at Tuition Solution & IT Solution.">
+    <title>Admission Form | Tuition Solution & IT Solution</title>
+
+    <link rel="icon" type="image/png" href="Assets/Logo/logo icon-01 2.png">
+    <link rel="apple-touch-icon" href="Assets/Logo/logo icon-01 2.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+                            400: '#60a5fa', 500: '#3b82f6', 600: '#1e40af', 700: '#1e3a8a',
+                            800: '#1e2d5f', 900: '#0f172a',
+                        },
+                        accent: {
+                            50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+                            400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+                            800: '#9a3412', 900: '#7c2d12',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            border: 2px solid #e5e7eb;
+            outline: none;
+            transition: all 0.2s;
+            font-size: 0.875rem;
+            color: #374151;
+            background: #fff;
+        }
+        .form-input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+        .form-input.error {
+            border-color: #ef4444;
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+        }
+        .form-input.success {
+            border-color: #22c55e;
+        }
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.375rem;
+        }
+        .form-label .required {
+            color: #ef4444;
+            margin-left: 2px;
+        }
+        .field-error-msg {
+            font-size: 0.75rem;
+            color: #ef4444;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .field-error-msg.visible {
+            display: block;
+        }
+        .radio-card {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding: 0.625rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+        }
+        .radio-card:hover {
+            border-color: #93c5fd;
+            background: #eff6ff;
+        }
+        .radio-card:has(input:checked) {
+            border-color: #1e40af;
+            background: #eff6ff;
+        }
+        .radio-card:has(input:checked) span {
+            color: #1e40af;
+            font-weight: 600;
+        }
+        .form-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        .form-overlay.hidden { display: none; }
+        .step-badge {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+        }
+        .step-badge.active { background: #1e40af; color: #fff; }
+        .step-badge.completed { background: #22c55e; color: #fff; }
+        .step-badge.pending { background: #e5e7eb; color: #9ca3af; }
+        @media (prefers-reduced-motion: reduce) {
+            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body class="font-body text-gray-800 bg-white overflow-x-hidden" data-page="admissions">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-accent-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:outline-none">
+        Skip to main content
+    </a>
+
+    <!-- HEADER -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="bg-primary-700 text-white py-2 hidden md:block">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm">
+                <div class="flex items-center gap-6">
+                    <a href="mailto:info@tuitionsolution.pk" class="flex items-center gap-2 hover:text-accent-400 transition-colors" aria-label="Email us">
+                        <i class="fas fa-envelope" aria-hidden="true"></i><span>info@tuitionsolution.pk</span>
+                    </a>
+                    <a href="tel:+923213825799" class="flex items-center gap-2 hover:text-accent-400 transition-colors" aria-label="Call us">
+                        <i class="fas fa-phone" aria-hidden="true"></i><span>0321-3825799</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="flex items-center gap-2"><i class="fas fa-clock" aria-hidden="true"></i> Mon - Sat: 9:00 AM - 8:00 PM</span>
+                    <div class="flex items-center gap-3 ml-4" role="list" aria-label="Social media links">
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="Facebook" role="listitem"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="WhatsApp" role="listitem"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="Instagram" role="listitem"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="YouTube" role="listitem"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="index.html" class="flex items-center gap-3 group" aria-label="Tuition Solution - Home">
+                    <img src="Assets/Logo/logo icon-01 2.png" alt="Tuition Solution Logo Icon" class="h-10 lg:h-14 w-auto object-contain" loading="eager">
+                    <div class="w-px h-8 lg:h-12 bg-gray-300" aria-hidden="true"></div>
+                    <img src="Assets/Logo/Group 48095398.png" alt="Tuition Solution & IT Solution" class="h-8 lg:h-11 w-auto object-contain" loading="eager">
+                </a>
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="index.html" data-nav="home" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Home</a>
+                    <a href="about.html" data-nav="about" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">About Us</a>
+                    <a href="services.html" data-nav="services" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Services</a>
+                    <a href="courses.html" data-nav="courses" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Courses</a>
+                    <a href="fee-structure.html" data-nav="fee-structure" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Fee Structure</a>
+                    <a href="admissions.html" data-nav="admissions" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Admissions</a>
+                    <a href="contact.html" data-nav="contact" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Contact</a>
+                </div>
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="admission-form.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-accent-500 to-accent-600 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:from-accent-600 hover:to-accent-700 transition-all shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2">
+                        <i class="fas fa-user-plus" aria-hidden="true"></i> Apply Now
+                    </a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100 shadow-xl" role="navigation" aria-label="Mobile navigation">
+            <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+                <a href="index.html" data-nav="home" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Home</a>
+                <a href="about.html" data-nav="about" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">About Us</a>
+                <a href="services.html" data-nav="services" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Services</a>
+                <a href="courses.html" data-nav="courses" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Courses</a>
+                <a href="fee-structure.html" data-nav="fee-structure" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Fee Structure</a>
+                <a href="admissions.html" data-nav="admissions" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Admissions</a>
+                <a href="contact.html" data-nav="contact" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Contact</a>
+                <div class="pt-3 border-t border-gray-100">
+                    <a href="admission-form.html" class="block text-center bg-gradient-to-r from-accent-500 to-accent-600 text-white px-6 py-3 rounded-full font-semibold hover:from-accent-600 hover:to-accent-700 transition-all">
+                        <i class="fas fa-user-plus mr-2" aria-hidden="true"></i>Apply Now
+                    </a>
+                </div>
+                <div class="pt-3 flex items-center justify-center gap-4 text-sm text-gray-500">
+                    <a href="tel:+923213825799" class="flex items-center gap-2 hover:text-primary-600"><i class="fas fa-phone" aria-hidden="true"></i> 0321-3825799</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="form-overlay hidden" role="status" aria-label="Submitting form">
+        <div class="bg-white rounded-2xl p-8 shadow-2xl text-center max-w-sm mx-4">
+            <div class="w-16 h-16 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin mx-auto mb-4"></div>
+            <p class="font-heading font-bold text-primary-800 text-lg">Submitting Your Application...</p>
+            <p class="text-gray-500 text-sm mt-1">Please wait, do not close this page.</p>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+
+        <!-- Page Banner -->
+        <section class="relative pt-32 lg:pt-40 pb-12 lg:pb-16 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900 overflow-hidden">
+            <div class="absolute inset-0 hero-pattern opacity-5"></div>
+            <div class="absolute top-20 right-10 w-72 h-72 bg-accent-500/10 rounded-full blur-3xl" aria-hidden="true"></div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="inline-flex items-center gap-2 bg-accent-500/20 border border-accent-500/30 rounded-full px-5 py-2 mb-4" data-aos="fade-up">
+                    <span class="w-2 h-2 bg-accent-400 rounded-full animate-pulse"></span>
+                    <span class="text-accent-300 font-semibold text-sm">Admissions Open — April 2026</span>
+                </div>
+                <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3" data-aos="fade-up" data-aos-delay="100">Admission <span class="text-accent-400">Form</span></h1>
+                <p class="text-primary-200 text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150">Fill the form below. Our team will contact you within 24 hours to confirm your admission.</p>
+                <nav class="mt-5" aria-label="Breadcrumb" data-aos="fade-up" data-aos-delay="200">
+                    <ol class="flex items-center justify-center gap-2 text-sm text-primary-300">
+                        <li><a href="index.html" class="hover:text-accent-400 transition-colors">Home</a></li>
+                        <li><i class="fas fa-chevron-right text-xs" aria-hidden="true"></i></li>
+                        <li><a href="admissions.html" class="hover:text-accent-400 transition-colors">Admissions</a></li>
+                        <li><i class="fas fa-chevron-right text-xs" aria-hidden="true"></i></li>
+                        <li class="text-accent-400 font-semibold">Apply Now</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- ADMISSION FORM SECTION -->
+        <section class="py-12 lg:py-16 bg-gray-50">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Step Indicator -->
+                <div class="flex items-center justify-center gap-3 mb-8" data-aos="fade-up" role="navigation" aria-label="Form steps">
+                    <div class="flex items-center gap-2">
+                        <div class="step-badge active" id="step-badge-1" aria-current="step">1</div>
+                        <span class="text-sm font-medium text-primary-700 hidden sm:inline" id="step-label-1">Personal Info</span>
+                    </div>
+                    <div class="w-8 sm:w-12 h-0.5 bg-gray-200" id="step-line-1"></div>
+                    <div class="flex items-center gap-2">
+                        <div class="step-badge pending" id="step-badge-2">2</div>
+                        <span class="text-sm font-medium text-gray-400 hidden sm:inline" id="step-label-2">Course & Education</span>
+                    </div>
+                    <div class="w-8 sm:w-12 h-0.5 bg-gray-200" id="step-line-2"></div>
+                    <div class="flex items-center gap-2">
+                        <div class="step-badge pending" id="step-badge-3">3</div>
+                        <span class="text-sm font-medium text-gray-400 hidden sm:inline" id="step-label-3">Submit</span>
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+
+                    <!-- Form Header -->
+                    <div class="bg-gradient-to-r from-primary-600 to-primary-700 px-6 lg:px-8 py-5">
+                        <h2 class="font-heading text-xl font-bold text-white"><i class="fas fa-file-alt mr-2" aria-hidden="true"></i>Student Admission Form</h2>
+                        <p class="text-primary-200 text-sm mt-1">Fields marked with <span class="text-red-300">*</span> are required.</p>
+                    </div>
+
+                    <!-- Form Body -->
+                    <div class="px-6 lg:px-8 py-8">
+                        <form id="admission-form" novalidate>
+
+                            <!-- STEP 1: Personal Information -->
+                            <fieldset id="form-step-1" class="space-y-5">
+                                <legend class="font-heading text-lg font-bold text-primary-700 mb-4 flex items-center gap-2">
+                                    <i class="fas fa-user text-accent-500" aria-hidden="true"></i> Personal Information
+                                </legend>
+
+                                <div class="grid sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label for="studentName" class="form-label">Student Full Name <span class="required" aria-hidden="true">*</span></label>
+                                        <input type="text" id="studentName" name="studentName" class="form-input" placeholder="e.g. Muhammad Ahmed" required aria-required="true" autocomplete="name">
+                                        <div class="field-error-msg" role="alert"></div>
+                                    </div>
+                                    <div>
+                                        <label for="fatherName" class="form-label">Father / Guardian Name <span class="required" aria-hidden="true">*</span></label>
+                                        <input type="text" id="fatherName" name="fatherName" class="form-input" placeholder="e.g. Muhammad Ali" required aria-required="true">
+                                        <div class="field-error-msg" role="alert"></div>
+                                    </div>
+                                </div>
+
+                                <div class="grid sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label for="dob" class="form-label">Date of Birth <span class="required" aria-hidden="true">*</span></label>
+                                        <input type="date" id="dob" name="dob" class="form-input" required aria-required="true">
+                                        <div class="field-error-msg" role="alert"></div>
+                                    </div>
+                                    <div>
+                                        <label class="form-label">Gender <span class="required" aria-hidden="true">*</span></label>
+                                        <div class="grid grid-cols-2 gap-2 mt-1" role="radiogroup" aria-label="Gender">
+                                            <label class="radio-card" for="gender-male">
+                                                <input type="radio" id="gender-male" name="gender" value="Male" class="w-4 h-4 text-primary-600 focus:ring-primary-500" required>
+                                                <span class="text-sm text-gray-700">Male</span>
+                                            </label>
+                                            <label class="radio-card" for="gender-female">
+                                                <input type="radio" id="gender-female" name="gender" value="Female" class="w-4 h-4 text-primary-600 focus:ring-primary-500">
+                                                <span class="text-sm text-gray-700">Female</span>
+                                            </label>
+                                        </div>
+                                        <div class="field-error-msg" id="gender-error" role="alert"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="cnic" class="form-label">CNIC / B-Form Number</label>
+                                    <input type="text" id="cnic" name="cnic" class="form-input" placeholder="e.g. 42101-1234567-1" maxlength="15" autocomplete="off">
+                                    <div class="field-error-msg" role="alert"></div>
+                                </div>
+
+                                <div class="grid sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label for="phone" class="form-label">Phone Number <span class="required" aria-hidden="true">*</span></label>
+                                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="e.g. 0321-3825799" required aria-required="true" autocomplete="tel">
+                                        <div class="field-error-msg" role="alert"></div>
+                                    </div>
+                                    <div>
+                                        <label for="whatsapp" class="form-label">WhatsApp Number</label>
+                                        <input type="tel" id="whatsapp" name="whatsapp" class="form-input" placeholder="Same as phone? Leave empty" autocomplete="tel">
+                                        <div class="field-error-msg" role="alert"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" id="email" name="email" class="form-input" placeholder="e.g. student@gmail.com" autocomplete="email">
+                                    <div class="field-error-msg" role="alert"></div>
+                                </div>
+
+                                <div>
+                                    <label for="address" class="form-label">Home Address <span class="required" aria-hidden="true">*</span></label>
+                                    <textarea id="address" name="address" rows="2" class="form-input resize-none" placeholder="e.g. House #12, Street 5, Gulshan, Karachi" required aria-required="true" autocomplete="street-address"></textarea>
+                                    <div class="field-error-msg" role="alert"></div>
+                                </div>
+
+                                <div class="flex justify-end pt-4">
+                                    <button type="button" id="next-step-1" class="inline-flex items-center gap-2 bg-primary-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary-700 transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+                                        Next Step <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </fieldset>
+
+                            <!-- STEP 2: Course & Education -->
+                            <fieldset id="form-step-2" class="space-y-5 hidden">
+                                <legend class="font-heading text-lg font-bold text-primary-700 mb-4 flex items-center gap-2">
+                                    <i class="fas fa-graduation-cap text-accent-500" aria-hidden="true"></i> Course & Education
+                                </legend>
+
+                                <div>
+                                    <label for="course" class="form-label">Select Course <span class="required" aria-hidden="true">*</span></label>
+                                    <select id="course" name="course" class="form-input bg-white" required aria-required="true">
+                                        <option value="" disabled selected>-- Select a Course --</option>
+                                        <optgroup label="AI Courses (New — April 2026)">
+                                            <option value="Web Development with AI">Web Development with AI — 6 Months</option>
+                                            <option value="UI/UX Design with AI">UI/UX Design with AI — 6 Months</option>
+                                            <option value="Freelancing with AI">Freelancing with AI — 3 Months</option>
+                                            <option value=".NET Development">.NET Development — 6 Months</option>
+                                            <option value="Agentic AI Course">Agentic AI Course — 6 Months</option>
+                                            <option value="GitHub Copilot Course">GitHub Copilot Course — 3 Months</option>
+                                            <option value="AI for Everyone">AI for Everyone — 3 Months</option>
+                                            <option value="Kid AI Course">Kid AI Course — 3 Months</option>
+                                            <option value="Python for Kids with AI">Python for Kids with AI — 3 Months</option>
+                                            <option value="AI Tools Mastery">AI Tools Mastery — 3 Months</option>
+                                        </optgroup>
+                                        <optgroup label="Computer Courses (SDC Certified)">
+                                            <option value="Computer Basics & MS Office">Computer Basics & MS Office — 3 Months</option>
+                                            <option value="Advanced Excel & Data Analysis">Advanced Excel & Data Analysis — 4 Months</option>
+                                            <option value="Graphic Design (Adobe Suite)">Graphic Design (Adobe Suite) — 6 Months</option>
+                                            <option value="Web Development">Web Development — 6 Months</option>
+                                            <option value="Digital Marketing">Digital Marketing — 3 Months</option>
+                                            <option value="Python Programming">Python Programming — 4 Months</option>
+                                        </optgroup>
+                                        <optgroup label="Tuition Classes">
+                                            <option value="Tuition - Play Group to KG">Tuition — Play Group to KG</option>
+                                            <option value="Tuition - Class 1 to 5">Tuition — Class 1 to 5</option>
+                                            <option value="Tuition - Class 6 to 8">Tuition — Class 6 to 8</option>
+                                            <option value="Tuition - Matric (9th-10th)">Tuition — Matric (9th-10th)</option>
+                                            <option value="Tuition - Intermediate (11th-12th)">Tuition — Intermediate (11th-12th)</option>
+                                        </optgroup>
+                                        <optgroup label="Nazra Classes">
+                                            <option value="Qaida / Noorani Qaida">Qaida / Noorani Qaida</option>
+                                            <option value="Nazra-e-Quran (Beginners)">Nazra-e-Quran (Beginners)</option>
+                                            <option value="Nazra with Tajweed">Nazra with Tajweed</option>
+                                            <option value="Hifz-e-Quran">Hifz-e-Quran</option>
+                                        </optgroup>
+                                    </select>
+                                    <div class="field-error-msg" role="alert"></div>
+                                </div>
+
+                                <div>
+                                    <label class="form-label">Preferred Shift <span class="required" aria-hidden="true">*</span></label>
+                                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-1" role="radiogroup" aria-label="Preferred shift">
+                                        <label class="radio-card" for="shift-morning">
+                                            <input type="radio" id="shift-morning" name="shift" value="Morning" class="w-4 h-4 text-primary-600 focus:ring-primary-500" required>
+                                            <span class="text-sm text-gray-700"><i class="fas fa-sun text-yellow-500 mr-1" aria-hidden="true"></i>Morning</span>
+                                        </label>
+                                        <label class="radio-card" for="shift-afternoon">
+                                            <input type="radio" id="shift-afternoon" name="shift" value="Afternoon" class="w-4 h-4 text-primary-600 focus:ring-primary-500">
+                                            <span class="text-sm text-gray-700"><i class="fas fa-cloud-sun text-orange-400 mr-1" aria-hidden="true"></i>Afternoon</span>
+                                        </label>
+                                        <label class="radio-card" for="shift-evening">
+                                            <input type="radio" id="shift-evening" name="shift" value="Evening" class="w-4 h-4 text-primary-600 focus:ring-primary-500">
+                                            <span class="text-sm text-gray-700"><i class="fas fa-moon text-indigo-400 mr-1" aria-hidden="true"></i>Evening</span>
+                                        </label>
+                                    </div>
+                                    <div class="field-error-msg" id="shift-error" role="alert"></div>
+                                </div>
+
+                                <div>
+                                    <label for="education" class="form-label">Last Education / Qualification <span class="required" aria-hidden="true">*</span></label>
+                                    <select id="education" name="education" class="form-input bg-white" required aria-required="true">
+                                        <option value="" disabled selected>-- Select Qualification --</option>
+                                        <option value="Below Matric">Below Matric</option>
+                                        <option value="Matric / 10th Pass">Matric / 10th Pass</option>
+                                        <option value="Intermediate / 12th Pass">Intermediate / 12th Pass</option>
+                                        <option value="Graduation">Graduation (BA/BSc/B.Com etc.)</option>
+                                        <option value="Masters or Above">Masters or Above</option>
+                                        <option value="Currently Studying">Currently Studying</option>
+                                    </select>
+                                    <div class="field-error-msg" role="alert"></div>
+                                </div>
+
+                                <div>
+                                    <label class="form-label">Sibling Discount (20% off)</label>
+                                    <div class="grid grid-cols-2 gap-2 mt-1" role="radiogroup" aria-label="Sibling discount eligibility">
+                                        <label class="radio-card" for="sibling-yes">
+                                            <input type="radio" id="sibling-yes" name="siblingDiscount" value="Yes" class="w-4 h-4 text-primary-600 focus:ring-primary-500">
+                                            <span class="text-sm text-gray-700">Yes, sibling enrolled</span>
+                                        </label>
+                                        <label class="radio-card" for="sibling-no">
+                                            <input type="radio" id="sibling-no" name="siblingDiscount" value="No" class="w-4 h-4 text-primary-600 focus:ring-primary-500" checked>
+                                            <span class="text-sm text-gray-700">No</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="source" class="form-label">How did you hear about us?</label>
+                                    <select id="source" name="source" class="form-input bg-white">
+                                        <option value="" disabled selected>-- Select --</option>
+                                        <option value="Facebook">Facebook</option>
+                                        <option value="Instagram">Instagram</option>
+                                        <option value="WhatsApp">WhatsApp</option>
+                                        <option value="Friend / Referral">Friend / Referral</option>
+                                        <option value="Walk-in">Walk-in</option>
+                                        <option value="Website">Website</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="remarks" class="form-label">Any Remarks / Questions</label>
+                                    <textarea id="remarks" name="remarks" rows="2" class="form-input resize-none" placeholder="Any specific questions or requirements..."></textarea>
+                                </div>
+
+                                <div class="flex justify-between pt-4">
+                                    <button type="button" id="prev-step-2" class="inline-flex items-center gap-2 bg-gray-100 text-gray-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-all focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2">
+                                        <i class="fas fa-arrow-left" aria-hidden="true"></i> Back
+                                    </button>
+                                    <button type="submit" id="submit-btn" class="inline-flex items-center gap-2 bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-3 rounded-xl font-bold text-lg hover:from-accent-600 hover:to-accent-700 transition-all shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2">
+                                        <i class="fas fa-paper-plane" aria-hidden="true"></i> Submit Application
+                                    </button>
+                                </div>
+                            </fieldset>
+
+                        </form>
+
+                        <!-- STEP 3: Success -->
+                        <div id="form-step-3" class="hidden text-center py-8">
+                            <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-check-circle text-green-500 text-5xl" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="font-heading text-2xl lg:text-3xl font-bold text-primary-700 mb-3">Application Submitted!</h3>
+                            <p class="text-gray-600 text-lg mb-2">Thank you for applying to <strong>Tuition Solution & IT Solution</strong>.</p>
+                            <p class="text-gray-500 mb-8">Our team will contact you within <strong>24 hours</strong> to confirm your admission.</p>
+
+                            <div class="bg-primary-50 rounded-xl p-6 mb-8 max-w-md mx-auto text-left">
+                                <h4 class="font-semibold text-primary-700 mb-3">What happens next?</h4>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5" aria-hidden="true"></i> Our team will review your application</li>
+                                    <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5" aria-hidden="true"></i> You'll receive a confirmation call/WhatsApp</li>
+                                    <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5" aria-hidden="true"></i> Fee details & class schedule will be shared</li>
+                                    <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5" aria-hidden="true"></i> Start your learning journey!</li>
+                                </ul>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a href="index.html" class="inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-700 transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+                                    <i class="fas fa-home" aria-hidden="true"></i> Go to Home
+                                </a>
+                                <button type="button" id="apply-again-btn" class="inline-flex items-center justify-center gap-2 bg-accent-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-accent-600 transition-all focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2">
+                                    <i class="fas fa-plus" aria-hidden="true"></i> Apply for Another Course
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="mt-8 text-center text-sm text-gray-500" data-aos="fade-up" data-aos-delay="200">
+                    <p>Need help? Call us at <a href="tel:+923213825799" class="text-primary-600 font-semibold hover:underline">0321-3825799</a> or
+                    <a href="https://wa.me/923213825799" target="_blank" rel="noopener noreferrer" class="text-green-600 font-semibold hover:underline">WhatsApp</a></p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary-900 text-white relative overflow-hidden" role="contentinfo">
+        <div class="absolute inset-0 hero-pattern opacity-5"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <a href="index.html" class="flex items-center gap-3 mb-6">
+                        <img src="Assets/Logo/logo icon-01 2.png" alt="Tuition Solution Logo" class="h-10 w-auto object-contain brightness-0 invert" loading="lazy">
+                        <div class="w-px h-8 bg-white/30" aria-hidden="true"></div>
+                        <img src="Assets/Logo/Group 48095398.png" alt="Tuition Solution & IT Solution" class="h-8 w-auto object-contain brightness-0 invert" loading="lazy">
+                    </a>
+                    <p class="text-primary-300 leading-relaxed mb-6">Your trusted partner in education. Providing quality tuition, SDC certified computer courses, Nazra classes, and personal tutoring.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-lg mb-6 relative">Quick Links<span class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"></span></h3>
+                    <nav aria-label="Footer quick links">
+                        <ul class="space-y-3" role="list">
+                            <li><a href="index.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Home</a></li>
+                            <li><a href="about.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> About Us</a></li>
+                            <li><a href="courses.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Courses</a></li>
+                            <li><a href="fee-structure.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Fee Structure</a></li>
+                            <li><a href="admissions.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Admissions</a></li>
+                            <li><a href="contact.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-lg mb-6 relative">AI Courses<span class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"></span></h3>
+                    <ul class="space-y-3" role="list">
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Web Dev with AI</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Agentic AI</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> GitHub Copilot</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> AI for Everyone</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Freelancing with AI</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> AI Tools Mastery</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-lg mb-6 relative">Stay Updated<span class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"></span></h3>
+                    <p class="text-primary-300 mb-4">Subscribe to our newsletter for updates on new courses and offers.</p>
+                    <form class="space-y-3" id="newsletter-form">
+                        <div class="relative">
+                            <label for="newsletter-email" class="sr-only">Email address for newsletter</label>
+                            <input type="email" id="newsletter-email" placeholder="Your email address" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-primary-400 focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all" required>
+                        </div>
+                        <button type="submit" class="w-full bg-accent-500 text-white py-3 rounded-xl font-semibold hover:bg-accent-600 transition-all focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 focus:ring-offset-primary-900">
+                            Subscribe <i class="fas fa-paper-plane ml-1" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                    <div class="mt-6 bg-white/10 rounded-xl p-4 border border-white/10">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-accent-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-certificate text-white text-xl" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <div class="text-accent-400 font-bold text-sm">Registered with</div>
+                                <div class="text-white font-semibold">Skills Development Council</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-primary-400 text-sm text-center md:text-left">&copy; <span id="footer-year"></span> Tuition Solution & IT Solution. All rights reserved.</p>
+                    <div class="flex items-center gap-6 text-sm">
+                        <a href="#" class="text-primary-400 hover:text-accent-400 transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-primary-400 hover:text-accent-400 transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-accent-500 text-white rounded-full shadow-xl opacity-0 invisible transition-all duration-300 hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 z-40" aria-label="Back to top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/923213825799" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 left-6 w-14 h-14 bg-green-500 text-white rounded-full shadow-xl flex items-center justify-center hover:bg-green-600 transition-all z-40 hover:scale-110" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/admission-form.js"></script>
+</body>
+</html>

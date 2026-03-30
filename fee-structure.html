@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fee Structure - Tuition Classes, Nazra Classes, Computer Courses. Affordable fees with 20% sibling discount.">
+    <title>Fee Structure | Tuition Solution & IT Solution</title>
+
+    <link rel="icon" type="image/png" href="Assets/Logo/logo icon-01 2.png">
+    <link rel="apple-touch-icon" href="Assets/Logo/logo icon-01 2.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+                            400: '#60a5fa', 500: '#3b82f6', 600: '#1e40af', 700: '#1e3a8a',
+                            800: '#1e2d5f', 900: '#0f172a',
+                        },
+                        accent: {
+                            50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+                            400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+                            800: '#9a3412', 900: '#7c2d12',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-body text-gray-800 bg-white overflow-x-hidden" data-page="fee-structure">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-accent-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:outline-none">
+        Skip to main content
+    </a>
+
+    <!-- HEADER -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="bg-primary-700 text-white py-2 hidden md:block">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm">
+                <div class="flex items-center gap-6">
+                    <a href="mailto:info@tuitionsolution.pk" class="flex items-center gap-2 hover:text-accent-400 transition-colors" aria-label="Email us">
+                        <i class="fas fa-envelope" aria-hidden="true"></i><span>info@tuitionsolution.pk</span>
+                    </a>
+                    <a href="tel:+923213825799" class="flex items-center gap-2 hover:text-accent-400 transition-colors" aria-label="Call us">
+                        <i class="fas fa-phone" aria-hidden="true"></i><span>0321-3825799</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="flex items-center gap-2"><i class="fas fa-clock" aria-hidden="true"></i> Mon - Sat: 9:00 AM - 8:00 PM</span>
+                    <div class="flex items-center gap-3 ml-4" role="list" aria-label="Social media links">
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="Facebook" role="listitem"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="WhatsApp" role="listitem"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="Instagram" role="listitem"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="YouTube" role="listitem"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="index.html" class="flex items-center gap-3 group" aria-label="Tuition Solution - Home">
+                    <img src="Assets/Logo/logo icon-01 2.png" alt="Tuition Solution Logo Icon" class="h-10 lg:h-14 w-auto object-contain" loading="eager">
+                    <div class="w-px h-8 lg:h-12 bg-gray-300" aria-hidden="true"></div>
+                    <img src="Assets/Logo/Group 48095398.png" alt="Tuition Solution & IT Solution" class="h-8 lg:h-11 w-auto object-contain" loading="eager">
+                </a>
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="index.html" data-nav="home" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Home</a>
+                    <a href="about.html" data-nav="about" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">About Us</a>
+                    <a href="services.html" data-nav="services" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Services</a>
+                    <a href="courses.html" data-nav="courses" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Courses</a>
+                    <a href="fee-structure.html" data-nav="fee-structure" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Fee Structure</a>
+                    <a href="admissions.html" data-nav="admissions" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Admissions</a>
+                    <a href="contact.html" data-nav="contact" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Contact</a>
+                </div>
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="registration.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-accent-500 to-accent-600 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:from-accent-600 hover:to-accent-700 transition-all shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2">
+                        <i class="fas fa-user-plus" aria-hidden="true"></i> Register Now
+                    </a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100 shadow-xl" role="navigation" aria-label="Mobile navigation">
+            <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+                <a href="index.html" data-nav="home" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Home</a>
+                <a href="about.html" data-nav="about" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">About Us</a>
+                <a href="services.html" data-nav="services" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Services</a>
+                <a href="courses.html" data-nav="courses" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Courses</a>
+                <a href="fee-structure.html" data-nav="fee-structure" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Fee Structure</a>
+                <a href="admissions.html" data-nav="admissions" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Admissions</a>
+                <a href="contact.html" data-nav="contact" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Contact</a>
+                <div class="pt-3 border-t border-gray-100">
+                    <a href="registration.html" class="block text-center bg-gradient-to-r from-accent-500 to-accent-600 text-white px-6 py-3 rounded-full font-semibold hover:from-accent-600 hover:to-accent-700 transition-all">
+                        <i class="fas fa-user-plus mr-2" aria-hidden="true"></i>Register Now
+                    </a>
+                </div>
+                <div class="pt-3 flex items-center justify-center gap-4 text-sm text-gray-500">
+                    <a href="tel:+923213825799" class="flex items-center gap-2 hover:text-primary-600"><i class="fas fa-phone" aria-hidden="true"></i> 0321-3825799</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+
+        <!-- Page Banner -->
+        <section class="relative pt-32 lg:pt-40 pb-16 lg:pb-20 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900 overflow-hidden">
+            <div class="absolute inset-0 hero-pattern opacity-5"></div>
+            <div class="absolute top-20 right-10 w-72 h-72 bg-accent-500/10 rounded-full blur-3xl" aria-hidden="true"></div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-4" data-aos="fade-up">Fee <span class="text-accent-400">Structure</span></h1>
+                <p class="text-primary-200 text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Affordable & transparent fee plans for all our programs. Quality education within your budget.</p>
+                <div class="inline-flex items-center gap-2 mt-4 bg-white/10 border border-white/20 rounded-full px-5 py-2" data-aos="fade-up" data-aos-delay="150">
+                    <i class="fas fa-tags text-accent-400" aria-hidden="true"></i>
+                    <span class="text-accent-300 font-semibold text-sm">20% Sibling Discount Available</span>
+                </div>
+                <nav class="mt-6" aria-label="Breadcrumb" data-aos="fade-up" data-aos-delay="200">
+                    <ol class="flex items-center justify-center gap-2 text-sm text-primary-300">
+                        <li><a href="index.html" class="hover:text-accent-400 transition-colors">Home</a></li>
+                        <li><i class="fas fa-chevron-right text-xs" aria-hidden="true"></i></li>
+                        <li class="text-accent-400 font-semibold">Fee Structure</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Sibling Discount Banner -->
+        <section class="bg-gradient-to-r from-accent-500 to-accent-600 py-5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-white text-center">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-percent text-xl" aria-hidden="true"></i>
+                        </div>
+                        <div class="text-left">
+                            <p class="font-heading font-bold text-lg">20% Sibling Discount!</p>
+                            <p class="text-white/90 text-sm">Enroll siblings and save 20% on the second child's fee.</p>
+                        </div>
+                    </div>
+                    <a href="registration.html" class="bg-white text-accent-600 px-6 py-2.5 rounded-full font-bold text-sm hover:bg-gray-100 transition-all focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-accent-500">
+                        Avail Discount <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- TUITION CLASSES FEE -->
+        <!-- ============================================ -->
+        <section class="py-16 lg:py-20 bg-white" aria-labelledby="tuition-fee-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 bg-primary-50 rounded-full px-4 py-2 mb-4">
+                        <i class="fas fa-chalkboard-teacher text-primary-600" aria-hidden="true"></i>
+                        <span class="text-primary-700 font-medium text-sm">Academic Programs</span>
+                    </div>
+                    <h2 id="tuition-fee-heading" class="font-heading text-3xl sm:text-4xl font-bold text-primary-800 mb-4">Tuition Classes <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-500 to-accent-600">Fee Structure</span></h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto">Expert coaching for all classes with experienced teachers. Morning & evening batches available.</p>
+                </div>
+
+                <div class="overflow-x-auto rounded-2xl shadow-lg border border-gray-200" data-aos="fade-up" data-aos-delay="100">
+                    <table class="w-full text-left" role="table">
+                        <caption class="sr-only">Tuition classes fee structure with class levels, subjects, monthly fees, and sibling discount rates</caption>
+                        <thead>
+                            <tr class="bg-gradient-to-r from-primary-700 to-primary-800 text-white">
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider">Class / Level</th>
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider">Subjects</th>
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider text-center">Monthly Fee</th>
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider text-center">With 20% Sibling Discount</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="hover:bg-primary-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700">Play Group - KG</td>
+                                <td class="px-6 py-4 text-gray-600">All Subjects</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 1,500</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 1,200</td>
+                            </tr>
+                            <tr class="bg-gray-50/50 hover:bg-primary-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700">Class 1 - 3</td>
+                                <td class="px-6 py-4 text-gray-600">All Subjects</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 2,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 1,600</td>
+                            </tr>
+                            <tr class="hover:bg-primary-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700">Class 4 - 5</td>
+                                <td class="px-6 py-4 text-gray-600">All Subjects</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 2,500</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 2,000</td>
+                            </tr>
+                            <tr class="bg-gray-50/50 hover:bg-primary-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700">Class 6 - 8</td>
+                                <td class="px-6 py-4 text-gray-600">All Subjects (Science & Arts)</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 3,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 2,400</td>
+                            </tr>
+                            <tr class="hover:bg-primary-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700">Matric (9th - 10th)</td>
+                                <td class="px-6 py-4 text-gray-600">Science / Arts / Commerce</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 3,500</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 2,800</td>
+                            </tr>
+                            <tr class="bg-gray-50/50 hover:bg-primary-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700">Intermediate (11th - 12th)</td>
+                                <td class="px-6 py-4 text-gray-600">Pre-Medical / Pre-Engineering / ICS / Commerce / Arts</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 4,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 3,200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- NAZRA CLASSES FEE -->
+        <!-- ============================================ -->
+        <section class="py-16 lg:py-20 bg-gray-50" aria-labelledby="nazra-fee-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 bg-green-50 rounded-full px-4 py-2 mb-4">
+                        <i class="fas fa-book-quran text-green-600" aria-hidden="true"></i>
+                        <span class="text-green-700 font-medium text-sm">Quranic Education</span>
+                    </div>
+                    <h2 id="nazra-fee-heading" class="font-heading text-3xl sm:text-4xl font-bold text-primary-800 mb-4">Nazra Classes <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-600">Fee Structure</span></h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto">Learn Quran reading with proper Tajweed under the guidance of qualified teachers.</p>
+                </div>
+
+                <div class="overflow-x-auto rounded-2xl shadow-lg border border-gray-200" data-aos="fade-up" data-aos-delay="100">
+                    <table class="w-full text-left" role="table">
+                        <caption class="sr-only">Nazra classes fee structure with program types, schedule, monthly fees, and sibling discount rates</caption>
+                        <thead>
+                            <tr class="bg-gradient-to-r from-green-600 to-green-700 text-white">
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider">Program</th>
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider">Schedule</th>
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider text-center">Monthly Fee</th>
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider text-center">With 20% Sibling Discount</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="hover:bg-green-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700">Nazra-e-Quran (Beginners)</td>
+                                <td class="px-6 py-4 text-gray-600">Mon - Sat (45 min daily)</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 1,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 800</td>
+                            </tr>
+                            <tr class="bg-gray-50/50 hover:bg-green-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700">Nazra with Tajweed</td>
+                                <td class="px-6 py-4 text-gray-600">Mon - Sat (1 hour daily)</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 1,500</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 1,200</td>
+                            </tr>
+                            <tr class="hover:bg-green-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700">Hifz-e-Quran</td>
+                                <td class="px-6 py-4 text-gray-600">Mon - Sat (2 hours daily)</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 2,500</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 2,000</td>
+                            </tr>
+                            <tr class="bg-gray-50/50 hover:bg-green-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700">Qaida / Noorani Qaida</td>
+                                <td class="px-6 py-4 text-gray-600">Mon - Fri (30 min daily)</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 800</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 640</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- COMPUTER COURSES FEE -->
+        <!-- ============================================ -->
+        <section class="py-16 lg:py-20 bg-white" aria-labelledby="computer-fee-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 bg-accent-50 rounded-full px-4 py-2 mb-4">
+                        <i class="fas fa-laptop-code text-accent-600" aria-hidden="true"></i>
+                        <span class="text-accent-700 font-medium text-sm">IT & Computer Programs</span>
+                    </div>
+                    <h2 id="computer-fee-heading" class="font-heading text-3xl sm:text-4xl font-bold text-primary-800 mb-4">Computer Courses <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-500 to-accent-600">Fee Structure</span></h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto">SDC Certified professional computer courses with hands-on training and industry-relevant curriculum.</p>
+                </div>
+
+                <div class="overflow-x-auto rounded-2xl shadow-lg border border-gray-200" data-aos="fade-up" data-aos-delay="100">
+                    <table class="w-full text-left" role="table">
+                        <caption class="sr-only">Computer courses fee structure with course names, duration, total fees and monthly installment options</caption>
+                        <thead>
+                            <tr class="bg-gradient-to-r from-accent-500 to-accent-600 text-white">
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider">Course</th>
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider text-center">Duration</th>
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider text-center">Total Fee</th>
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider text-center">Monthly Installment</th>
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider text-center">With 20% Sibling Discount</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="hover:bg-accent-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700"><i class="fas fa-laptop text-accent-500 mr-2" aria-hidden="true"></i>Computer Basics & MS Office</td>
+                                <td class="px-6 py-4 text-center text-gray-600">3 Months</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 9,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 3,000/mo</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 7,200</td>
+                            </tr>
+                            <tr class="bg-gray-50/50 hover:bg-accent-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700"><i class="fas fa-chart-bar text-accent-500 mr-2" aria-hidden="true"></i>Advanced Excel & Data Analysis</td>
+                                <td class="px-6 py-4 text-center text-gray-600">4 Months</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 16,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 4,000/mo</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 12,800</td>
+                            </tr>
+                            <tr class="hover:bg-accent-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700"><i class="fas fa-palette text-accent-500 mr-2" aria-hidden="true"></i>Graphic Design (Adobe Suite)</td>
+                                <td class="px-6 py-4 text-center text-gray-600">6 Months</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 30,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 5,000/mo</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 24,000</td>
+                            </tr>
+                            <tr class="bg-gray-50/50 hover:bg-accent-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700"><i class="fas fa-code text-accent-500 mr-2" aria-hidden="true"></i>Web Development</td>
+                                <td class="px-6 py-4 text-center text-gray-600">6 Months</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 36,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 6,000/mo</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 28,800</td>
+                            </tr>
+                            <tr class="hover:bg-accent-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700"><i class="fas fa-bullhorn text-accent-500 mr-2" aria-hidden="true"></i>Digital Marketing</td>
+                                <td class="px-6 py-4 text-center text-gray-600">3 Months</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 15,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 5,000/mo</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 12,000</td>
+                            </tr>
+                            <tr class="bg-gray-50/50 hover:bg-accent-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700"><i class="fab fa-python text-accent-500 mr-2" aria-hidden="true"></i>Python Programming</td>
+                                <td class="px-6 py-4 text-center text-gray-600">4 Months</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 20,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 5,000/mo</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 16,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- AI COURSES FEE (NEW) -->
+        <!-- ============================================ -->
+        <section class="py-16 lg:py-20 bg-gray-50" aria-labelledby="ai-fee-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 bg-purple-50 rounded-full px-4 py-2 mb-4">
+                        <i class="fas fa-robot text-purple-600" aria-hidden="true"></i>
+                        <span class="text-purple-700 font-medium text-sm">New AI Programs — Launching April 2026</span>
+                    </div>
+                    <h2 id="ai-fee-heading" class="font-heading text-3xl sm:text-4xl font-bold text-primary-800 mb-4">AI Courses <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-purple-600">Fee Structure</span></h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto">Cutting-edge AI & technology courses designed to future-proof your career. Duration: 3-6 months each.</p>
+                </div>
+
+                <div class="overflow-x-auto rounded-2xl shadow-lg border border-gray-200" data-aos="fade-up" data-aos-delay="100">
+                    <table class="w-full text-left" role="table">
+                        <caption class="sr-only">AI courses fee structure with course names, duration, eligibility, total fees and sibling discount</caption>
+                        <thead>
+                            <tr class="bg-gradient-to-r from-purple-600 to-purple-700 text-white">
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider">Course</th>
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider text-center">Duration</th>
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider text-center">Eligibility</th>
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider text-center">Total Fee</th>
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider text-center">Monthly Installment</th>
+                                <th scope="col" class="px-6 py-4 font-heading font-semibold text-sm uppercase tracking-wider text-center">With 20% Sibling Discount</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="hover:bg-purple-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700"><i class="fas fa-globe text-purple-500 mr-2" aria-hidden="true"></i>Web Development with AI</td>
+                                <td class="px-6 py-4 text-center text-gray-600">6 Months</td>
+                                <td class="px-6 py-4 text-center text-gray-600">10th Pass | Age 15+</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 36,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 6,000/mo</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 28,800</td>
+                            </tr>
+                            <tr class="bg-gray-50/50 hover:bg-purple-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700"><i class="fas fa-pen-ruler text-purple-500 mr-2" aria-hidden="true"></i>UI/UX Design with AI</td>
+                                <td class="px-6 py-4 text-center text-gray-600">6 Months</td>
+                                <td class="px-6 py-4 text-center text-gray-600">10th Pass | Age 15+</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 36,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 6,000/mo</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 28,800</td>
+                            </tr>
+                            <tr class="hover:bg-purple-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700"><i class="fas fa-briefcase text-purple-500 mr-2" aria-hidden="true"></i>Freelancing with AI</td>
+                                <td class="px-6 py-4 text-center text-gray-600">3 Months</td>
+                                <td class="px-6 py-4 text-center text-gray-600">10th Pass | Age 15+</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 18,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 6,000/mo</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 14,400</td>
+                            </tr>
+                            <tr class="bg-gray-50/50 hover:bg-purple-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700"><i class="fas fa-database text-purple-500 mr-2" aria-hidden="true"></i>.NET Development</td>
+                                <td class="px-6 py-4 text-center text-gray-600">6 Months</td>
+                                <td class="px-6 py-4 text-center text-gray-600">10th Pass | Age 15+</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 36,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 6,000/mo</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 28,800</td>
+                            </tr>
+                            <tr class="hover:bg-purple-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700"><i class="fas fa-robot text-purple-500 mr-2" aria-hidden="true"></i>Agentic AI Course</td>
+                                <td class="px-6 py-4 text-center text-gray-600">6 Months</td>
+                                <td class="px-6 py-4 text-center text-gray-600">10th Pass | Age 15+</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 36,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 6,000/mo</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 28,800</td>
+                            </tr>
+                            <tr class="bg-gray-50/50 hover:bg-purple-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700"><i class="fas fa-terminal text-purple-500 mr-2" aria-hidden="true"></i>GitHub Copilot Course</td>
+                                <td class="px-6 py-4 text-center text-gray-600">3 Months</td>
+                                <td class="px-6 py-4 text-center text-gray-600">10th Pass | Age 15+</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 18,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 6,000/mo</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 14,400</td>
+                            </tr>
+                            <tr class="hover:bg-purple-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700"><i class="fas fa-brain text-purple-500 mr-2" aria-hidden="true"></i>AI for Everyone</td>
+                                <td class="px-6 py-4 text-center text-gray-600">3 Months</td>
+                                <td class="px-6 py-4 text-center text-gray-600">10th Pass | Age 15+</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 15,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 5,000/mo</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 12,000</td>
+                            </tr>
+                            <tr class="bg-gray-50/50 hover:bg-purple-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700"><i class="fas fa-child text-purple-500 mr-2" aria-hidden="true"></i>Kid AI Course</td>
+                                <td class="px-6 py-4 text-center text-gray-600">3 Months</td>
+                                <td class="px-6 py-4 text-center text-gray-600">Ages 8-14</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 12,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 4,000/mo</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 9,600</td>
+                            </tr>
+                            <tr class="hover:bg-purple-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700"><i class="fab fa-python text-purple-500 mr-2" aria-hidden="true"></i>Python for Kids with AI</td>
+                                <td class="px-6 py-4 text-center text-gray-600">3 Months</td>
+                                <td class="px-6 py-4 text-center text-gray-600">Ages 10-16</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 15,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 5,000/mo</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 12,000</td>
+                            </tr>
+                            <tr class="bg-gray-50/50 hover:bg-purple-50/50 transition-colors">
+                                <td class="px-6 py-4 font-semibold text-primary-700"><i class="fas fa-wand-magic-sparkles text-purple-500 mr-2" aria-hidden="true"></i>AI Tools Mastery</td>
+                                <td class="px-6 py-4 text-center text-gray-600">3 Months</td>
+                                <td class="px-6 py-4 text-center text-gray-600">10th Pass | Age 15+</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 15,000</td>
+                                <td class="px-6 py-4 text-center font-bold text-primary-800">Rs. 5,000/mo</td>
+                                <td class="px-6 py-4 text-center font-bold text-green-600">Rs. 12,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- IMPORTANT NOTES -->
+        <!-- ============================================ -->
+        <section class="py-16 lg:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up">
+                    <!-- Note 1 -->
+                    <div class="bg-primary-50 rounded-2xl p-8 border border-primary-100">
+                        <div class="w-14 h-14 bg-primary-600 rounded-xl flex items-center justify-center mb-5">
+                            <i class="fas fa-info-circle text-white text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-primary-800 mb-3">Payment Options</h3>
+                        <ul class="text-gray-600 text-sm space-y-2">
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-primary-500 mt-0.5" aria-hidden="true"></i> Monthly installments available</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-primary-500 mt-0.5" aria-hidden="true"></i> Cash & online bank transfer accepted</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-primary-500 mt-0.5" aria-hidden="true"></i> JazzCash & EasyPaisa accepted</li>
+                        </ul>
+                    </div>
+                    <!-- Note 2 -->
+                    <div class="bg-accent-50 rounded-2xl p-8 border border-accent-100">
+                        <div class="w-14 h-14 bg-accent-500 rounded-xl flex items-center justify-center mb-5">
+                            <i class="fas fa-users text-white text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-primary-800 mb-3">Sibling Discount</h3>
+                        <ul class="text-gray-600 text-sm space-y-2">
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent-500 mt-0.5" aria-hidden="true"></i> 20% off on 2nd sibling enrollment</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent-500 mt-0.5" aria-hidden="true"></i> Applicable on all programs</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-accent-500 mt-0.5" aria-hidden="true"></i> Both siblings must be actively enrolled</li>
+                        </ul>
+                    </div>
+                    <!-- Note 3 -->
+                    <div class="bg-green-50 rounded-2xl p-8 border border-green-100">
+                        <div class="w-14 h-14 bg-green-600 rounded-xl flex items-center justify-center mb-5">
+                            <i class="fas fa-certificate text-white text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-primary-800 mb-3">What's Included</h3>
+                        <ul class="text-gray-600 text-sm space-y-2">
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5" aria-hidden="true"></i> SDC Certificate (Computer Courses)</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5" aria-hidden="true"></i> Course materials & notes included</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-green-500 mt-0.5" aria-hidden="true"></i> Practical lab sessions included</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 bg-gradient-to-r from-primary-800 to-primary-900 relative overflow-hidden">
+            <div class="absolute inset-0 hero-pattern opacity-5"></div>
+            <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">Ready to Start Your Learning Journey?</h2>
+                <p class="text-primary-200 text-lg mb-8">Register now and take the first step towards a brighter future. Sibling discounts available!</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="registration.html" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-accent-600 hover:to-accent-700 transition-all shadow-2xl shadow-accent-500/30 hover:shadow-accent-500/50 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:ring-offset-2 focus:ring-offset-primary-800">
+                        <i class="fas fa-user-plus" aria-hidden="true"></i> Register Now
+                    </a>
+                    <a href="contact.html" class="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full font-bold text-lg border border-white/20 hover:bg-white/20 transition-all focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-primary-800">
+                        <i class="fas fa-phone" aria-hidden="true"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary-900 text-white relative overflow-hidden" role="contentinfo">
+        <div class="absolute inset-0 hero-pattern opacity-5"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <a href="index.html" class="flex items-center gap-3 mb-6">
+                        <img src="Assets/Logo/logo icon-01 2.png" alt="Tuition Solution Logo" class="h-10 w-auto object-contain brightness-0 invert" loading="lazy">
+                        <div class="w-px h-8 bg-white/30" aria-hidden="true"></div>
+                        <img src="Assets/Logo/Group 48095398.png" alt="Tuition Solution & IT Solution" class="h-8 w-auto object-contain brightness-0 invert" loading="lazy">
+                    </a>
+                    <p class="text-primary-300 leading-relaxed mb-6">Your trusted partner in education. Providing quality tuition, SDC certified computer courses, Nazra classes, and personal tutoring.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-lg mb-6 relative">Quick Links<span class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"></span></h3>
+                    <nav aria-label="Footer quick links">
+                        <ul class="space-y-3" role="list">
+                            <li><a href="index.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Home</a></li>
+                            <li><a href="about.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> About Us</a></li>
+                            <li><a href="courses.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Courses</a></li>
+                            <li><a href="fee-structure.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Fee Structure</a></li>
+                            <li><a href="admissions.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Admissions</a></li>
+                            <li><a href="contact.html" class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-lg mb-6 relative">Our Courses<span class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"></span></h3>
+                    <ul class="space-y-3" role="list">
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Computer Basics</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Web Development</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Graphic Design</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> AI Courses</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Digital Marketing</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Python Programming</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-lg mb-6 relative">Stay Updated<span class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"></span></h3>
+                    <p class="text-primary-300 mb-4">Subscribe to our newsletter for updates on new courses and offers.</p>
+                    <form class="space-y-3" id="newsletter-form">
+                        <div class="relative">
+                            <label for="newsletter-email" class="sr-only">Email address for newsletter</label>
+                            <input type="email" id="newsletter-email" placeholder="Your email address" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-primary-400 focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all" required>
+                        </div>
+                        <button type="submit" class="w-full bg-accent-500 text-white py-3 rounded-xl font-semibold hover:bg-accent-600 transition-all focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 focus:ring-offset-primary-900">
+                            Subscribe <i class="fas fa-paper-plane ml-1" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                    <div class="mt-6 bg-white/10 rounded-xl p-4 border border-white/10">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-accent-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-certificate text-white text-xl" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <div class="text-accent-400 font-bold text-sm">Registered with</div>
+                                <div class="text-white font-semibold">Skills Development Council</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-primary-400 text-sm text-center md:text-left">&copy; <span id="footer-year"></span> Tuition Solution & IT Solution. All rights reserved.</p>
+                    <div class="flex items-center gap-6 text-sm">
+                        <a href="#" class="text-primary-400 hover:text-accent-400 transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-primary-400 hover:text-accent-400 transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-accent-500 text-white rounded-full shadow-xl opacity-0 invisible transition-all duration-300 hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 z-40" aria-label="Back to top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/923213825799" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 left-6 w-14 h-14 bg-green-500 text-white rounded-full shadow-xl flex items-center justify-center hover:bg-green-600 transition-all z-40 hover:scale-110" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/common.js"></script>
+</body>
+</html>
