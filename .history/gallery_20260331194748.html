@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Gallery - View our events, classroom moments, student achievements, and campus life at Tuition Solution & IT Solution.">
+    <title>Gallery | Tuition Solution & IT Solution</title>
+
+    <link rel="icon" type="image/png" href="Assets/Logo/logo icon-01 2.png">
+    <link rel="apple-touch-icon" href="Assets/Logo/logo icon-01 2.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+                            400: '#60a5fa', 500: '#3b82f6', 600: '#1e40af', 700: '#1e3a8a',
+                            800: '#1e2d5f', 900: '#0f172a',
+                        },
+                        accent: {
+                            50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+                            400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+                            800: '#9a3412', 900: '#7c2d12',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="font-body text-gray-800 bg-[#fafafa] overflow-x-hidden antialiased selection:bg-primary-500 selection:text-white" data-page="gallery">
+
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-accent-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:outline-none">
+        Skip to main content
+    </a>
+
+    <!-- HEADER -->
+    <header id="header"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white border-b border-gray-100 shadow-sm">
+        <div class="bg-primary-700 text-white py-2 hidden md:block">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm">
+                <div class="flex items-center gap-6">
+                    <a href="mailto:info@tuitionsolution.pk"
+                        class="flex items-center gap-2 hover:text-accent-400 transition-colors" aria-label="Email us">
+                        <i class="fas fa-envelope" aria-hidden="true"></i><span>info@tuitionsolution.pk</span>
+                    </a>
+                    <a href="tel:+923213825799" class="flex items-center gap-2 hover:text-accent-400 transition-colors"
+                        aria-label="Call us">
+                        <i class="fas fa-phone" aria-hidden="true"></i><span>0321-3825799</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="flex items-center gap-2"><i class="fas fa-clock" aria-hidden="true"></i> Mon-Fri: 5-9 PM | Sat-Sun: 2-5 PM</span>
+                    <div class="flex items-center gap-3 ml-4" role="list" aria-label="Social media links">
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="Facebook"
+                            role="listitem"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="WhatsApp"
+                            role="listitem"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="Instagram"
+                            role="listitem"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="YouTube"
+                            role="listitem"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="index.html" class="flex items-center gap-3 group" aria-label="Tuition Solution - Home">
+                    <img src="Assets/Logo/logo icon-01 2.png" alt="Tuition Solution Logo Icon"
+                        class="h-10 lg:h-14 w-auto object-contain" loading="eager">
+                    <div class="w-px h-8 lg:h-12 bg-gray-300" aria-hidden="true"></div>
+                    <img src="Assets/Logo/Group 48095398.png" alt="Tuition Solution & IT Solution"
+                        class="h-8 lg:h-11 w-auto object-contain" loading="eager">
+                    <div class="hidden sm:block pl-1 border-l border-gray-200">
+                        <span class="block text-xs font-bold text-primary-800 leading-tight tracking-wide">Tuition Solution</span>
+                        <span class="block text-[10px] font-semibold text-accent-500 leading-tight tracking-wide">IT Solution</span>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="index.html" data-nav="home"
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Home</a>
+                    <a href="about.html" data-nav="about"
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">About
+                        Us</a>
+                    <a href="gallery.html" data-nav="gallery"
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Gallery</a>
+                    <a href="fee-structure.html" data-nav="fee-structure"
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Fee
+                        Structure</a>
+                    <a href="admissions.html" data-nav="admissions"
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Admissions</a>
+                    <a href="contact.html" data-nav="contact"
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Contact</a>
+                </div>
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="admission-form.html"
+                        class="inline-flex items-center gap-2 relative inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 bg-gray-900 rounded-full hover:bg-gray-800 hover:shadow-[0_0_20px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 ring-1 ring-gray-900/10 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2">
+                        <i class="fas fa-user-plus" aria-hidden="true"></i> Apply Now
+                    </a>
+                </div>
+                <button id="mobile-menu-btn"
+                    class="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100 shadow-xl" role="navigation"
+            aria-label="Mobile navigation">
+            <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+                <a href="index.html" data-nav="home"
+                    class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Home</a>
+                <a href="about.html" data-nav="about"
+                    class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">About
+                    Us</a>
+                <a href="gallery.html" data-nav="gallery"
+                    class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Gallery</a>
+                <a href="fee-structure.html" data-nav="fee-structure"
+                    class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Fee
+                    Structure</a>
+                <a href="admissions.html" data-nav="admissions"
+                    class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Admissions</a>
+                <a href="contact.html" data-nav="contact"
+                    class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Contact</a>
+                <div class="pt-3 border-t border-gray-100">
+                    <a href="admission-form.html"
+                        class="block text-center bg-gradient-to-r from-accent-500 to-accent-600 text-white px-6 py-3 rounded-full font-semibold hover:from-accent-600 hover:to-accent-700 transition-all">
+                        <i class="fas fa-user-plus mr-2" aria-hidden="true"></i>Apply Now
+                    </a>
+                </div>
+                <div class="pt-3 flex items-center justify-center gap-4 text-sm text-gray-500">
+                    <a href="tel:+923213825799" class="flex items-center gap-2 hover:text-primary-600"><i
+                            class="fas fa-phone" aria-hidden="true"></i> 0321-3825799</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+
+        <!-- Page Banner -->
+        <section class="relative pt-32 lg:pt-40 pb-16 lg:pb-20 bg-[#0a0f1c] relative z-0 overflow-hidden">
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+            <div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary-500 opacity-20 blur-[100px]"></div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="font-heading tracking-tight text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-4"
+                    data-aos="fade-up">Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-accent-400">Gallery</span>
+                </h1>
+                <nav class="mt-6" aria-label="Breadcrumb" data-aos="fade-up" data-aos-delay="100">
+                    <ol class="flex items-center justify-center gap-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-accent-400 transition-colors">Home</a></li>
+                        <li><i class="fas fa-chevron-right text-xs" aria-hidden="true"></i></li>
+                        <li class="text-accent-400 font-semibold">Gallery</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Filter Tabs -->
+        <section class="py-16 lg:py-24 bg-[#fafafa]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10" data-aos="fade-up">
+                    <p class="text-accent-500 font-medium text-sm uppercase tracking-wider mb-3">Moments & Memories</p>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-primary-800 mb-4 tracking-tight">Events, Classes & Campus Life</h2>
+                    <p class="text-gray-400 text-sm max-w-xl mx-auto">A glimpse into our vibrant learning community — from classroom sessions to special events.</p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-2 mb-12" data-aos="fade-up" data-aos-delay="100">
+                    <button class="gallery-filter active px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-primary-800 text-white" data-filter="all">All</button>
+                    <button class="gallery-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:border-primary-300 hover:text-primary-700" data-filter="events">Events</button>
+                    <button class="gallery-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:border-primary-300 hover:text-primary-700" data-filter="classroom">Classroom</button>
+                    <button class="gallery-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:border-primary-300 hover:text-primary-700" data-filter="achievements">Achievements</button>
+                    <button class="gallery-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:border-primary-300 hover:text-primary-700" data-filter="videos">Videos</button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery-grid">
+
+                    <!-- Event Items -->
+                    <div class="gallery-item group relative rounded-2xl overflow-hidden bg-gray-200 aspect-square cursor-pointer" data-category="events" data-aos="fade-up">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-primary-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-calendar-star text-primary-500 text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-400 text-xs">Event Photo</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+                            <span class="inline-block bg-accent-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md mb-1.5">EVENT</span>
+                            <h3 class="text-white font-semibold text-sm">Annual Prize Distribution</h3>
+                            <p class="text-white/60 text-xs mt-1">March 2026</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item group relative rounded-2xl overflow-hidden bg-gray-200 aspect-[4/5] cursor-pointer" data-category="events" data-aos="fade-up" data-aos-delay="50">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-primary-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-accent-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-trophy text-accent-500 text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-400 text-xs">Event Photo</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+                            <span class="inline-block bg-accent-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md mb-1.5">EVENT</span>
+                            <h3 class="text-white font-semibold text-sm">Certificate Ceremony</h3>
+                            <p class="text-white/60 text-xs mt-1">February 2026</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item group relative rounded-2xl overflow-hidden bg-gray-200 aspect-square cursor-pointer" data-category="events" data-aos="fade-up" data-aos-delay="100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-primary-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-users text-emerald-500 text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-400 text-xs">Event Photo</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+                            <span class="inline-block bg-accent-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md mb-1.5">EVENT</span>
+                            <h3 class="text-white font-semibold text-sm">Open Day 2026</h3>
+                            <p class="text-white/60 text-xs mt-1">January 2026</p>
+                        </div>
+                    </div>
+
+                    <!-- Classroom Items -->
+                    <div class="gallery-item group relative rounded-2xl overflow-hidden bg-gray-200 aspect-[4/5] cursor-pointer" data-category="classroom" data-aos="fade-up" data-aos-delay="150">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-primary-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-violet-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-chalkboard-user text-violet-500 text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-400 text-xs">Classroom Photo</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+                            <span class="inline-block bg-violet-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md mb-1.5">CLASSROOM</span>
+                            <h3 class="text-white font-semibold text-sm">AI Course Session</h3>
+                            <p class="text-white/60 text-xs mt-1">Live Class</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item group relative rounded-2xl overflow-hidden bg-gray-200 aspect-square cursor-pointer" data-category="classroom" data-aos="fade-up">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-primary-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-laptop-code text-blue-500 text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-400 text-xs">Classroom Photo</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+                            <span class="inline-block bg-violet-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md mb-1.5">CLASSROOM</span>
+                            <h3 class="text-white font-semibold text-sm">Computer Lab Session</h3>
+                            <p class="text-white/60 text-xs mt-1">Hands-on Practice</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item group relative rounded-2xl overflow-hidden bg-gray-200 aspect-square cursor-pointer" data-category="classroom" data-aos="fade-up" data-aos-delay="50">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-primary-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-pink-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-book-open text-pink-500 text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-400 text-xs">Classroom Photo</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+                            <span class="inline-block bg-violet-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md mb-1.5">CLASSROOM</span>
+                            <h3 class="text-white font-semibold text-sm">Nazra Class</h3>
+                            <p class="text-white/60 text-xs mt-1">Daily Sessions</p>
+                        </div>
+                    </div>
+
+                    <!-- Achievement Items -->
+                    <div class="gallery-item group relative rounded-2xl overflow-hidden bg-gray-200 aspect-[4/5] cursor-pointer" data-category="achievements" data-aos="fade-up" data-aos-delay="100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-primary-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-medal text-amber-500 text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-400 text-xs">Achievement Photo</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+                            <span class="inline-block bg-amber-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md mb-1.5">ACHIEVEMENT</span>
+                            <h3 class="text-white font-semibold text-sm">Top Students Award</h3>
+                            <p class="text-white/60 text-xs mt-1">Batch 2025</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item group relative rounded-2xl overflow-hidden bg-gray-200 aspect-square cursor-pointer" data-category="achievements" data-aos="fade-up" data-aos-delay="150">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-primary-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-certificate text-emerald-500 text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-400 text-xs">Achievement Photo</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+                            <span class="inline-block bg-amber-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md mb-1.5">ACHIEVEMENT</span>
+                            <h3 class="text-white font-semibold text-sm">Certification Day</h3>
+                            <p class="text-white/60 text-xs mt-1">Batch 2025</p>
+                        </div>
+                    </div>
+
+                    <!-- Video Items -->
+                    <div class="gallery-item group relative rounded-2xl overflow-hidden bg-gray-900 aspect-video md:col-span-2 cursor-pointer" data-category="videos" data-aos="fade-up">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-primary-900/20 to-transparent z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-accent-500 group-hover:scale-110 transition-all duration-300">
+                                <i class="fas fa-play text-white text-xl ml-1" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-30">
+                            <i class="fas fa-film text-white text-6xl" aria-hidden="true"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-5 z-20">
+                            <span class="inline-block bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md mb-1.5"><i class="fas fa-play mr-1"></i>VIDEO</span>
+                            <h3 class="text-white font-semibold text-sm">Campus Tour — Tuition Solution</h3>
+                            <p class="text-white/60 text-xs mt-1">Watch the full tour of our campus & facilities</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item group relative rounded-2xl overflow-hidden bg-gray-900 aspect-video md:col-span-2 cursor-pointer" data-category="videos" data-aos="fade-up" data-aos-delay="100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-primary-900/20 to-transparent z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-accent-500 group-hover:scale-110 transition-all duration-300">
+                                <i class="fas fa-play text-white text-xl ml-1" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-30">
+                            <i class="fas fa-graduation-cap text-white text-6xl" aria-hidden="true"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-5 z-20">
+                            <span class="inline-block bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md mb-1.5"><i class="fas fa-play mr-1"></i>VIDEO</span>
+                            <h3 class="text-white font-semibold text-sm">Student Testimonials</h3>
+                            <p class="text-white/60 text-xs mt-1">Hear from our students about their experience</p>
+                        </div>
+                    </div>
+
+                    <!-- More Event Items -->
+                    <div class="gallery-item group relative rounded-2xl overflow-hidden bg-gray-200 aspect-square cursor-pointer" data-category="events" data-aos="fade-up">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-primary-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-cyan-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-cake-candles text-cyan-500 text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-400 text-xs">Event Photo</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+                            <span class="inline-block bg-accent-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md mb-1.5">EVENT</span>
+                            <h3 class="text-white font-semibold text-sm">Founders Day Celebration</h3>
+                            <p class="text-white/60 text-xs mt-1">December 2025</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item group relative rounded-2xl overflow-hidden bg-gray-200 aspect-[4/5] cursor-pointer" data-category="classroom" data-aos="fade-up" data-aos-delay="50">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-primary-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-pen-ruler text-indigo-500 text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-400 text-xs">Classroom Photo</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+                            <span class="inline-block bg-violet-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md mb-1.5">CLASSROOM</span>
+                            <h3 class="text-white font-semibold text-sm">Graphics Design Workshop</h3>
+                            <p class="text-white/60 text-xs mt-1">Hands-on Session</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item group relative rounded-2xl overflow-hidden bg-gray-200 aspect-square cursor-pointer" data-category="achievements" data-aos="fade-up" data-aos-delay="100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-primary-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-rose-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-star text-rose-500 text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-400 text-xs">Achievement Photo</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+                            <span class="inline-block bg-amber-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md mb-1.5">ACHIEVEMENT</span>
+                            <h3 class="text-white font-semibold text-sm">Student of the Year</h3>
+                            <p class="text-white/60 text-xs mt-1">Annual Award</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item group relative rounded-2xl overflow-hidden bg-gray-200 aspect-[4/5] cursor-pointer" data-category="events" data-aos="fade-up" data-aos-delay="150">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-primary-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-handshake text-teal-500 text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <p class="text-gray-400 text-xs">Event Photo</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+                            <span class="inline-block bg-accent-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md mb-1.5">EVENT</span>
+                            <h3 class="text-white font-semibold text-sm">Parents Meet-up</h3>
+                            <p class="text-white/60 text-xs mt-1">November 2025</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Load More (placeholder) -->
+                <div class="text-center mt-12" data-aos="fade-up">
+                    <p class="text-gray-400 text-sm mb-6">More photos and videos coming soon — stay tuned!</p>
+                    <a href="contact.html" class="inline-flex items-center gap-2 text-primary-600 font-semibold text-sm hover:text-accent-500 transition-colors">
+                        <i class="fas fa-camera" aria-hidden="true"></i> Have event photos? Share with us
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 bg-primary-900 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+            <div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary-500 opacity-20 blur-[100px]"></div>
+            <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">Want to Be Part of Our Story?</h2>
+                <p class="text-primary-200 text-lg mb-6">Join our growing community of learners. New AI batches starting mid-April 2026.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="admission-form.html"
+                        class="inline-flex items-center justify-center gap-2 bg-accent-500 text-white px-7 py-3.5 rounded-full font-semibold hover:bg-accent-600 transition-all">
+                        <i class="fas fa-user-plus" aria-hidden="true"></i> Apply Now
+                    </a>
+                    <a href="contact.html"
+                        class="inline-flex items-center justify-center gap-2 text-white/80 px-7 py-3.5 rounded-full font-semibold border border-white/15 hover:bg-white/5 transition-all">
+                        <i class="fas fa-phone" aria-hidden="true"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary-900 text-white relative overflow-hidden" role="contentinfo">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary-500 opacity-20 blur-[100px]"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <a href="index.html" class="flex items-center gap-3 mb-6">
+                        <img src="Assets/Logo/logo icon-01 2.png" alt="Tuition Solution Logo"
+                            class="h-10 w-auto object-contain brightness-0 invert" loading="lazy">
+                        <div class="w-px h-8 bg-white/30" aria-hidden="true"></div>
+                        <img src="Assets/Logo/Group 48095398.png" alt="Tuition Solution & IT Solution"
+                            class="h-8 w-auto object-contain brightness-0 invert" loading="lazy">
+                    </a>
+                    <p class="text-primary-300 leading-relaxed mb-6">Your trusted partner in education. Providing
+                        quality tuition, professional computer courses, Nazra classes, and personal tutoring.</p>
+                    <div class="flex gap-3">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors"
+                            aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors"
+                            aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors"
+                            aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors"
+                            aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-heading tracking-tight font-bold text-lg mb-6 relative">Quick Links<span
+                            class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"></span></h3>
+                    <nav aria-label="Footer quick links">
+                        <ul class="space-y-3" role="list">
+                            <li><a href="index.html"
+                                    class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i
+                                        class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i>
+                                    Home</a></li>
+                            <li><a href="about.html"
+                                    class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i
+                                        class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i>
+                                    About Us</a></li>
+                            <li><a href="gallery.html"
+                                    class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i
+                                        class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i>
+                                    Gallery</a></li>
+                            <li><a href="fee-structure.html"
+                                    class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i
+                                        class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Fee
+                                    Structure</a></li>
+                            <li><a href="admissions.html"
+                                    class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i
+                                        class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i>
+                                    Admissions</a></li>
+                            <li><a href="contact.html"
+                                    class="text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2"><i
+                                        class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i>
+                                    Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <h3 class="font-heading tracking-tight font-bold text-lg mb-6 relative">Our Courses<span
+                            class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"></span></h3>
+                    <ul class="space-y-3" role="list">
+                        <li class="text-primary-300 flex items-center gap-2"><i
+                                class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Skills
+                            Oriented Program</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i
+                                class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> UI/UX
+                            Design with AI</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i
+                                class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> .NET
+                            Development</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i
+                                class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Python
+                            with AI</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i
+                                class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> AI for
+                            Everyone</li>
+                        <li class="text-primary-300 flex items-center gap-2"><i
+                                class="fas fa-chevron-right text-xs text-accent-500" aria-hidden="true"></i> Kids
+                            Computing</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-heading tracking-tight font-bold text-lg mb-6 relative">Stay Updated<span
+                            class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"></span></h3>
+                    <p class="text-primary-300 mb-4">Subscribe to our newsletter for updates on new courses and offers.</p>
+                    <form class="space-y-3" id="newsletter-form">
+                        <div class="relative">
+                            <label for="newsletter-email" class="sr-only">Email address for newsletter</label>
+                            <input type="email" id="newsletter-email" placeholder="Your email address"
+                                class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-primary-400 focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 outline-none transition-all"
+                                required>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-accent-500 text-white py-3 rounded-xl font-semibold hover:bg-accent-600 transition-all focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 focus:ring-offset-primary-900">
+                            Subscribe <i class="fas fa-paper-plane ml-1" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-primary-400 text-sm text-center md:text-left">&copy; <span id="footer-year"></span>
+                        Tuition Solution & IT Solution. All rights reserved.</p>
+                    <div class="flex items-center gap-6 text-sm">
+                        <a href="#" class="text-primary-400 hover:text-accent-400 transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-primary-400 hover:text-accent-400 transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top"
+        class="fixed bottom-6 right-6 w-12 h-12 bg-accent-500 text-white rounded-full shadow-xl opacity-0 invisible transition-all duration-300 hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 z-40"
+        aria-label="Back to top">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/923213825799" target="_blank" rel="noopener noreferrer"
+        class="fixed bottom-6 left-6 w-14 h-14 bg-green-500 text-white rounded-full shadow-xl flex items-center justify-center hover:bg-green-600 transition-all z-40 hover:scale-110"
+        aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+    (function() {
+        // Gallery filter functionality
+        var filters = document.querySelectorAll('.gallery-filter');
+        var items = document.querySelectorAll('.gallery-item');
+
+        filters.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                // Update active state
+                filters.forEach(function(b) {
+                    b.classList.remove('bg-primary-800', 'text-white');
+                    b.classList.add('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+                });
+                this.classList.remove('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+                this.classList.add('bg-primary-800', 'text-white');
+
+                var filter = this.getAttribute('data-filter');
+
+                items.forEach(function(item) {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = '';
+                        item.style.animation = 'galleryFadeIn 0.4s ease-out forwards';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    })();
+    </script>
+    <style>
+        @keyframes galleryFadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</body>
+
+</html>
