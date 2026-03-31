@@ -555,3 +555,104 @@ details[open] summary ~ * {
     background-color: #4f46e5;
     color: #ffffff;
 }
+
+/* ============================================
+   HERO TYPING ANIMATION
+   ============================================ */
+.typing-cursor {
+    animation: blinkCursor 0.7s step-end infinite;
+    font-weight: 400;
+}
+
+@keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ============================================
+   FLOATING GEOMETRIC SHAPES
+   ============================================ */
+@keyframes floatShape {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-25px) rotate(10deg); }
+}
+
+@keyframes floatShapeDelayed {
+    0%, 100% { transform: translateY(0) rotate(45deg); }
+    50% { transform: translateY(-18px) rotate(55deg); }
+}
+
+@keyframes pulseDot {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.8); }
+}
+
+.animate-float-shape {
+    animation: floatShape 7s ease-in-out infinite;
+}
+
+.animate-float-shape-delayed {
+    animation: floatShapeDelayed 9s ease-in-out infinite;
+    animation-delay: 1.5s;
+}
+
+.animate-pulse-dot {
+    animation: pulseDot 4s ease-in-out infinite;
+}
+
+/* ============================================
+   ANNOUNCEMENT TICKER
+   ============================================ */
+.ticker-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.ticker-track {
+    display: flex;
+    gap: 0;
+    width: max-content;
+    animation: tickerScroll 40s linear infinite;
+}
+
+.ticker-track:hover {
+    animation-play-state: paused;
+}
+
+.ticker-item {
+    flex-shrink: 0;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0 3rem;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+}
+
+@keyframes tickerScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ============================================
+   PROCESS STEP ICON HOVER
+   ============================================ */
+.process-step-icon {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-step-icon:hover {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+/* Mobile ticker */
+@media (max-width: 640px) {
+    .ticker-item {
+        font-size: 0.75rem;
+        padding: 0 2rem;
+    }
+    .ticker-track {
+        animation-duration: 25s;
+    }
+}

@@ -1,9 +1,50 @@
 /* ============================================
-   HOME PAGE - Counter Animation
+   HOME PAGE - Counter Animation & Typing Effect
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
+
+    // ============================================
+    // Hero Typing Text Animation
+    // ============================================
+    const typingElement = document.querySelector('.hero-typing-text');
+    if (typingElement) {
+        const words = ['Academic Excellence', 'Bright Future', 'IT Career', 'Quran Knowledge', 'Success Story'];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typeSpeed = 80;
+        const deleteSpeed = 40;
+        const pauseTime = 2000;
+
+        function typeWord() {
+            const currentWord = words[wordIndex];
+
+            if (isDeleting) {
+                typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let delay = isDeleting ? deleteSpeed : typeSpeed;
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                delay = pauseTime;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                delay = 300;
+            }
+
+            setTimeout(typeWord, delay);
+        }
+
+        typeWord();
+    }
 
     // ============================================
     // Counter Animation
