@@ -72,10 +72,7 @@
             0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.3); }
             50% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.6); }
         }
-        @keyframes countdown-pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
+
         @keyframes ribbon-wave {
             0%, 100% { transform: rotate(-45deg) translateX(0); }
             50% { transform: rotate(-45deg) translateX(2px); }
@@ -89,7 +86,6 @@
             animation: shimmer-gold 3s linear infinite;
         }
         .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
-        .countdown-pulse { animation: countdown-pulse 2s ease-in-out infinite; }
         
         .position-card:hover .avatar-ring {
             transform: scale(1.1);
@@ -219,16 +215,16 @@
 
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div data-aos="fade-up" data-aos-duration="600">
-                    <div class="inline-flex items-center gap-2 bg-white/10 rounded-full px-5 py-2 mb-6 border border-white/10">
+                    <!-- <div class="inline-flex items-center gap-2 bg-white/10 rounded-full px-5 py-2 mb-6 border border-white/10">
                         <i class="fas fa-bullhorn text-accent-400" aria-hidden="true"></i>
                         <span class="text-white/90 text-sm font-medium">Latest Updates</span>
-                    </div>
+                    </div> -->
                     <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
                         Announcements
                     </h1>
-                    <p class="text-primary-200 text-lg md:text-xl max-w-2xl mx-auto">
+                    <!-- <p class="text-primary-200 text-lg md:text-xl max-w-2xl mx-auto">
                         Celebrating our students' achievements and sharing important updates
-                    </p>
+                    </p> -->
                 </div>
                 <!-- Breadcrumb -->
                 <nav class="mt-8" aria-label="Breadcrumb" data-aos="fade-up" data-aos-delay="200">
@@ -241,92 +237,7 @@
             </div>
         </section>
 
-        <!-- ============================================ -->
-        <!-- COMING SOON - SKILLS ORIENTED PROGRAM BATCH 3 -->
-        <!-- ============================================ -->
-        <section class="py-16 lg:py-20 relative overflow-hidden">
-            <!-- Background decoration -->
-            <div class="absolute top-0 left-0 w-full h-full">
-                <div class="absolute top-10 left-1/4 w-4 h-4 bg-accent-400 rounded-full opacity-20 animate-bounce-slow" aria-hidden="true"></div>
-                <div class="absolute top-32 right-1/3 w-3 h-3 bg-primary-400 rounded-full opacity-20 animate-bounce-slow" style="animation-delay: 0.5s" aria-hidden="true"></div>
-                <div class="absolute bottom-20 left-1/3 w-5 h-5 bg-yellow-400 rounded-full opacity-20 animate-bounce-slow" style="animation-delay: 1s" aria-hidden="true"></div>
-            </div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                <!-- Coming Soon Card -->
-                <div class="max-w-4xl mx-auto" data-aos="fade-up">
-                    <div class="relative bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 rounded-3xl p-8 md:p-12 lg:p-16 overflow-hidden shadow-2xl pulse-glow">
-                        <!-- Card decorations -->
-                        <div class="absolute top-0 right-0 w-64 h-64 bg-accent-500/10 rounded-full blur-3xl" aria-hidden="true"></div>
-                        <div class="absolute bottom-0 left-0 w-48 h-48 bg-primary-500/20 rounded-full blur-3xl" aria-hidden="true"></div>
-                        <div class="absolute inset-0 hero-pattern opacity-10"></div>
-
-                        <!-- Ribbon -->
-                        <div class="absolute top-6 -right-12 bg-accent-500 text-white text-xs font-bold px-12 py-2 rotate-45 shadow-lg" aria-hidden="true">
-                            COMING SOON
-                        </div>
-
-                        <div class="relative text-center">
-                            <!-- Icon -->
-                            <div class="inline-flex items-center justify-center w-20 h-20 bg-accent-500/20 rounded-2xl mb-8 trophy-bounce">
-                                <i class="fas fa-trophy text-4xl text-accent-400" aria-hidden="true"></i>
-                            </div>
-
-                            <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight">
-                                <span class="shimmer-gold">Skills Oriented Program</span>
-                            </h2>
-                            <h3 class="font-heading text-2xl md:text-3xl font-bold text-white/90 mb-3">
-                                Batch 3 — Results
-                            </h3>
-                            <p class="text-primary-300 text-lg md:text-xl mb-10 max-w-xl mx-auto">
-                                The wait is almost over! Results will be announced this <strong class="text-accent-400">Friday</strong>
-                            </p>
-
-                            <!-- Countdown-style visual -->
-                            <div class="flex flex-wrap items-center justify-center gap-4 md:gap-6 mb-10">
-                                <div class="countdown-pulse bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-5 min-w-[120px]">
-                                    <div class="text-3xl md:text-4xl font-bold text-white" id="countdown-days">--</div>
-                                    <div class="text-primary-400 text-sm font-medium mt-1">Days</div>
-                                </div>
-                                <div class="countdown-pulse bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-5 min-w-[120px]" style="animation-delay: 0.3s">
-                                    <div class="text-3xl md:text-4xl font-bold text-white" id="countdown-hours">--</div>
-                                    <div class="text-primary-400 text-sm font-medium mt-1">Hours</div>
-                                </div>
-                                <div class="countdown-pulse bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-5 min-w-[120px]" style="animation-delay: 0.6s">
-                                    <div class="text-3xl md:text-4xl font-bold text-white" id="countdown-mins">--</div>
-                                    <div class="text-primary-400 text-sm font-medium mt-1">Minutes</div>
-                                </div>
-                                <div class="countdown-pulse bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-5 min-w-[120px]" style="animation-delay: 0.9s">
-                                    <div class="text-3xl md:text-4xl font-bold text-white" id="countdown-secs">--</div>
-                                    <div class="text-primary-400 text-sm font-medium mt-1">Seconds</div>
-                                </div>
-                            </div>
-
-                            <!-- Info badges -->
-                            <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
-                                <span class="inline-flex items-center gap-2 bg-white/10 text-white/80 text-sm px-4 py-2 rounded-full border border-white/10">
-                                    <i class="fas fa-calendar-check text-accent-400" aria-hidden="true"></i>
-                                    Announcing Friday
-                                </span>
-                                <span class="inline-flex items-center gap-2 bg-white/10 text-white/80 text-sm px-4 py-2 rounded-full border border-white/10">
-                                    <i class="fas fa-users text-accent-400" aria-hidden="true"></i>
-                                    Batch 3 Students
-                                </span>
-                                <span class="inline-flex items-center gap-2 bg-white/10 text-white/80 text-sm px-4 py-2 rounded-full border border-white/10">
-                                    <i class="fas fa-star text-accent-400" aria-hidden="true"></i>
-                                    Position Holders
-                                </span>
-                            </div>
-
-                            <p class="text-primary-400 text-sm">
-                                <i class="fas fa-bell mr-2" aria-hidden="true"></i>
-                                Stay tuned for the big reveal!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Coming Soon section removed - Results announced -->
 
         <!-- ============================================ -->
         <!-- POSITION HOLDERS SECTION (Coming Soon with Avatars) -->
@@ -344,17 +255,17 @@
                         <span class="text-sm font-semibold">Position Holders</span>
                     </div>
                     <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
-                        Top Achievers — <span class="text-accent-500">Batch 3</span>
+                        Top Achievers — Skills Oriented Program <span class="text-accent-500">Batch 3</span>
                     </h2>
                     <p class="text-gray-500 text-lg max-w-2xl mx-auto">
-                        Our brightest stars who excelled in the Skills Oriented Program. Photos will be revealed on Friday!
+                        Celebrating our brightest stars who excelled in the Skills Oriented Program!
                     </p>
                 </div>
 
                 <!-- Top 3 Position Holders -->
                 <div class="flex flex-col lg:flex-row items-end justify-center gap-6 lg:gap-8 mb-16">
                     
-                    <!-- 2nd Position -->
+                    <!-- 2nd Position - Mustafa -->
                     <div class="order-2 lg:order-1 w-full lg:w-72" data-aos="fade-up" data-aos-delay="200">
                         <div class="position-card bg-white rounded-3xl p-8 text-center shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500 relative group">
                             <!-- Silver badge -->
@@ -363,24 +274,21 @@
                             </div>
                             <!-- Avatar -->
                             <div class="avatar-ring w-28 h-28 mx-auto mb-5 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 p-1 shadow-xl">
-                                <div class="w-full h-full rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center overflow-hidden">
-                                    <i class="fas fa-user-secret text-4xl text-gray-400" aria-hidden="true"></i>
-                                </div>
+                                <img src="Assets/Announcement/mustafa.JPG" alt="Mustafa" class="w-full h-full rounded-full object-cover object-top">
                             </div>
                             <div class="inline-flex items-center gap-1 bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full mb-3">
                                 <i class="fas fa-medal text-gray-400" aria-hidden="true"></i>
                                 2nd Position
                             </div>
-                            <h3 class="font-heading font-bold text-xl text-gray-900 mb-1">Coming Soon</h3>
-                            <p class="text-gray-400 text-sm mb-4">Revealed on Friday</p>
-                            <div class="flex items-center justify-center gap-2 text-gray-400 text-sm">
-                                <i class="fas fa-eye-slash" aria-hidden="true"></i>
-                                <span>Score Hidden</span>
+                            <h3 class="font-heading font-bold text-xl text-gray-900 mb-1">Mustafa</h3>
+                            <p class="text-accent-500 text-sm font-semibold mb-4">81% Score</p>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-gray-300 to-gray-400 h-2 rounded-full" style="width: 81%"></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 1st Position (Highlighted & Taller) -->
+                    <!-- 1st Position - Abdullah Ismail (Highlighted & Taller) -->
                     <div class="order-1 lg:order-2 w-full lg:w-80" data-aos="fade-up" data-aos-delay="100">
                         <div class="position-card bg-white rounded-3xl p-8 lg:p-10 text-center shadow-xl border-2 border-yellow-200 hover:shadow-2xl transition-all duration-500 relative group lg:-mt-8">
                             <!-- Crown icon -->
@@ -395,46 +303,41 @@
                             </div>
                             <!-- Avatar -->
                             <div class="avatar-ring w-36 h-36 mx-auto mb-6 mt-6 rounded-full bg-gradient-to-br from-yellow-300 to-amber-400 p-1.5 shadow-2xl">
-                                <div class="w-full h-full rounded-full bg-gradient-to-br from-yellow-50 to-amber-100 flex items-center justify-center overflow-hidden">
-                                    <i class="fas fa-user-secret text-5xl text-yellow-500/60" aria-hidden="true"></i>
-                                </div>
+                                <img src="Assets/Announcement/abdullah.JPG" alt="Abdullah Ismail" class="w-full h-full rounded-full object-cover object-top">
                             </div>
                             <div class="inline-flex items-center gap-1 bg-yellow-50 text-yellow-700 text-xs font-bold px-4 py-1.5 rounded-full mb-3 border border-yellow-200">
                                 <i class="fas fa-crown text-yellow-500" aria-hidden="true"></i>
                                 1st Position
                             </div>
-                            <h3 class="font-heading font-bold text-2xl text-gray-900 mb-1">Coming Soon</h3>
-                            <p class="text-gray-400 text-sm mb-4">Revealed on Friday</p>
-                            <div class="flex items-center justify-center gap-2 text-yellow-500/60 text-sm">
-                                <i class="fas fa-star" aria-hidden="true"></i>
-                                <span>Top Scorer</span>
-                                <i class="fas fa-star" aria-hidden="true"></i>
+                            <h3 class="font-heading font-bold text-2xl text-gray-900 mb-1">Abdullah Ismail</h3>
+                            <p class="text-accent-500 text-sm font-semibold mb-4">83% Score</p>
+                            <div class="w-full bg-gray-100 rounded-full h-2.5">
+                                <div class="bg-gradient-to-r from-yellow-400 to-amber-500 h-2.5 rounded-full" style="width: 83%"></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 3rd Position -->
+                    <!-- 3rd Position - Ayan Atif -->
                     <div class="order-3 w-full lg:w-72" data-aos="fade-up" data-aos-delay="300">
                         <div class="position-card bg-white rounded-3xl p-8 text-center shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500 relative group">
                             <!-- Bronze badge -->
                             <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-600 to-amber-700 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
                                 3
                             </div>
-                            <!-- Avatar -->
+                            <!-- Avatar placeholder -->
                             <div class="avatar-ring w-28 h-28 mx-auto mb-5 rounded-full bg-gradient-to-br from-amber-200 to-amber-400 p-1 shadow-xl">
                                 <div class="w-full h-full rounded-full bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center overflow-hidden">
-                                    <i class="fas fa-user-secret text-4xl text-amber-400/60" aria-hidden="true"></i>
+                                    <i class="fas fa-user-graduate text-4xl text-amber-400" aria-hidden="true"></i>
                                 </div>
                             </div>
                             <div class="inline-flex items-center gap-1 bg-amber-50 text-amber-700 text-xs font-bold px-3 py-1 rounded-full mb-3 border border-amber-200">
                                 <i class="fas fa-medal text-amber-500" aria-hidden="true"></i>
                                 3rd Position
                             </div>
-                            <h3 class="font-heading font-bold text-xl text-gray-900 mb-1">Coming Soon</h3>
-                            <p class="text-gray-400 text-sm mb-4">Revealed on Friday</p>
-                            <div class="flex items-center justify-center gap-2 text-gray-400 text-sm">
-                                <i class="fas fa-eye-slash" aria-hidden="true"></i>
-                                <span>Score Hidden</span>
+                            <h3 class="font-heading font-bold text-xl text-gray-900 mb-1">Ayan Atif</h3>
+                            <p class="text-accent-500 text-sm font-semibold mb-4">79% Score</p>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-amber-500 to-amber-600 h-2 rounded-full" style="width: 79%"></div>
                             </div>
                         </div>
                     </div>
@@ -446,80 +349,112 @@
                         <i class="fas fa-fire text-accent-500 mr-2" aria-hidden="true"></i>
                         Top Test Scorers
                     </h3>
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-                        <!-- Top Scorer 1 -->
-                        <div class="position-card bg-white rounded-2xl p-5 text-center shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                            <div class="avatar-ring w-20 h-20 mx-auto mb-3 rounded-full bg-gradient-to-br from-primary-100 to-primary-200 p-0.5">
-                                <div class="w-full h-full rounded-full bg-gradient-to-br from-primary-50 to-blue-50 flex items-center justify-center">
-                                    <i class="fas fa-user text-2xl text-primary-300" aria-hidden="true"></i>
-                                </div>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-7">
+                        <!-- Batool -->
+                        <div class="position-card bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div class="avatar-ring w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary-100 to-primary-200 p-0.5">
+                                <img src="Assets/Announcement/batool.JPG" alt="Batool" class="w-full h-full rounded-full object-cover object-top">
                             </div>
-                            <h4 class="font-heading font-semibold text-sm text-gray-800 mb-0.5">Coming Soon</h4>
-                            <p class="text-gray-400 text-xs">Highest Marks</p>
+                            <h4 class="font-heading font-semibold text-base text-gray-800 mb-0.5">Batool</h4>
+                            <p class="text-accent-500 text-sm font-bold">78%</p>
                             <div class="mt-2 inline-flex items-center gap-1 bg-green-50 text-green-600 text-xs font-bold px-2 py-0.5 rounded-full">
                                 <i class="fas fa-arrow-up text-[10px]" aria-hidden="true"></i>
                                 Top Performer
                             </div>
                         </div>
 
-                        <!-- Top Scorer 2 -->
-                        <div class="position-card bg-white rounded-2xl p-5 text-center shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                            <div class="avatar-ring w-20 h-20 mx-auto mb-3 rounded-full bg-gradient-to-br from-purple-100 to-purple-200 p-0.5">
-                                <div class="w-full h-full rounded-full bg-gradient-to-br from-purple-50 to-pink-50 flex items-center justify-center">
-                                    <i class="fas fa-user text-2xl text-purple-300" aria-hidden="true"></i>
-                                </div>
+                        <!-- Ahmed -->
+                        <div class="position-card bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div class="avatar-ring w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-100 to-purple-200 p-0.5">
+                                <img src="Assets/Announcement/ahmed.jpg" alt="Ahmed" class="w-full h-full rounded-full object-cover object-top">
                             </div>
-                            <h4 class="font-heading font-semibold text-sm text-gray-800 mb-0.5">Coming Soon</h4>
-                            <p class="text-gray-400 text-xs">Highest Marks</p>
+                            <h4 class="font-heading font-semibold text-base text-gray-800 mb-0.5">Ahmed</h4>
+                            <p class="text-accent-500 text-sm font-bold">63%</p>
+                        </div>
+
+                        <!-- Amna - Top Performer -->
+                        <div class="position-card bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div class="avatar-ring w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-emerald-100 to-emerald-200 p-0.5">
+                                <img src="Assets/Announcement/amna.JPG" alt="Amna" class="w-full h-full rounded-full object-cover object-top">
+                            </div>
+                            <h4 class="font-heading font-semibold text-base text-gray-800 mb-0.5">Amna</h4>
+                            <p class="text-accent-500 text-sm font-bold">77%</p>
                             <div class="mt-2 inline-flex items-center gap-1 bg-green-50 text-green-600 text-xs font-bold px-2 py-0.5 rounded-full">
                                 <i class="fas fa-arrow-up text-[10px]" aria-hidden="true"></i>
                                 Top Performer
                             </div>
                         </div>
 
-                        <!-- Top Scorer 3 -->
-                        <div class="position-card bg-white rounded-2xl p-5 text-center shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                            <div class="avatar-ring w-20 h-20 mx-auto mb-3 rounded-full bg-gradient-to-br from-emerald-100 to-emerald-200 p-0.5">
-                                <div class="w-full h-full rounded-full bg-gradient-to-br from-emerald-50 to-green-50 flex items-center justify-center">
-                                    <i class="fas fa-user text-2xl text-emerald-300" aria-hidden="true"></i>
-                                </div>
+                        <!-- Hasan -->
+                        <div class="position-card bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div class="avatar-ring w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-rose-100 to-rose-200 p-0.5">
+                                <img src="Assets/Announcement/hasan.JPG" alt="Hasan" class="w-full h-full rounded-full object-cover object-top">
                             </div>
-                            <h4 class="font-heading font-semibold text-sm text-gray-800 mb-0.5">Coming Soon</h4>
-                            <p class="text-gray-400 text-xs">Highest Marks</p>
-                            <div class="mt-2 inline-flex items-center gap-1 bg-green-50 text-green-600 text-xs font-bold px-2 py-0.5 rounded-full">
-                                <i class="fas fa-arrow-up text-[10px]" aria-hidden="true"></i>
-                                Top Performer
-                            </div>
+                            <h4 class="font-heading font-semibold text-base text-gray-800 mb-0.5">Hasan</h4>
+                            <p class="text-accent-500 text-sm font-bold">75%</p>
                         </div>
 
-                        <!-- Top Scorer 4 -->
-                        <div class="position-card bg-white rounded-2xl p-5 text-center shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                            <div class="avatar-ring w-20 h-20 mx-auto mb-3 rounded-full bg-gradient-to-br from-rose-100 to-rose-200 p-0.5">
-                                <div class="w-full h-full rounded-full bg-gradient-to-br from-rose-50 to-pink-50 flex items-center justify-center">
-                                    <i class="fas fa-user text-2xl text-rose-300" aria-hidden="true"></i>
-                                </div>
+                        <!-- Huraira -->
+                        <div class="position-card bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div class="avatar-ring w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-sky-100 to-sky-200 p-0.5">
+                                <img src="Assets/Announcement/huraira.jpg" alt="Huraira" class="w-full h-full rounded-full object-cover object-top">
                             </div>
-                            <h4 class="font-heading font-semibold text-sm text-gray-800 mb-0.5">Coming Soon</h4>
-                            <p class="text-gray-400 text-xs">Highest Marks</p>
-                            <div class="mt-2 inline-flex items-center gap-1 bg-green-50 text-green-600 text-xs font-bold px-2 py-0.5 rounded-full">
-                                <i class="fas fa-arrow-up text-[10px]" aria-hidden="true"></i>
-                                Top Performer
-                            </div>
+                            <h4 class="font-heading font-semibold text-base text-gray-800 mb-0.5">Huraira</h4>
+                            <p class="text-accent-500 text-sm font-bold">74%</p>
                         </div>
 
-                        <!-- Top Scorer 5 -->
-                        <div class="position-card bg-white rounded-2xl p-5 text-center shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                            <div class="avatar-ring w-20 h-20 mx-auto mb-3 rounded-full bg-gradient-to-br from-sky-100 to-sky-200 p-0.5">
-                                <div class="w-full h-full rounded-full bg-gradient-to-br from-sky-50 to-blue-50 flex items-center justify-center">
-                                    <i class="fas fa-user text-2xl text-sky-300" aria-hidden="true"></i>
-                                </div>
+                        <!-- Maryam Sarwar -->
+                        <div class="position-card bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div class="avatar-ring w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-violet-100 to-violet-200 p-0.5">
+                                <img src="Assets/Announcement/maryam sarwar.jpeg" alt="Maryam Sarwar" class="w-full h-full rounded-full object-cover object-top">
                             </div>
-                            <h4 class="font-heading font-semibold text-sm text-gray-800 mb-0.5">Coming Soon</h4>
-                            <p class="text-gray-400 text-xs">Highest Marks</p>
-                            <div class="mt-2 inline-flex items-center gap-1 bg-green-50 text-green-600 text-xs font-bold px-2 py-0.5 rounded-full">
-                                <i class="fas fa-arrow-up text-[10px]" aria-hidden="true"></i>
-                                Top Performer
+                            <h4 class="font-heading font-semibold text-base text-gray-800 mb-0.5">Maryam Sarwar</h4>
+                            <p class="text-accent-500 text-sm font-bold">73%</p>
+                        </div>
+
+                        <!-- Musdalfa -->
+                        <div class="position-card bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div class="avatar-ring w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-teal-100 to-teal-200 p-0.5">
+                                <img src="Assets/Announcement/musdalfa.jpg" alt="Musdalfa" class="w-full h-full rounded-full object-cover object-top">
                             </div>
+                            <h4 class="font-heading font-semibold text-base text-gray-800 mb-0.5">Musdalfa</h4>
+                            <p class="text-accent-500 text-sm font-bold">72%</p>
+                        </div>
+
+                        <!-- Muzammil Mehmood -->
+                        <div class="position-card bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div class="avatar-ring w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-indigo-100 to-indigo-200 p-0.5">
+                                <img src="Assets/Announcement/Muzammil Mehmood.jpg" alt="Muzammil Mehmood" class="w-full h-full rounded-full object-cover object-top">
+                            </div>
+                            <h4 class="font-heading font-semibold text-base text-gray-800 mb-0.5">Muzammil Mehmood</h4>
+                            <p class="text-accent-500 text-sm font-bold">71%</p>
+                        </div>
+
+                        <!-- Naofil -->
+                        <div class="position-card bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div class="avatar-ring w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-cyan-100 to-cyan-200 p-0.5">
+                                <img src="Assets/Announcement/naofil.jpg" alt="Naofil" class="w-full h-full rounded-full object-cover object-top">
+                            </div>
+                            <h4 class="font-heading font-semibold text-base text-gray-800 mb-0.5">Naofil</h4>
+                            <p class="text-accent-500 text-sm font-bold">70%</p>
+                        </div>
+
+                        <!-- Bisma -->
+                        <div class="position-card bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div class="avatar-ring w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-pink-100 to-pink-200 p-0.5">
+                                <img src="Assets/Announcement/bisma.jpg" alt="Bisma" class="w-full h-full rounded-full object-cover object-top">
+                            </div>
+                            <h4 class="font-heading font-semibold text-base text-gray-800 mb-0.5">Bisma</h4>
+                            <p class="text-accent-500 text-sm font-bold">69%</p>
+                        </div>
+
+                        <!-- Saif -->
+                        <div class="position-card bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div class="avatar-ring w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-amber-100 to-amber-200 p-0.5">
+                                <img src="Assets/Announcement/saif.jpg" alt="Saif" class="w-full h-full rounded-full object-cover object-top">
+                            </div>
+                            <h4 class="font-heading font-semibold text-base text-gray-800 mb-0.5">Saif</h4>
+                            <p class="text-accent-500 text-sm font-bold">68%</p>
                         </div>
                     </div>
                 </div>
@@ -528,10 +463,10 @@
                 <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="500">
                     <div class="inline-flex items-center gap-3 bg-accent-50 border border-accent-200 rounded-2xl px-6 py-4">
                         <div class="w-10 h-10 bg-accent-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-camera text-accent-500" aria-hidden="true"></i>
+                            <i class="fas fa-star text-accent-500" aria-hidden="true"></i>
                         </div>
                         <p class="text-gray-700 text-sm md:text-base text-left">
-                            <strong class="text-accent-600">Photos coming Friday!</strong> Student images and actual scores will be revealed when results are officially announced.
+                            <strong class="text-accent-600">Congratulations to all students!</strong> Keep up the hard work and continue striving for excellence.
                         </p>
                     </div>
                 </div>
@@ -576,14 +511,14 @@
                                     <div class="flex items-center gap-3 mb-2">
                                         <span class="text-xs text-gray-400 font-medium">
                                             <i class="far fa-clock mr-1" aria-hidden="true"></i>
-                                            This Friday
+                                            Results Announced
                                         </span>
                                     </div>
                                     <h3 class="font-heading font-bold text-lg text-gray-900 mb-2">
-                                        Skills Oriented Program — Batch 3 Results
+                                        Skills Oriented Program — Batch 3 Results Announced!
                                     </h3>
                                     <p class="text-gray-600 leading-relaxed">
-                                        We are excited to announce that the results for <strong>Skills Oriented Program Batch 3</strong> will be officially announced this <strong class="text-accent-600">Friday</strong>. Position holders and top scorers will be revealed with their photos and scores. Stay tuned!
+                                        The results for <strong>Skills Oriented Program Batch 3</strong> have been officially announced! Congratulations to <strong class="text-accent-600">Abdullah Ismail (1st - 83%)</strong>, <strong class="text-accent-600">Mustafa (2nd - 81%)</strong>, and <strong class="text-accent-600">Ayan Atif (3rd - 79%)</strong> for securing the top positions. Well done to all participants!
                                     </p>
                                     <div class="mt-4 flex flex-wrap gap-2">
                                         <span class="text-xs bg-white text-gray-600 px-3 py-1 rounded-full border border-gray-200">#Results</span>
@@ -795,50 +730,6 @@
 
     <!-- JS Files -->
     <script src="js/common.js"></script>
-    <script>
-        // Countdown to Friday
-        (function() {
-            function getNextFriday() {
-                const now = new Date();
-                const dayOfWeek = now.getDay();
-                const daysUntilFriday = (5 - dayOfWeek + 7) % 7 || 7;
-                const friday = new Date(now);
-                friday.setDate(now.getDate() + daysUntilFriday);
-                friday.setHours(17, 0, 0, 0); // 5:00 PM Friday
-                if (friday <= now) {
-                    friday.setDate(friday.getDate() + 7);
-                }
-                return friday;
-            }
 
-            const targetDate = getNextFriday();
-
-            function updateCountdown() {
-                const now = new Date();
-                const diff = targetDate - now;
-
-                if (diff <= 0) {
-                    document.getElementById('countdown-days').textContent = '0';
-                    document.getElementById('countdown-hours').textContent = '0';
-                    document.getElementById('countdown-mins').textContent = '0';
-                    document.getElementById('countdown-secs').textContent = '0';
-                    return;
-                }
-
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const secs = Math.floor((diff % (1000 * 60)) / 1000);
-
-                document.getElementById('countdown-days').textContent = String(days).padStart(2, '0');
-                document.getElementById('countdown-hours').textContent = String(hours).padStart(2, '0');
-                document.getElementById('countdown-mins').textContent = String(mins).padStart(2, '0');
-                document.getElementById('countdown-secs').textContent = String(secs).padStart(2, '0');
-            }
-
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-        })();
-    </script>
 </body>
 </html>
