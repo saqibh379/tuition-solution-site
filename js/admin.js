@@ -76,28 +76,99 @@
         return 'form_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
     }
 
-    function getForms() {
+    function readStoredArray(key) {
         try {
-            return JSON.parse(localStorage.getItem(STORAGE_KEY_FORMS)) || [];
+            return JSON.parse(localStorage.getItem(key)) || [];
         } catch {
             return [];
         }
+    }
+
+    function writeStoredArray(key, value) {
+        localStorage.setItem(key, JSON.stringify(value));
+    }
+
+    let formsCache = readStoredArray(STORAGE_KEY_FORMS);
+    let submissionsCache = readStoredArray(STORAGE_KEY_SUBMISSIONS);
+    let hasShownSyncWarning = false;
+
+    function getForms() {
+        return formsCache;
     }
 
     function saveForms(forms) {
-        localStorage.setItem(STORAGE_KEY_FORMS, JSON.stringify(forms));
+        formsCache = Array.isArray(forms) ? forms : [];
+        writeStoredArray(STORAGE_KEY_FORMS, formsCache);
+        syncFormsToApi(formsCache);
     }
 
     function getSubmissions() {
-        try {
-            return JSON.parse(localStorage.getItem(STORAGE_KEY_SUBMISSIONS)) || [];
-        } catch {
-            return [];
-        }
+        return submissionsCache;
     }
 
     function saveSubmissions(subs) {
-        localStorage.setItem(STORAGE_KEY_SUBMISSIONS, JSON.stringify(subs));
+        submissionsCache = Array.isArray(subs) ? subs : [];
+        writeStoredArray(STORAGE_KEY_SUBMISSIONS, submissionsCache);
+        syncSubmissionsToApi(submissionsCache);
+    }
+
+    async function loadFormsFromApi() {
+        if (!window.TuitionSolutionApi) {
+            throw new Error('API client unavailable.');
+        }
+
+        const response = await window.TuitionSolutionApi.getForms({ activeOnly: false });
+        formsCache = Array.isArray(response.forms) ? response.forms : [];
+        writeStoredArray(STORAGE_KEY_FORMS, formsCache);
+        return formsCache;
+    }
+
+    async function loadSubmissionsFromApi() {
+        if (!window.TuitionSolutionApi) {
+            throw new Error('API client unavailable.');
+        }
+
+        const response = await window.TuitionSolutionApi.getSubmissions();
+        submissionsCache = Array.isArray(response.submissions) ? response.submissions : [];
+        writeStoredArray(STORAGE_KEY_SUBMISSIONS, submissionsCache);
+        return submissionsCache;
+    }
+
+    function reportSyncWarning(message) {
+        if (hasShownSyncWarning) {
+            return;
+        }
+
+        hasShownSyncWarning = true;
+        showToast(message, 'warning');
+    }
+
+    async function syncFormsToApi(forms) {
+        if (!window.TuitionSolutionApi) {
+            return;
+        }
+
+        try {
+            const response = await window.TuitionSolutionApi.replaceForms(forms);
+            formsCache = Array.isArray(response.forms) ? response.forms : forms;
+            writeStoredArray(STORAGE_KEY_FORMS, formsCache);
+        } catch {
+            reportSyncWarning('Could not sync forms to MongoDB. Changes are only saved in this browser.');
+        }
+    }
+
+    async function syncSubmissionsToApi(submissions) {
+        if (!window.TuitionSolutionApi) {
+            return;
+        }
+
+        try {
+            const response = await window.TuitionSolutionApi.replaceSubmissions(submissions);
+            submissionsCache = Array.isArray(response.submissions) ? response.submissions : submissions;
+            writeStoredArray(STORAGE_KEY_SUBMISSIONS, submissionsCache);
+        } catch {
+            reportSyncWarning('Could not sync submissions to MongoDB. Changes are only saved in this browser.');
+        }
     }
 
     function showToast(message, type = 'success') {
@@ -129,34 +200,62 @@
     // ============================================
     // Authentication
     // ============================================
-    function checkAuth() {
+    async function showDashboard() {
+        loginScreen.classList.add('hidden');
+        dashboard.classList.remove('hidden');
+        await initDashboard();
+    }
+
+    async function checkAuth() {
+        try {
+            if (window.TuitionSolutionApi) {
+                const session = await window.TuitionSolutionApi.adminSession();
+                if (session && session.authenticated) {
+                    sessionStorage.setItem('ts_admin_auth', 'true');
+                    await showDashboard();
+                    return;
+                }
+            }
+        } catch {
+            // Fall back to the previous local-only auth state.
+        }
+
         const isLoggedIn = sessionStorage.getItem('ts_admin_auth') === 'true';
         if (isLoggedIn) {
-            loginScreen.classList.add('hidden');
-            dashboard.classList.remove('hidden');
-            initDashboard();
+            await showDashboard();
         }
     }
 
-    loginForm.addEventListener('submit', (e) => {
+    loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const username = document.getElementById('admin-username').value.trim();
         const password = document.getElementById('admin-password').value;
 
-        if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
+        try {
+            if (window.TuitionSolutionApi) {
+                await window.TuitionSolutionApi.adminLogin({ username, password });
+            } else if (username !== ADMIN_CREDENTIALS.username || password !== ADMIN_CREDENTIALS.password) {
+                throw new Error('Invalid username or password.');
+            }
+
             sessionStorage.setItem('ts_admin_auth', 'true');
             loginError.classList.add('hidden');
-            loginScreen.classList.add('hidden');
-            dashboard.classList.remove('hidden');
-            initDashboard();
-        } else {
+            await showDashboard();
+        } catch {
             loginError.classList.remove('hidden');
             document.getElementById('admin-password').value = '';
         }
     });
 
-    logoutBtn.addEventListener('click', () => {
+    logoutBtn.addEventListener('click', async () => {
         sessionStorage.removeItem('ts_admin_auth');
+        try {
+            if (window.TuitionSolutionApi) {
+                await window.TuitionSolutionApi.adminLogout();
+            }
+        } catch {
+            // Ignore logout sync issues; clearing the browser state is enough for fallback mode.
+        }
         location.reload();
     });
 
@@ -177,7 +276,16 @@
     // ============================================
     // Dashboard Init
     // ============================================
-    function initDashboard() {
+    async function initDashboard() {
+        try {
+            if (window.TuitionSolutionApi) {
+                await Promise.all([loadFormsFromApi(), loadSubmissionsFromApi()]);
+            }
+        } catch {
+            formsCache = readStoredArray(STORAGE_KEY_FORMS);
+            submissionsCache = readStoredArray(STORAGE_KEY_SUBMISSIONS);
+        }
+
         renderSavedForms();
         renderSubmissions();
         updateStats();

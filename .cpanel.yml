@@ -2,4 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/tuition1/public_html/
-    - /bin/cp -R * $DEPLOYPATH
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp about.html admin.html admission-form.html admissions.html announcements.html contact.html courses.html fee-structure.html gallery.html index.html index_backup.html lms.html lms-admin.html registration.html services.html student-portal.html teacher-portal.html $DEPLOYPATH
+    - /bin/cp -R Assets css images js $DEPLOYPATH
+    - /bin/sh -c "printf \"(function (window) {\\n    'use strict';\\n    window.TUITION_SOLUTION_API_BASE_URL = 'https://api.tuitionsol.com';\\n})(window);\\n\" > $DEPLOYPATH/js/runtime-config.js"

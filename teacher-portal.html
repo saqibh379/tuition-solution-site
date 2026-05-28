@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Teacher Portal | Tuition Solution LMS</title>
+
+    <link rel="icon" type="image/png" href="Assets/Logo/logo icon-01 2.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+                            400: '#60a5fa', 500: '#3b82f6', 600: '#1e40af', 700: '#1e3a8a',
+                            800: '#1e2d5f', 900: '#0f172a'
+                        },
+                        accent: {
+                            50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+                            400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+                            800: '#9a3412', 900: '#7c2d12'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/lms.css">
+</head>
+<body class="font-body text-slate-800 lms-shell lms-teacher-density">
+    <header class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+            <div>
+                <p class="text-sm uppercase tracking-[0.2em] text-primary-600 font-semibold">Teacher Workspace</p>
+                <h1 class="font-heading text-3xl font-bold text-slate-900">Manage your assigned classes</h1>
+                <p class="text-slate-500 mt-1">Signed in as <span id="teacher-name"></span></p>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="lms.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 text-sm font-semibold text-slate-600 hover:border-primary-300 hover:text-primary-700 transition-colors"><i class="fas fa-arrow-left" aria-hidden="true"></i> LMS Home</a>
+                <button id="teacher-logout" type="button" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary-600 text-white text-sm font-semibold hover:bg-primary-700 transition-colors"><i class="fas fa-right-from-bracket" aria-hidden="true"></i> Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lms-portal-layout">
+        <aside class="space-y-6">
+            <article class="lms-dashboard-card p-5 lms-portal-rail">
+                <div class="flex items-center justify-between gap-3 mb-4">
+                    <h2 class="lms-section-title">Workspace Menu</h2>
+                    <span class="lms-badge lms-badge-blue">Teacher</span>
+                </div>
+                <nav id="teacher-view-nav" class="space-y-2">
+                    <button type="button" class="lms-sidebar-item" data-view-target="teacher-overview-section">Overview</button>
+                    <button type="button" class="lms-sidebar-item" data-view-target="teacher-assignments-section">Assignments</button>
+                    <button type="button" class="lms-sidebar-item" data-view-target="teacher-quizzes-section">Quizzes</button>
+                    <button type="button" class="lms-sidebar-item" data-view-target="teacher-attendance-section">Attendance</button>
+                    <button type="button" class="lms-sidebar-item" data-view-target="teacher-marks-section">Marks</button>
+                </nav>
+
+                <div class="mt-6 pt-5 border-t border-slate-200">
+                    <div class="flex items-center justify-between gap-3 mb-4">
+                        <h3 class="lms-section-title">Assigned Classes</h3>
+                        <span class="lms-badge lms-badge-blue">Teacher only</span>
+                    </div>
+                    <div id="teacher-class-list" class="space-y-3"></div>
+                </div>
+            </article>
+        </aside>
+
+        <section class="space-y-6">
+            <div id="teacher-notice" class="lms-notice" data-visible="false" data-tone="info"></div>
+
+            <article class="lms-dashboard-card p-6 lms-anchor-section">
+                <p class="text-sm uppercase tracking-[0.2em] text-primary-600 font-semibold">Current Class</p>
+                <h2 id="teacher-class-title" class="font-heading text-3xl font-bold text-slate-900 mt-2">Select a class</h2>
+                <p id="teacher-class-subtitle" class="text-slate-500 mt-2">Choose a class from the left rail to load its workspace.</p>
+            </article>
+
+            <div id="teacher-view-stack" class="lms-view-stack">
+            <section id="teacher-overview-section" class="lms-view-panel">
+                <div id="teacher-summary" class="grid md:grid-cols-2 xl:grid-cols-4 gap-5"></div>
+            </section>
+
+            <section id="teacher-assignments-section" class="grid xl:grid-cols-[0.95fr_1.05fr] gap-6 lms-anchor-section lms-view-panel">
+                <article class="lms-dashboard-card p-6">
+                    <div class="flex items-center justify-between gap-3 mb-5"><h3 class="lms-section-title">Assignments</h3><span class="lms-badge lms-badge-orange">Create, update, delete</span></div>
+                    <form id="assignment-form" class="space-y-4">
+                        <input id="assignment-id" type="hidden">
+                        <div>
+                            <label for="assignment-title" class="block text-sm font-semibold text-slate-700 mb-1.5">Title</label>
+                            <input id="assignment-title" type="text" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20">
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="assignment-due-date" class="block text-sm font-semibold text-slate-700 mb-1.5">Due date</label>
+                                <input id="assignment-due-date" type="date" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20">
+                            </div>
+                            <div>
+                                <label for="assignment-resource-link" class="block text-sm font-semibold text-slate-700 mb-1.5">Resource link</label>
+                                <input id="assignment-resource-link" type="url" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20" placeholder="https://...">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="assignment-description" class="block text-sm font-semibold text-slate-700 mb-1.5">Description</label>
+                            <textarea id="assignment-description" rows="3" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 resize-none"></textarea>
+                        </div>
+                        <div class="flex gap-3">
+                            <button type="submit" class="flex-1 rounded-2xl bg-accent-500 text-white font-bold py-3 hover:bg-accent-600 transition-colors">Save Assignment</button>
+                            <button id="assignment-cancel" type="button" class="hidden px-5 rounded-2xl border border-slate-200 text-slate-600 font-semibold hover:border-slate-300 transition-colors">Cancel</button>
+                        </div>
+                    </form>
+                </article>
+
+                <article class="lms-dashboard-card p-6">
+                    <div class="flex items-center justify-between gap-3 mb-5"><h3 class="lms-section-title">Created Assignments</h3><span class="lms-badge lms-badge-orange">Latest first</span></div>
+                    <div id="assignment-list" class="space-y-4"></div>
+                </article>
+
+                <article class="xl:col-span-2 lms-dashboard-card p-6">
+                    <div class="flex items-center justify-between gap-3 mb-5 flex-wrap"><h3 class="lms-section-title">Assignment Marks</h3><span class="lms-badge lms-badge-slate">Per-student grading grid</span></div>
+                    <div id="assignment-marks-panel"></div>
+                </article>
+            </section>
+
+            <section id="teacher-quizzes-section" class="grid xl:grid-cols-[0.95fr_1.05fr] gap-6 lms-anchor-section lms-view-panel">
+                <article class="lms-dashboard-card p-6">
+                    <div class="flex items-center justify-between gap-3 mb-5"><h3 class="lms-section-title">Quizzes</h3><span class="lms-badge lms-badge-blue">Create, update, delete</span></div>
+                    <form id="quiz-form" class="space-y-4">
+                        <input id="quiz-id" type="hidden">
+                        <div>
+                            <label for="quiz-title" class="block text-sm font-semibold text-slate-700 mb-1.5">Title</label>
+                            <input id="quiz-title" type="text" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20">
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="quiz-scheduled-for" class="block text-sm font-semibold text-slate-700 mb-1.5">Scheduled date</label>
+                                <input id="quiz-scheduled-for" type="date" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20">
+                            </div>
+                            <div>
+                                <label for="quiz-total-marks" class="block text-sm font-semibold text-slate-700 mb-1.5">Total marks</label>
+                                <input id="quiz-total-marks" type="number" min="1" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="quiz-description" class="block text-sm font-semibold text-slate-700 mb-1.5">Description</label>
+                            <textarea id="quiz-description" rows="3" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 resize-none"></textarea>
+                        </div>
+                        <div class="flex gap-3">
+                            <button type="submit" class="flex-1 rounded-2xl bg-primary-600 text-white font-bold py-3 hover:bg-primary-700 transition-colors">Save Quiz</button>
+                            <button id="quiz-cancel" type="button" class="hidden px-5 rounded-2xl border border-slate-200 text-slate-600 font-semibold hover:border-slate-300 transition-colors">Cancel</button>
+                        </div>
+                    </form>
+                </article>
+
+                <article class="lms-dashboard-card p-6">
+                    <div class="flex items-center justify-between gap-3 mb-5"><h3 class="lms-section-title">Created Quizzes</h3><span class="lms-badge lms-badge-blue">Latest first</span></div>
+                    <div id="quiz-list" class="space-y-4"></div>
+                </article>
+            </section>
+
+            <section id="teacher-attendance-section" class="grid xl:grid-cols-[1.05fr_0.95fr] gap-6 lms-anchor-section lms-view-panel">
+                <article class="lms-dashboard-card p-6">
+                    <div class="flex items-center justify-between gap-3 mb-5"><h3 class="lms-section-title">Attendance</h3><span class="lms-badge lms-badge-green">Create, update, delete</span></div>
+                    <form id="attendance-form" class="space-y-4">
+                        <div>
+                            <label for="attendance-date" class="block text-sm font-semibold text-slate-700 mb-1.5">Attendance date</label>
+                            <input id="attendance-date" type="date" required class="w-full max-w-xs rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20">
+                        </div>
+                        <div id="attendance-student-list" class="space-y-3"></div>
+                        <div class="flex gap-3">
+                            <button type="submit" class="rounded-2xl bg-green-600 text-white font-bold px-6 py-3 hover:bg-green-700 transition-colors">Save Attendance</button>
+                            <button id="attendance-reset" type="button" class="hidden px-5 rounded-2xl border border-slate-200 text-slate-600 font-semibold hover:border-slate-300 transition-colors">Clear</button>
+                        </div>
+                    </form>
+                </article>
+
+                <article class="lms-dashboard-card p-6">
+                    <div class="flex items-center justify-between gap-3 mb-5"><h3 class="lms-section-title">Attendance History</h3><span class="lms-badge lms-badge-slate">Load or delete</span></div>
+                    <div id="attendance-list" class="space-y-4"></div>
+                </article>
+            </section>
+
+            <section id="teacher-marks-section" class="grid xl:grid-cols-[0.95fr_1.05fr] gap-6 lms-anchor-section lms-view-panel">
+                <article class="lms-dashboard-card p-6">
+                    <div class="flex items-center justify-between gap-3 mb-5"><h3 class="lms-section-title">Manual Marks</h3><span class="lms-badge lms-badge-green">Quiz, exam, project, other</span></div>
+                    <p class="text-sm text-slate-500 mb-5">Manage assignment-linked marks from the assignment detail grading grid. Use this form for manual marks only.</p>
+                    <form id="mark-form" class="space-y-4">
+                        <input id="mark-id" type="hidden">
+                        <div>
+                            <label for="mark-student-id" class="block text-sm font-semibold text-slate-700 mb-1.5">Student</label>
+                            <select id="mark-student-id" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20"></select>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="mark-title" class="block text-sm font-semibold text-slate-700 mb-1.5">Title</label>
+                                <input id="mark-title" type="text" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20">
+                            </div>
+                            <div>
+                                <label for="mark-type" class="block text-sm font-semibold text-slate-700 mb-1.5">Type</label>
+                                <select id="mark-type" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20">
+                                    <option value="assignment">Assignment</option>
+                                    <option value="quiz">Quiz</option>
+                                    <option value="exam">Exam</option>
+                                    <option value="project">Project</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid sm:grid-cols-3 gap-4">
+                            <div>
+                                <label for="mark-score" class="block text-sm font-semibold text-slate-700 mb-1.5">Score</label>
+                                <input id="mark-score" type="number" min="0" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20">
+                            </div>
+                            <div>
+                                <label for="mark-total" class="block text-sm font-semibold text-slate-700 mb-1.5">Total</label>
+                                <input id="mark-total" type="number" min="1" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20">
+                            </div>
+                            <div>
+                                <label for="mark-recorded-at" class="block text-sm font-semibold text-slate-700 mb-1.5">Recorded on</label>
+                                <input id="mark-recorded-at" type="date" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="mark-notes" class="block text-sm font-semibold text-slate-700 mb-1.5">Notes</label>
+                            <textarea id="mark-notes" rows="3" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20 resize-none"></textarea>
+                        </div>
+                        <div class="flex gap-3">
+                            <button type="submit" class="rounded-2xl bg-green-600 text-white font-bold px-6 py-3 hover:bg-green-700 transition-colors">Save Marks</button>
+                            <button id="mark-cancel" type="button" class="hidden px-5 rounded-2xl border border-slate-200 text-slate-600 font-semibold hover:border-slate-300 transition-colors">Cancel</button>
+                        </div>
+                    </form>
+                </article>
+
+                <article class="lms-dashboard-card p-6">
+                    <div class="flex items-center justify-between gap-3 mb-5"><h3 class="lms-section-title">All Marks</h3><span class="lms-badge lms-badge-slate">By student and month</span></div>
+                    <div id="mark-list"></div>
+                </article>
+
+                <article class="xl:col-span-2 lms-dashboard-card p-6">
+                    <div class="flex items-center justify-between gap-3 mb-5 flex-wrap"><h3 class="lms-section-title">Monthly Report Posting</h3><span class="lms-badge lms-badge-blue">Teacher publish control</span></div>
+                    <div id="teacher-monthly-report-panel"></div>
+                </article>
+            </section>
+            </div>
+        </section>
+    </main>
+
+    <div id="student-marks-modal" class="hidden fixed inset-0 z-[75] bg-slate-950/55 backdrop-blur-sm px-4 py-6 sm:py-8">
+        <div class="max-w-5xl mx-auto h-full max-h-[88vh] lms-dashboard-card overflow-hidden flex flex-col">
+            <div class="flex items-start justify-between gap-4 px-5 sm:px-6 py-4 border-b border-slate-200 bg-white/95">
+                <div class="min-w-0">
+                    <p class="text-sm uppercase tracking-[0.18em] text-primary-600 font-semibold">Student Marks</p>
+                    <h2 id="student-marks-modal-title" class="font-heading text-2xl font-bold text-slate-900 mt-1 break-words leading-tight">Student</h2>
+                    <p id="student-marks-modal-context" class="text-sm text-slate-500 mt-1">Month and filter summary</p>
+                </div>
+                <button type="button" class="w-10 h-10 rounded-2xl border border-slate-200 text-slate-500 hover:text-slate-700 hover:border-slate-300 transition-colors" data-close-student-marks-modal aria-label="Close student marks dialog">
+                    <i class="fas fa-xmark" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div id="student-marks-modal-body" class="flex-1 overflow-y-auto lms-scrollbar px-5 sm:px-6 py-5 bg-slate-50/70"></div>
+        </div>
+    </div>
+
+    <div id="teacher-password-gate" class="hidden fixed inset-0 z-[80] bg-slate-950/60 backdrop-blur-sm px-4 py-8">
+        <div class="max-w-xl mx-auto lms-dashboard-card p-6 sm:p-8 mt-4 sm:mt-10">
+            <div class="flex items-start gap-4">
+                <span class="w-14 h-14 rounded-[1.25rem] bg-primary-50 text-primary-600 flex items-center justify-center text-xl"><i class="fas fa-lock" aria-hidden="true"></i></span>
+                <div>
+                    <p class="text-sm uppercase tracking-[0.2em] text-primary-600 font-semibold">Password Update Required</p>
+                    <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900 mt-2">Set your own password</h2>
+                    <p id="teacher-password-gate-message" class="text-slate-500 mt-3">You must update your password before accessing the portal.</p>
+                </div>
+            </div>
+
+            <form id="teacher-password-form" class="space-y-4 mt-6">
+                <div>
+                    <label for="teacher-current-password" class="block text-sm font-semibold text-slate-700 mb-1.5">Current password</label>
+                    <input id="teacher-current-password" type="password" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20">
+                </div>
+                <div>
+                    <label for="teacher-new-password" class="block text-sm font-semibold text-slate-700 mb-1.5">New password</label>
+                    <input id="teacher-new-password" type="password" minlength="6" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20">
+                </div>
+                <div>
+                    <label for="teacher-confirm-password" class="block text-sm font-semibold text-slate-700 mb-1.5">Confirm new password</label>
+                    <input id="teacher-confirm-password" type="password" minlength="6" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20">
+                </div>
+                <div id="teacher-password-gate-notice" class="lms-notice" data-visible="false" data-tone="info"></div>
+                <button id="teacher-password-submit" type="submit" class="w-full rounded-2xl bg-primary-600 text-white font-bold py-3 hover:bg-primary-700 transition-colors">Update Password</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/runtime-config.js"></script>
+    <script src="js/api-client.js"></script>
+    <script src="js/lms-shared.js"></script>
+    <script src="js/teacher-portal.js"></script>
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>LMS Super Admin | Tuition Solution</title>
+
+    <link rel="icon" type="image/png" href="Assets/Logo/logo icon-01 2.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+                            400: '#60a5fa', 500: '#3b82f6', 600: '#1e40af', 700: '#1e3a8a',
+                            800: '#1e2d5f', 900: '#0f172a'
+                        },
+                        accent: {
+                            50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+                            400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+                            800: '#9a3412', 900: '#7c2d12'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/lms.css">
+</head>
+<body class="font-body text-slate-800 lms-shell">
+    <div id="admin-loading-screen" class="min-h-screen flex items-center justify-center px-4 py-10">
+        <div class="lms-panel rounded-[2rem] p-8 sm:p-10 w-full max-w-lg text-center">
+            <span class="lms-pill mb-4"><i class="fas fa-user-shield" aria-hidden="true"></i> Super Admin</span>
+            <h1 class="font-heading text-3xl font-bold text-primary-900">Opening the control room</h1>
+            <p class="text-slate-500 mt-3">Verifying your LMS session and loading the dashboard.</p>
+            <div class="mt-6 text-primary-600 text-2xl"><i class="fas fa-spinner fa-spin" aria-hidden="true"></i></div>
+        </div>
+    </div>
+
+    <div id="admin-dashboard-shell" class="hidden min-h-screen">
+        <header class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                <div>
+                    <p class="text-sm uppercase tracking-[0.2em] text-primary-600 font-semibold">LMS Control Room</p>
+                    <h1 class="font-heading text-3xl font-bold text-slate-900">Super Admin Dashboard</h1>
+                    <p class="text-slate-500 mt-1">Welcome, <span id="admin-name"></span></p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="lms.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 text-sm font-semibold text-slate-600 hover:border-primary-300 hover:text-primary-700 transition-colors">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i> LMS Home
+                    </a>
+                    <button id="admin-logout" type="button" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary-600 text-white text-sm font-semibold hover:bg-primary-700 transition-colors">
+                        <i class="fas fa-right-from-bracket" aria-hidden="true"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lms-portal-layout">
+            <aside class="space-y-6">
+                <article class="lms-dashboard-card p-5 lms-portal-rail">
+                    <div class="flex items-center justify-between gap-3 mb-4">
+                        <h2 class="lms-section-title">Control Panel</h2>
+                        <span class="lms-badge lms-badge-blue">All access</span>
+                    </div>
+                    <nav id="admin-view-nav" class="space-y-2">
+                        <button type="button" class="lms-sidebar-item" data-view-target="admin-overview-section">Overview</button>
+                        <button type="button" class="lms-sidebar-item" data-view-target="admin-accounts-section">Accounts</button>
+                        <button type="button" class="lms-sidebar-item" data-view-target="admin-classes-section">Classes</button>
+                        <button type="button" class="lms-sidebar-item" data-view-target="admin-workspace-section">Workspace</button>
+                        <button type="button" class="lms-sidebar-item" data-view-target="admin-assignments-section">Assignments</button>
+                        <button type="button" class="lms-sidebar-item" data-view-target="admin-quizzes-section">Quizzes</button>
+                        <button type="button" class="lms-sidebar-item" data-view-target="admin-attendance-section">Attendance</button>
+                        <button type="button" class="lms-sidebar-item" data-view-target="admin-marks-section">Marks</button>
+                        <button type="button" class="lms-sidebar-item" data-view-target="admin-reports-section">Reports</button>
+                    </nav>
+
+                    <div class="mt-6 pt-5 border-t border-slate-200">
+                        <label for="admin-workspace-class" class="block text-sm font-semibold text-slate-700 mb-1.5">Open class workspace</label>
+                        <select id="admin-workspace-class" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"></select>
+                        <p id="admin-workspace-meta" class="text-sm text-slate-500 mt-3">Select any class to review assignments, quizzes, attendance, and marks.</p>
+                    </div>
+                </article>
+            </aside>
+
+            <section class="space-y-6">
+                <div id="admin-notice" class="lms-notice" data-visible="false" data-tone="info"></div>
+
+                <div id="admin-view-stack" class="lms-view-stack">
+                <section id="admin-overview-section" class="space-y-5 lms-anchor-section lms-view-panel">
+                    <div class="grid md:grid-cols-2 xl:grid-cols-7 gap-5">
+                        <article class="lms-dashboard-card p-5"><p class="text-sm text-slate-500">Teachers</p><p id="stat-teachers" class="mt-3 text-4xl font-bold text-slate-900">0</p></article>
+                        <article class="lms-dashboard-card p-5"><p class="text-sm text-slate-500">Students</p><p id="stat-students" class="mt-3 text-4xl font-bold text-slate-900">0</p></article>
+                        <article class="lms-dashboard-card p-5"><p class="text-sm text-slate-500">Classes</p><p id="stat-classes" class="mt-3 text-4xl font-bold text-slate-900">0</p></article>
+                        <article class="lms-dashboard-card p-5"><p class="text-sm text-slate-500">Assignments</p><p id="stat-assignments" class="mt-3 text-4xl font-bold text-slate-900">0</p></article>
+                        <article class="lms-dashboard-card p-5"><p class="text-sm text-slate-500">Quizzes</p><p id="stat-quizzes" class="mt-3 text-4xl font-bold text-slate-900">0</p></article>
+                        <article class="lms-dashboard-card p-5"><p class="text-sm text-slate-500">Attendance</p><p id="stat-attendance" class="mt-3 text-4xl font-bold text-slate-900">0</p></article>
+                        <article class="lms-dashboard-card p-5"><p class="text-sm text-slate-500">Marks</p><p id="stat-marks" class="mt-3 text-4xl font-bold text-slate-900">0</p></article>
+                    </div>
+
+                    <article class="lms-dashboard-card p-6">
+                        <p class="text-sm uppercase tracking-[0.2em] text-primary-600 font-semibold">Current Workspace</p>
+                        <h2 id="admin-class-title" class="font-heading text-3xl font-bold text-slate-900 mt-2">Select a class</h2>
+                        <p id="admin-class-subtitle" class="text-slate-500 mt-2">Choose a class to inspect every assignment, quiz, attendance sheet, and mark record.</p>
+                        <div id="admin-class-summary" class="grid md:grid-cols-2 xl:grid-cols-4 gap-5 mt-6"></div>
+                    </article>
+                </section>
+
+                <section id="admin-accounts-section" class="space-y-6 lms-anchor-section lms-view-panel">
+                    <div class="grid xl:grid-cols-2 gap-6">
+                        <article class="lms-dashboard-card p-6">
+                            <div class="flex items-center justify-between gap-3 mb-5"><h2 class="lms-section-title">Teacher Accounts</h2><span class="lms-badge lms-badge-blue">Create or edit</span></div>
+                            <form id="teacher-form" class="space-y-4">
+                                <input id="teacher-id" type="hidden">
+                                <div>
+                                    <label for="teacher-full-name" class="block text-sm font-semibold text-slate-700 mb-1.5">Full name</label>
+                                    <input id="teacher-full-name" type="text" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20">
+                                </div>
+                                <div>
+                                    <label for="teacher-username" class="block text-sm font-semibold text-slate-700 mb-1.5">Username</label>
+                                    <input id="teacher-username" type="text" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20">
+                                </div>
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="teacher-email" class="block text-sm font-semibold text-slate-700 mb-1.5">Email</label>
+                                        <input id="teacher-email" type="email" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20">
+                                    </div>
+                                    <div>
+                                        <label for="teacher-phone" class="block text-sm font-semibold text-slate-700 mb-1.5">Phone</label>
+                                        <input id="teacher-phone" type="text" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="teacher-password" class="block text-sm font-semibold text-slate-700 mb-1.5">Password</label>
+                                    <input id="teacher-password" type="password" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20" placeholder="leave blank to keep current password on edit">
+                                    <p class="text-xs text-slate-500 mt-2">New teachers will be asked to change this password on first login.</p>
+                                </div>
+                                <label class="inline-flex items-center gap-3 text-sm font-semibold text-slate-700"><input id="teacher-active" type="checkbox" class="w-4 h-4 rounded border-slate-300 text-primary-600 focus:ring-primary-500" checked> Teacher account is active</label>
+                                <div class="flex gap-3">
+                                    <button type="submit" class="flex-1 rounded-2xl bg-primary-600 text-white font-bold py-3 hover:bg-primary-700 transition-colors">Save Teacher</button>
+                                    <button id="teacher-cancel" type="button" class="hidden px-5 rounded-2xl border border-slate-200 text-slate-600 font-semibold hover:border-slate-300 transition-colors">Cancel</button>
+                                </div>
+                            </form>
+                        </article>
+
+                        <article class="lms-dashboard-card p-6">
+                            <div class="flex items-center justify-between gap-3 mb-5"><h2 class="lms-section-title">Student Accounts</h2><span class="lms-badge lms-badge-orange">Create or edit</span></div>
+                            <form id="student-form" class="space-y-4">
+                                <input id="student-id" type="hidden">
+                                <div>
+                                    <label for="student-full-name" class="block text-sm font-semibold text-slate-700 mb-1.5">Full name</label>
+                                    <input id="student-full-name" type="text" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20">
+                                </div>
+                                <div>
+                                    <label for="student-username" class="block text-sm font-semibold text-slate-700 mb-1.5">Username</label>
+                                    <input id="student-username" type="text" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20">
+                                </div>
+                                <div class="grid sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="student-email" class="block text-sm font-semibold text-slate-700 mb-1.5">Email</label>
+                                        <input id="student-email" type="email" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20">
+                                    </div>
+                                    <div>
+                                        <label for="student-phone" class="block text-sm font-semibold text-slate-700 mb-1.5">Phone</label>
+                                        <input id="student-phone" type="text" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="student-password" class="block text-sm font-semibold text-slate-700 mb-1.5">Password</label>
+                                    <input id="student-password" type="password" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20" placeholder="leave blank to keep current password on edit">
+                                    <p class="text-xs text-slate-500 mt-2">New students will be asked to change this password on first login.</p>
+                                </div>
+                                <label class="inline-flex items-center gap-3 text-sm font-semibold text-slate-700"><input id="student-active" type="checkbox" class="w-4 h-4 rounded border-slate-300 text-accent-500 focus:ring-accent-500" checked> Student account is active</label>
+                                <div class="flex gap-3">
+                                    <button type="submit" class="flex-1 rounded-2xl bg-accent-500 text-white font-bold py-3 hover:bg-accent-600 transition-colors">Save Student</button>
+                                    <button id="student-cancel" type="button" class="hidden px-5 rounded-2xl border border-slate-200 text-slate-600 font-semibold hover:border-slate-300 transition-colors">Cancel</button>
+                                </div>
+                            </form>
+                        </article>
+                    </div>
+
+                    <div class="grid xl:grid-cols-2 gap-6">
+                        <article class="lms-dashboard-card p-6"><div class="flex items-center justify-between gap-3 mb-5"><h2 class="lms-section-title">Teachers</h2><span class="lms-badge lms-badge-blue">Editable</span></div><div id="teacher-list" class="space-y-4"></div></article>
+                        <article class="lms-dashboard-card p-6"><div class="flex items-center justify-between gap-3 mb-5"><h2 class="lms-section-title">Students</h2><span class="lms-badge lms-badge-orange">Editable</span></div><div id="student-list" class="space-y-4"></div></article>
+                    </div>
+
+                    <article class="lms-dashboard-card p-6">
+                        <div class="flex items-center justify-between gap-3 mb-5 flex-wrap">
+                            <div>
+                                <h2 class="lms-section-title">Password Reset Requests</h2>
+                                <p class="text-sm text-slate-500 mt-1">Forgot password requests will appear here. Resetting a request will generate a temporary password.</p>
+                            </div>
+                            <span id="admin-reset-request-count" class="lms-badge lms-badge-slate">0 pending</span>
+                        </div>
+                        <div id="admin-reset-request-list" class="space-y-4"></div>
+                    </article>
+                </section>
+
+                <section id="admin-classes-section" class="grid xl:grid-cols-[1.05fr_0.95fr] gap-6 lms-anchor-section lms-view-panel">
+                    <article class="lms-dashboard-card p-6">
+                        <div class="flex items-center justify-between gap-3 mb-5"><h2 class="lms-section-title">Class Builder</h2><span class="lms-badge lms-badge-green">Assign teachers + students</span></div>
+                        <form id="class-form" class="space-y-4">
+                            <input id="class-id" type="hidden">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="class-name" class="block text-sm font-semibold text-slate-700 mb-1.5">Class name</label>
+                                    <input id="class-name" type="text" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20">
+                                </div>
+                                <div>
+                                    <label for="class-code" class="block text-sm font-semibold text-slate-700 mb-1.5">Class code</label>
+                                    <input id="class-code" type="text" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20" placeholder="MAT-10-A">
+                                </div>
+                            </div>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="class-subject" class="block text-sm font-semibold text-slate-700 mb-1.5">Subject</label>
+                                    <input id="class-subject" type="text" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20">
+                                </div>
+                                <div>
+                                    <label for="class-room" class="block text-sm font-semibold text-slate-700 mb-1.5">Room / batch</label>
+                                    <input id="class-room" type="text" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="class-schedule" class="block text-sm font-semibold text-slate-700 mb-1.5">Schedule</label>
+                                <input id="class-schedule" type="text" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20" placeholder="Mon-Wed-Fri | 5:00 PM - 6:30 PM">
+                            </div>
+                            <div>
+                                <label for="class-description" class="block text-sm font-semibold text-slate-700 mb-1.5">Description</label>
+                                <textarea id="class-description" rows="3" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 resize-none"></textarea>
+                            </div>
+                            <div>
+                                <p class="block text-sm font-semibold text-slate-700 mb-2">Assign teachers</p>
+                                <div id="class-teacher-options" class="lms-check-grid"></div>
+                            </div>
+                            <div>
+                                <p class="block text-sm font-semibold text-slate-700 mb-2">Assign students</p>
+                                <div id="class-student-options" class="lms-check-grid lms-scrollbar max-h-64 overflow-auto pr-4"></div>
+                            </div>
+                            <label class="inline-flex items-center gap-3 text-sm font-semibold text-slate-700"><input id="class-active" type="checkbox" class="w-4 h-4 rounded border-slate-300 text-primary-600 focus:ring-primary-500" checked> Class is active</label>
+                            <div class="flex gap-3">
+                                <button type="submit" class="flex-1 rounded-2xl bg-slate-900 text-white font-bold py-3 hover:bg-slate-800 transition-colors">Save Class</button>
+                                <button id="class-cancel" type="button" class="hidden px-5 rounded-2xl border border-slate-200 text-slate-600 font-semibold hover:border-slate-300 transition-colors">Cancel</button>
+                            </div>
+                        </form>
+                    </article>
+
+                    <article class="lms-dashboard-card p-6"><div class="flex items-center justify-between gap-3 mb-5"><h2 class="lms-section-title">Classes</h2><span class="lms-badge lms-badge-green">Editable</span></div><div id="class-list" class="space-y-4"></div></article>
+                </section>
+
+                <section id="admin-workspace-section" class="lms-dashboard-card p-6 lms-anchor-section lms-view-panel">
+                    <div class="flex items-center justify-between gap-3 mb-5"><h2 class="lms-section-title">Class Workspace</h2><span class="lms-badge lms-badge-green">Live class data</span></div>
+                    <div id="admin-workspace-overview" class="grid xl:grid-cols-[1.05fr_0.95fr] gap-4"></div>
+                </section>
+
+                <section id="admin-assignments-section" class="grid xl:grid-cols-[0.95fr_1.05fr] gap-6 lms-anchor-section lms-view-panel">
+                    <article class="lms-dashboard-card p-6">
+                        <div class="flex items-center justify-between gap-3 mb-5"><h2 class="lms-section-title">Assignments</h2><span class="lms-badge lms-badge-orange">Create, update, delete</span></div>
+                        <form id="admin-assignment-form" class="space-y-4">
+                            <input id="admin-assignment-id" type="hidden">
+                            <div>
+                                <label for="admin-assignment-title" class="block text-sm font-semibold text-slate-700 mb-1.5">Title</label>
+                                <input id="admin-assignment-title" type="text" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20">
+                            </div>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="admin-assignment-due-date" class="block text-sm font-semibold text-slate-700 mb-1.5">Due date</label>
+                                    <input id="admin-assignment-due-date" type="date" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20">
+                                </div>
+                                <div>
+                                    <label for="admin-assignment-resource-link" class="block text-sm font-semibold text-slate-700 mb-1.5">Resource link</label>
+                                    <input id="admin-assignment-resource-link" type="url" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20" placeholder="https://...">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="admin-assignment-description" class="block text-sm font-semibold text-slate-700 mb-1.5">Description</label>
+                                <textarea id="admin-assignment-description" rows="3" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 resize-none"></textarea>
+                            </div>
+                            <div class="flex gap-3">
+                                <button type="submit" class="flex-1 rounded-2xl bg-accent-500 text-white font-bold py-3 hover:bg-accent-600 transition-colors">Save Assignment</button>
+                                <button id="admin-assignment-cancel" type="button" class="hidden px-5 rounded-2xl border border-slate-200 text-slate-600 font-semibold hover:border-slate-300 transition-colors">Cancel</button>
+                            </div>
+                        </form>
+                    </article>
+
+                    <article class="lms-dashboard-card p-6">
+                        <div class="flex items-center justify-between gap-3 mb-5"><h2 class="lms-section-title">Created Assignments</h2><span class="lms-badge lms-badge-orange">Selected class</span></div>
+                        <div id="admin-assignment-list" class="space-y-4"></div>
+                    </article>
+                </section>
+
+                <section id="admin-quizzes-section" class="grid xl:grid-cols-[0.95fr_1.05fr] gap-6 lms-anchor-section lms-view-panel">
+                    <article class="lms-dashboard-card p-6">
+                        <div class="flex items-center justify-between gap-3 mb-5"><h2 class="lms-section-title">Quizzes</h2><span class="lms-badge lms-badge-blue">Create, update, delete</span></div>
+                        <form id="admin-quiz-form" class="space-y-4">
+                            <input id="admin-quiz-id" type="hidden">
+                            <div>
+                                <label for="admin-quiz-title" class="block text-sm font-semibold text-slate-700 mb-1.5">Title</label>
+                                <input id="admin-quiz-title" type="text" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20">
+                            </div>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="admin-quiz-scheduled-for" class="block text-sm font-semibold text-slate-700 mb-1.5">Scheduled date</label>
+                                    <input id="admin-quiz-scheduled-for" type="date" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20">
+                                </div>
+                                <div>
+                                    <label for="admin-quiz-total-marks" class="block text-sm font-semibold text-slate-700 mb-1.5">Total marks</label>
+                                    <input id="admin-quiz-total-marks" type="number" min="1" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="admin-quiz-description" class="block text-sm font-semibold text-slate-700 mb-1.5">Description</label>
+                                <textarea id="admin-quiz-description" rows="3" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 resize-none"></textarea>
+                            </div>
+                            <div class="flex gap-3">
+                                <button type="submit" class="flex-1 rounded-2xl bg-primary-600 text-white font-bold py-3 hover:bg-primary-700 transition-colors">Save Quiz</button>
+                                <button id="admin-quiz-cancel" type="button" class="hidden px-5 rounded-2xl border border-slate-200 text-slate-600 font-semibold hover:border-slate-300 transition-colors">Cancel</button>
+                            </div>
+                        </form>
+                    </article>
+
+                    <article class="lms-dashboard-card p-6">
+                        <div class="flex items-center justify-between gap-3 mb-5"><h2 class="lms-section-title">Created Quizzes</h2><span class="lms-badge lms-badge-blue">Selected class</span></div>
+                        <div id="admin-quiz-list" class="space-y-4"></div>
+                    </article>
+                </section>
+
+                <section id="admin-attendance-section" class="grid xl:grid-cols-[1.05fr_0.95fr] gap-6 lms-anchor-section lms-view-panel">
+                    <article class="lms-dashboard-card p-6">
+                        <div class="flex items-center justify-between gap-3 mb-5"><h2 class="lms-section-title">Attendance</h2><span class="lms-badge lms-badge-green">Create, update, delete</span></div>
+                        <form id="admin-attendance-form" class="space-y-4">
+                            <div>
+                                <label for="admin-attendance-date" class="block text-sm font-semibold text-slate-700 mb-1.5">Attendance date</label>
+                                <input id="admin-attendance-date" type="date" required class="w-full max-w-xs rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20">
+                            </div>
+                            <div id="admin-attendance-student-list" class="space-y-3"></div>
+                            <div class="flex gap-3">
+                                <button type="submit" class="rounded-2xl bg-green-600 text-white font-bold px-6 py-3 hover:bg-green-700 transition-colors">Save Attendance</button>
+                                <button id="admin-attendance-reset" type="button" class="hidden px-5 rounded-2xl border border-slate-200 text-slate-600 font-semibold hover:border-slate-300 transition-colors">Clear</button>
+                            </div>
+                        </form>
+                    </article>
+
+                    <article class="lms-dashboard-card p-6">
+                        <div class="flex items-center justify-between gap-3 mb-5"><h2 class="lms-section-title">Attendance History</h2><span class="lms-badge lms-badge-slate">Selected class</span></div>
+                        <div id="admin-attendance-list" class="space-y-4"></div>
+                    </article>
+                </section>
+
+                <section id="admin-marks-section" class="grid xl:grid-cols-[0.95fr_1.05fr] gap-6 lms-anchor-section lms-view-panel">
+                    <article class="lms-dashboard-card p-6">
+                        <div class="flex items-center justify-between gap-3 mb-5"><h2 class="lms-section-title">Marks</h2><span class="lms-badge lms-badge-green">Super admin can edit posted marks</span></div>
+                        <form id="admin-mark-form" class="space-y-4">
+                            <input id="admin-mark-id" type="hidden">
+                            <div>
+                                <label for="admin-mark-student-id" class="block text-sm font-semibold text-slate-700 mb-1.5">Student</label>
+                                <select id="admin-mark-student-id" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20"></select>
+                            </div>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="admin-mark-title" class="block text-sm font-semibold text-slate-700 mb-1.5">Title</label>
+                                    <input id="admin-mark-title" type="text" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20">
+                                </div>
+                                <div>
+                                    <label for="admin-mark-type" class="block text-sm font-semibold text-slate-700 mb-1.5">Type</label>
+                                    <select id="admin-mark-type" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20">
+                                        <option value="assignment">Assignment</option>
+                                        <option value="quiz">Quiz</option>
+                                        <option value="exam">Exam</option>
+                                        <option value="project">Project</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="grid sm:grid-cols-3 gap-4">
+                                <div>
+                                    <label for="admin-mark-score" class="block text-sm font-semibold text-slate-700 mb-1.5">Score</label>
+                                    <input id="admin-mark-score" type="number" min="0" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20">
+                                </div>
+                                <div>
+                                    <label for="admin-mark-total" class="block text-sm font-semibold text-slate-700 mb-1.5">Total</label>
+                                    <input id="admin-mark-total" type="number" min="1" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20">
+                                </div>
+                                <div>
+                                    <label for="admin-mark-recorded-at" class="block text-sm font-semibold text-slate-700 mb-1.5">Recorded on</label>
+                                    <input id="admin-mark-recorded-at" type="date" required class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="admin-mark-notes" class="block text-sm font-semibold text-slate-700 mb-1.5">Notes</label>
+                                <textarea id="admin-mark-notes" rows="3" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20 resize-none"></textarea>
+                            </div>
+                            <div class="flex gap-3">
+                                <button type="submit" class="rounded-2xl bg-green-600 text-white font-bold px-6 py-3 hover:bg-green-700 transition-colors">Save Marks</button>
+                                <button id="admin-mark-cancel" type="button" class="hidden px-5 rounded-2xl border border-slate-200 text-slate-600 font-semibold hover:border-slate-300 transition-colors">Cancel</button>
+                            </div>
+                        </form>
+                    </article>
+
+                    <article class="lms-dashboard-card p-6">
+                        <div class="flex items-center justify-between gap-3 mb-5"><h2 class="lms-section-title">Recorded Marks</h2><span class="lms-badge lms-badge-slate">Selected class</span></div>
+                        <div id="admin-mark-list"></div>
+                    </article>
+                </section>
+
+                <section id="admin-reports-section" class="space-y-6 lms-anchor-section lms-view-panel">
+                    <article class="lms-dashboard-card p-6">
+                        <div class="flex items-center justify-between gap-3 mb-5 flex-wrap">
+                            <div>
+                                <h2 class="lms-section-title">Monthly Reports</h2>
+                                <p class="text-sm text-slate-500 mt-1">Teacher-posted class reports can be activated, hidden, or deleted here. The public announcements page only shows active and visible reports.</p>
+                            </div>
+                            <span class="lms-badge lms-badge-blue">LMS managed</span>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="admin-report-class-filter" class="block text-sm font-semibold text-slate-700 mb-1.5">Filter by class</label>
+                                <select id="admin-report-class-filter" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"></select>
+                            </div>
+                            <div>
+                                <label for="admin-report-month-filter" class="block text-sm font-semibold text-slate-700 mb-1.5">Filter by month</label>
+                                <select id="admin-report-month-filter" class="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"></select>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="lms-dashboard-card p-6">
+                        <div class="flex items-center justify-between gap-3 mb-5"><h2 class="lms-section-title">Posted Reports</h2><span class="lms-badge lms-badge-slate">Visibility controls</span></div>
+                        <div id="admin-report-list" class="space-y-4"></div>
+                    </article>
+                </section>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/runtime-config.js"></script>
+    <script src="js/api-client.js"></script>
+    <script src="js/lms-shared.js"></script>
+    <script src="js/lms-admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tuition Solution LMS login for super admin, teachers, and students. Access classes, assignments, quizzes, attendance, and academic progress.">
+    <title>LMS Portal | Tuition Solution</title>
+
+    <link rel="icon" type="image/png" href="Assets/Logo/logo icon-01 2.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+                            400: '#60a5fa', 500: '#3b82f6', 600: '#1e40af', 700: '#1e3a8a',
+                            800: '#1e2d5f', 900: '#0f172a'
+                        },
+                        accent: {
+                            50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+                            400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+                            800: '#9a3412', 900: '#7c2d12'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/lms.css">
+</head>
+<body class="font-body text-gray-800 overflow-x-hidden antialiased selection:bg-primary-500 selection:text-white lms-app" data-page="lms">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-accent-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:outline-none">
+        Skip to main content
+    </a>
+
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white border-b border-gray-100 shadow-sm">
+        <div class="bg-primary-700 text-white py-2 hidden md:block">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm">
+                <div class="flex items-center gap-6">
+                    <a href="mailto:info@tuitionsol.com" class="flex items-center gap-2 hover:text-accent-400 transition-colors" aria-label="Email us">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span>info@tuitionsol.com</span>
+                    </a>
+                    <a href="tel:+923213825799" class="flex items-center gap-2 hover:text-accent-400 transition-colors" aria-label="Call us">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <span>0321-3825799</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        Mon-Fri: 5-9 PM | Sat-Sun: 2-5 PM
+                    </span>
+                    <div class="flex items-center gap-3 ml-4" role="list" aria-label="Social media links">
+                        <a href="https://www.facebook.com/tuitionsol" target="_blank" rel="noopener noreferrer" class="hover:text-accent-400 transition-colors" aria-label="Facebook" role="listitem"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" class="hover:text-accent-400 transition-colors" aria-label="WhatsApp" role="listitem"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/tuition_solution/" target="_blank" rel="noopener noreferrer" class="hover:text-accent-400 transition-colors" aria-label="Instagram" role="listitem"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://www.youtube.com/@solutionsoflife8175" target="_blank" rel="noopener noreferrer" class="hover:text-accent-400 transition-colors" aria-label="YouTube" role="listitem"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="index.html" class="flex items-center gap-3 group" aria-label="Tuition Solution - Home">
+                    <img src="Assets/Logo/logo icon-01 2.png" alt="Tuition Solution Logo Icon" class="h-10 lg:h-14 w-auto object-contain" loading="eager">
+                    <div class="w-px h-8 lg:h-12 bg-gray-300" aria-hidden="true"></div>
+                    <img src="Assets/Logo/Group 48095398.png" alt="Tuition Solution & IT Solution" class="h-8 lg:h-11 w-auto object-contain" loading="eager">
+                    <div class="pl-1 border-l border-gray-200">
+                        <span class="block text-sm sm:text-base lg:text-lg font-bold text-primary-800 leading-tight tracking-wide">Tuition Solution</span>
+                        <span class="block text-[10px] sm:text-xs lg:text-sm font-semibold text-accent-500 leading-tight tracking-wide">IT Solution</span>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="index.html" data-nav="home" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Home</a>
+                    <a href="about.html" data-nav="about" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">About Us</a>
+                    <a href="gallery.html" data-nav="gallery" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Gallery</a>
+                    <a href="fee-structure.html" data-nav="fee-structure" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Fee Structure</a>
+                    <a href="admissions.html" data-nav="admissions" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Admissions</a>
+                    <a href="announcements.html" data-nav="announcements" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Announcements</a>
+                    <a href="contact.html" data-nav="contact" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">Contact</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100 shadow-xl" role="navigation" aria-label="Mobile navigation">
+            <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+                <a href="index.html" data-nav="home" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Home</a>
+                <a href="about.html" data-nav="about" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">About Us</a>
+                <a href="gallery.html" data-nav="gallery" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Gallery</a>
+                <a href="fee-structure.html" data-nav="fee-structure" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Fee Structure</a>
+                <a href="admissions.html" data-nav="admissions" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Admissions</a>
+                <a href="announcements.html" data-nav="announcements" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Announcements</a>
+                <a href="contact.html" data-nav="contact" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">Contact</a>
+                <div class="pt-3 flex items-center justify-center gap-4 text-sm text-gray-500">
+                    <a href="tel:+923213825799" class="flex items-center gap-2 hover:text-primary-600"><i class="fas fa-phone" aria-hidden="true"></i> 0321-3825799</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="pt-24 lg:pt-28">
+        <section class="relative overflow-hidden min-h-[calc(100vh-7rem)] flex items-center">
+            <div class="absolute inset-0 lms-grid-bg" aria-hidden="true"></div>
+            <div class="lms-orb top-16 left-8 w-56 h-56 bg-primary-300"></div>
+            <div class="lms-orb bottom-10 right-10 w-72 h-72 bg-accent-300"></div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+                <div class="max-w-xl mx-auto lms-panel rounded-[2rem] p-8 sm:p-10">
+                    <div class="text-center mb-8">
+                        <h1 class="font-heading text-3xl sm:text-4xl font-bold text-primary-900">Open your LMS portal</h1>
+                        <p class="text-slate-500 mt-3">Super admins, teachers, and students all sign in through this single login form. The system detects your role and opens the correct portal automatically.</p>
+                    </div>
+
+                    <form id="lms-login-form" class="space-y-5">
+                        <div>
+                            <label for="lms-username" class="block text-sm font-semibold text-slate-700 mb-1.5">Username</label>
+                            <input id="lms-username" name="username" type="text" autocomplete="username" required class="w-full rounded-2xl border border-slate-200 px-4 py-3.5 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all" placeholder="enter your username">
+                        </div>
+                        <div>
+                            <label for="lms-password" class="block text-sm font-semibold text-slate-700 mb-1.5">Password</label>
+                            <input id="lms-password" name="password" type="password" autocomplete="current-password" required class="w-full rounded-2xl border border-slate-200 px-4 py-3.5 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all" placeholder="enter your password">
+                        </div>
+                        <div id="lms-login-notice" class="lms-notice" data-visible="false" data-tone="info"></div>
+                        <button id="lms-login-btn" type="submit" class="w-full rounded-2xl bg-primary-600 text-white font-bold py-3.5 hover:bg-primary-700 transition-colors shadow-lg shadow-primary-600/20">
+                            <i class="fas fa-right-to-bracket mr-2" aria-hidden="true"></i> Open My Portal
+                        </button>
+                    </form>
+
+                    <div class="mt-6 rounded-[1.5rem] border border-slate-200 bg-slate-50/90 p-5">
+                        <div class="flex items-center gap-3 text-slate-900">
+                            <span class="w-10 h-10 rounded-2xl bg-accent-100 text-accent-600 flex items-center justify-center"><i class="fas fa-key" aria-hidden="true"></i></span>
+                            <div>
+                                <h2 class="font-heading text-xl font-semibold">Forgot password?</h2>
+                                <p class="text-sm text-slate-500 mt-1">Enter your LMS ID or username. Your request will be sent to the super admin.</p>
+                            </div>
+                        </div>
+
+                        <form id="lms-reset-request-form" class="mt-5 space-y-4">
+                            <div>
+                                <label for="lms-reset-identifier" class="block text-sm font-semibold text-slate-700 mb-1.5">LMS ID / Username</label>
+                                <input id="lms-reset-identifier" name="identifier" type="text" required class="w-full rounded-2xl border border-slate-200 px-4 py-3.5 outline-none focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 transition-all" placeholder="e.g. teacher_123 or ali.teacher">
+                            </div>
+                            <div id="lms-reset-request-notice" class="lms-notice" data-visible="false" data-tone="info"></div>
+                            <button id="lms-reset-request-btn" type="submit" class="w-full rounded-2xl border border-accent-200 text-accent-700 font-bold py-3.5 hover:border-accent-300 hover:bg-accent-50 transition-colors">
+                                <i class="fas fa-paper-plane mr-2" aria-hidden="true"></i> Send Reset Request
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-200/80 bg-white/80 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500">
+            <p>&copy; <span id="footer-year"></span> Tuition Solution. LMS access for teachers and students.</p>
+            <div class="flex items-center gap-4">
+                <a href="contact.html" class="hover:text-primary-600 transition-colors">Support</a>
+                <a href="index.html" class="hover:text-primary-600 transition-colors">Main Site</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="fixed right-5 bottom-5 w-11 h-11 rounded-full bg-primary-600 text-white shadow-lg opacity-0 pointer-events-none transition-all duration-300 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-400" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="js/common.js"></script>
+    <script src="js/runtime-config.js"></script>
+    <script src="js/api-client.js"></script>
+    <script src="js/lms-shared.js"></script>
+    <script src="js/lms-landing.js"></script>
+</body>
+</html>

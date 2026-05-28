@@ -26,6 +26,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.getElementById('mobile-menu');
     let isMenuOpen = false;
 
+    const desktopContactLink = document.querySelector('.nav-link[data-nav="contact"]');
+    if (desktopContactLink && !document.querySelector('.nav-link[data-nav="lms"]')) {
+        desktopContactLink.insertAdjacentHTML('beforebegin', '<a href="lms.html" data-nav="lms" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-all">LMS</a>');
+    }
+
+    const mobileContactLink = document.querySelector('.mobile-nav-link[data-nav="contact"]');
+    if (mobileContactLink && !document.querySelector('.mobile-nav-link[data-nav="lms"]')) {
+        mobileContactLink.insertAdjacentHTML('beforebegin', '<a href="lms.html" data-nav="lms" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all">LMS</a>');
+    }
+
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', () => {
             isMenuOpen = !isMenuOpen;

@@ -251,23 +251,35 @@
 
     // ── Submit to Google Sheets ──
     function submitToSheet(data) {
-        overlay.classList.remove('hidden');
-
-        fetch(SCRIPT_URL, {
+        return fetch(SCRIPT_URL, {
             method: 'POST',
             mode: 'no-cors',
             headers: { 'Content-Type': 'text/plain' },
             body: JSON.stringify(data)
-        })
-        .then(function () {
-            // no-cors means opaque response — treat as success
+        });
+    }
+
+    async function submitAdmission(data) {
+        overlay.classList.remove('hidden');
+
+        try {
+            if (window.TuitionSolutionApi) {
+                await window.TuitionSolutionApi.submitAdmission(data);
+            } else {
+                await submitToSheet(data);
+            }
             overlay.classList.add('hidden');
             goToStep(3);
-        })
-        .catch(function () {
-            overlay.classList.add('hidden');
-            alert('Network error! Please check your internet connection and try again.');
-        });
+        } catch (error) {
+            try {
+                await submitToSheet(data);
+                overlay.classList.add('hidden');
+                goToStep(3);
+            } catch {
+                overlay.classList.add('hidden');
+                alert(error.message || 'Network error! Please check your internet connection and try again.');
+            }
+        }
     }
 
     // ── Live validation on blur ──
@@ -298,7 +310,7 @@
         e.preventDefault();
         if (!validateStep2()) return;
         var data = collectData();
-        submitToSheet(data);
+        submitAdmission(data);
     });
 
     applyAgainBtn.addEventListener('click', function () {

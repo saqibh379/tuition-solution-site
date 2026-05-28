@@ -10,6 +10,8 @@
 
     const STORAGE_KEY_FORMS = 'ts_registration_forms';
     const STORAGE_KEY_SUBMISSIONS = 'ts_form_submissions';
+    let formsCache = readStoredArray(STORAGE_KEY_FORMS);
+    let submissionsCache = readStoredArray(STORAGE_KEY_SUBMISSIONS);
 
     // DOM
     const formSelectorSection = document.getElementById('form-selector-section');
@@ -31,24 +33,29 @@
     // ============================================
     // Utility
     // ============================================
-    function getForms() {
+    function readStoredArray(key) {
         try {
-            return JSON.parse(localStorage.getItem(STORAGE_KEY_FORMS)) || [];
+            return JSON.parse(localStorage.getItem(key)) || [];
         } catch {
             return [];
         }
+    }
+
+    function writeStoredArray(key, value) {
+        localStorage.setItem(key, JSON.stringify(value));
+    }
+
+    function getForms() {
+        return formsCache;
     }
 
     function getSubmissions() {
-        try {
-            return JSON.parse(localStorage.getItem(STORAGE_KEY_SUBMISSIONS)) || [];
-        } catch {
-            return [];
-        }
+        return submissionsCache;
     }
 
     function saveSubmissions(subs) {
-        localStorage.setItem(STORAGE_KEY_SUBMISSIONS, JSON.stringify(subs));
+        submissionsCache = Array.isArray(subs) ? subs : [];
+        writeStoredArray(STORAGE_KEY_SUBMISSIONS, submissionsCache);
     }
 
     function escapeHtml(str) {
@@ -286,7 +293,7 @@
     // ============================================
     // Form Submission
     // ============================================
-    dynamicForm.addEventListener('submit', (e) => {
+    dynamicForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         if (!currentForm) return;
@@ -393,35 +400,54 @@
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Submitting...';
         submitBtn.disabled = true;
 
-        // Save submission
-        setTimeout(() => {
-            const subs = getSubmissions();
-            subs.push({
-                formId: currentForm.id,
-                formName: currentForm.name,
-                data: formData,
-                submittedAt: new Date().toISOString()
-            });
-            saveSubmissions(subs);
+        const submissionRecord = {
+            formId: currentForm.id,
+            formName: currentForm.name,
+            data: formData,
+            submittedAt: new Date().toISOString()
+        };
 
-            // Show success
-            formContainer.classList.add('hidden');
-            successScreen.classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        let savedLocallyOnly = false;
 
-            // Reset
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Registration';
-            submitBtn.disabled = false;
+        try {
+            if (window.TuitionSolutionApi) {
+                await window.TuitionSolutionApi.submitRegistration({
+                    formId: submissionRecord.formId,
+                    formName: submissionRecord.formName,
+                    data: submissionRecord.data
+                });
+            } else {
+                savedLocallyOnly = true;
+            }
+        } catch {
+            savedLocallyOnly = true;
+        }
 
-            // Announce for screen readers
-            const announcer = document.createElement('div');
-            announcer.setAttribute('role', 'status');
-            announcer.setAttribute('aria-live', 'polite');
-            announcer.className = 'sr-only';
-            announcer.textContent = 'Registration submitted successfully.';
-            document.body.appendChild(announcer);
-            setTimeout(() => announcer.remove(), 3000);
-        }, 1500);
+        const subs = getSubmissions();
+        subs.push(submissionRecord);
+        saveSubmissions(subs);
+
+        if (savedLocallyOnly) {
+            window.alert('The registration server is unavailable. This submission was saved only in this browser.');
+        }
+
+        // Show success
+        formContainer.classList.add('hidden');
+        successScreen.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Reset
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Registration';
+        submitBtn.disabled = false;
+
+        // Announce for screen readers
+        const announcer = document.createElement('div');
+        announcer.setAttribute('role', 'status');
+        announcer.setAttribute('aria-live', 'polite');
+        announcer.className = 'sr-only';
+        announcer.textContent = 'Registration submitted successfully.';
+        document.body.appendChild(announcer);
+        setTimeout(() => announcer.remove(), 3000);
     });
 
     function showFieldError(errorEl, message) {
@@ -496,13 +522,29 @@
     // ============================================
     // Footer Year
     // ============================================
-    if (footerYear) {
-        footerYear.textContent = new Date().getFullYear();
+    async function init() {
+        if (footerYear) {
+            footerYear.textContent = new Date().getFullYear();
+        }
+
+        try {
+            if (window.TuitionSolutionApi) {
+                const response = await window.TuitionSolutionApi.getForms();
+                formsCache = Array.isArray(response.forms) ? response.forms : [];
+                writeStoredArray(STORAGE_KEY_FORMS, formsCache);
+            } else {
+                formsCache = readStoredArray(STORAGE_KEY_FORMS);
+            }
+        } catch {
+            formsCache = readStoredArray(STORAGE_KEY_FORMS);
+        }
+
+        loadFormSelector();
     }
 
     // ============================================
     // Init
     // ============================================
-    loadFormSelector();
+    init();
 
 })();

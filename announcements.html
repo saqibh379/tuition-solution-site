@@ -81,6 +81,7 @@
         .shimmer-gold {
             background: linear-gradient(90deg, #f59e0b, #fbbf24, #f59e0b, #fbbf24);
             background-size: 200% auto;
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: shimmer-gold 3s linear infinite;
@@ -102,6 +103,18 @@
             height: 10px;
             animation: confetti-fall linear infinite;
             opacity: 0;
+        }
+
+        .report-accordion summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .report-accordion[open] .report-chevron {
+            transform: rotate(180deg);
+        }
+
+        .report-chevron {
+            transition: transform 0.25s ease;
         }
     </style>
 </head>
@@ -239,10 +252,36 @@
 
         <!-- Coming Soon section removed - Results announced -->
 
+        <section id="monthly-reports-section" class="py-16 lg:py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-yellow-100/50 rounded-full blur-3xl -translate-x-1/2" aria-hidden="true"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-orange-100/50 rounded-full blur-3xl translate-x-1/2" aria-hidden="true"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 bg-yellow-50 text-yellow-700 rounded-full px-5 py-2 mb-4 border border-yellow-200">
+                        <i class="fas fa-medal" aria-hidden="true"></i>
+                        <span class="text-sm font-semibold">Monthly Reports</span>
+                    </div>
+                    <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+                        Class-Wise Results & <span class="text-accent-500">Top 1 Highlights</span>
+                    </h2>
+                    <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+                        Posted monthly reports from the LMS appear here. Open any month to see the detailed class rankings and toppers.
+                    </p>
+                </div>
+
+                <div id="monthly-reports-shell" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-white rounded-3xl border border-gray-100 shadow-lg p-8 text-center text-gray-500">
+                        Loading monthly reports...
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ============================================ -->
         <!-- POSITION HOLDERS SECTION (Coming Soon with Avatars) -->
         <!-- ============================================ -->
-        <section class="py-16 lg:py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        <section id="legacy-announcements-results" class="hidden py-16 lg:py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
             <!-- Background decorations -->
             <div class="absolute top-0 left-0 w-96 h-96 bg-yellow-100/50 rounded-full blur-3xl -translate-x-1/2" aria-hidden="true"></div>
             <div class="absolute bottom-0 right-0 w-96 h-96 bg-orange-100/50 rounded-full blur-3xl translate-x-1/2" aria-hidden="true"></div>
@@ -728,6 +767,9 @@
 
     <!-- JS Files -->
     <script src="js/common.js"></script>
+    <script src="js/runtime-config.js"></script>
+    <script src="js/api-client.js"></script>
+    <script src="js/announcements.js"></script>
 
 </body>
 </html>
